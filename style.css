@@ -323,3 +323,27 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal-item { opacity: 1 !important; transform: none !important; }
 }
+
+/* Project page heading background image */
+.project-heading {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-heading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/pc-header.jpg"); /* <-- your image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22; /* transparency */
+  z-index: 0;
+}
+
+.project-heading > * {
+  position: relative;
+  z-index: 1;
+}
+
+
