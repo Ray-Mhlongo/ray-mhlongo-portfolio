@@ -172,13 +172,18 @@ h3 { margin: var(--space-3) 0 var(--space-2); font-size: var(--fs-xl); }
 }
 
 .skill-pill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
   border: 1px solid var(--border);
   border-radius: .85rem;
   background: linear-gradient(170deg, var(--surface) 0%, var(--surface-2) 100%);
   color: var(--text);
   font-weight: 700;
   letter-spacing: .01em;
-  padding: .8rem 1rem;
+  padding: 1rem;
   min-width: 8.5rem;
   text-align: center;
   transition: transform .3s var(--anim-ease), box-shadow .3s var(--anim-ease), border-color .3s var(--anim-ease), color .3s var(--anim-ease);
@@ -187,9 +192,29 @@ h3 { margin: var(--space-3) 0 var(--space-2); font-size: var(--fs-xl); }
 .skill-pill-card:hover,
 .skill-pill-card:focus-visible {
   transform: translateY(-4px);
-  border-color: #4ab6ff;
+  border-color: var(--accent);
   box-shadow: var(--shadow-soft);
   color: #f0f7ff;
+}
+
+.skill-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  border: 0;
+  border-radius: .2rem;
+  box-shadow: none;
+}
+
+.skill-pill-card:hover .skill-icon,
+.skill-pill-card:focus-visible .skill-icon {
+  transform: none;
+  box-shadow: none;
+}
+
+.skill-name {
+  font-size: var(--fs-md);
+  line-height: 1.2;
 }
 
 
