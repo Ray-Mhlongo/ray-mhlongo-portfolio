@@ -78,8 +78,8 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   z-index: 60;
 }
 .site-logo {
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   border: 1px solid #3b5c90;
   object-fit: cover;
