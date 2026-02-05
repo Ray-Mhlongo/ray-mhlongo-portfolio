@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PC Price Analysis by Ray Mhlongo." />
-  <title>PC Price Analysis | Ray Mhlongo</title>
+  <meta name="description" content="PC Parts Price Analysis project by Ray Mhlongo." />
+  <title>PC Parts Price Analysis | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,20 +12,140 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header"><nav class="navbar container" aria-label="Primary"><a class="brand" href="index.html">Ray Mhlongo</a><button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button><ul id="nav-list" class="nav-list"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li><li><a class="nav-link active" href="projects.html">Projects</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul></nav></header>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand" href="index.html">Ray Mhlongo</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
+        <span class="sr-only">Open menu</span>☰
+      </button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link active" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main id="main-content" class="container page-main">
-    <section class="section reveal"><h1>PC Price Analysis</h1><p class="lead">Advanced marketplace indexing using SQL and Power BI to standardize raw PC hardware data.</p></section>
-    <section class="section grid details reveal">
-      <article class="card"><h2>Project Overview</h2><p>This analysis organizes fragmented PC marketplace listings into a normalized model so components and full builds can be compared consistently across vendors.</p></article>
-      <article class="card"><h2>Problem Statement</h2><p>Raw listing data is inconsistent and noisy, making direct price comparison unreliable. The project builds a clean structure that supports trustworthy pricing insights.</p></article>
-      <article class="card"><h2>Tools Used</h2><ul><li>SQL</li><li>Power BI</li></ul></article>
-      <article class="card"><h2>Key Insights</h2><ul><li>Placeholder: Significant price variance for similar component specifications.</li><li>Placeholder: Specific vendors consistently positioned above market median.</li><li>Placeholder: Clear value tiers emerged after standardization.</li></ul></article>
-      <article class="card"><h2>Visuals</h2><img src="images/pc-price-analysis.svg" alt="Placeholder dashboard for PC price analysis" /></article>
-      <article class="card"><h2>GitHub</h2><a class="text-link" href="#">GitHub repository link (placeholder)</a></article>
+    <section class="section reveal">
+      <p class="kicker">Project Case Study</p>
+      <h1>PC Parts Price Analysis (South Africa)</h1>
+      <p class="lead">
+        This learning-focused portfolio project analyzes PC component prices across different shops and provinces in South Africa.
+        The goal was to model clean, analysis-ready data that can support SQL insights and Power BI reporting.
+      </p>
+    </section>
+
+    <section class="section grid details reveal" aria-label="Project details">
+      <article class="card">
+        <h2>Tools Used</h2>
+        <ul>
+          <li>SQL (MySQL)</li>
+          <li>Power BI</li>
+          <li>GitHub</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>What I Did</h2>
+        <ul>
+          <li>Created a relational database for PC parts pricing.</li>
+          <li>Inserted raw product-level data from multiple sources.</li>
+          <li>Cleaned and standardized inconsistent names and formatting.</li>
+          <li>Built dimension tables for categories, provinces, shops, and manufacturers.</li>
+          <li>Applied primary and foreign key relationships for data integrity.</li>
+          <li>Ran analytical SQL queries to answer business-style pricing questions.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Database Structure</h2>
+        <p><strong>Main table:</strong> <code>Parts</code></p>
+        <p><strong>Dimension tables:</strong></p>
+        <ul>
+          <li><code>part_categories</code></li>
+          <li><code>Province</code></li>
+          <li><code>Shop</code></li>
+          <li><code>Manufacturer</code></li>
+        </ul>
+        <p>This structure supports filtering by category (CPU, GPU, RAM, etc.), province, shop, and manufacturer.</p>
+      </article>
+
+      <article class="card">
+        <h2>Key Questions Answered</h2>
+        <ul>
+          <li>What products are available in each province?</li>
+          <li>What are the cheapest products per category?</li>
+          <li>How do prices differ between shops?</li>
+          <li>Which products have the highest warranties?</li>
+          <li>What are the most and least expensive items per category?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Folder Structure / Resources</h2>
+        <ul>
+          <li><code>/scripts/</code> → SQL scripts for schema creation and data inserts</li>
+          <li><code>/data/</code> → Raw and cleaned CSV data files</li>
+          <li><code>/PowerBI/</code> → Power BI report files and dashboard outputs</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>View Full Project on GitHub</h2>
+        <p>Open the complete repository for SQL scripts, data resources, and dashboard files.</p>
+        <a class="btn btn-primary" href="[INSERT LINK]" target="_blank" rel="noopener noreferrer">View Full Project on GitHub</a>
+      </article>
+    </section>
+
+    <section class="section reveal" aria-label="Visuals and screenshots">
+      <div class="section-heading">
+        <h2>Visuals / Screenshots</h2>
+        <p>Space for dashboard exports, SQL output snippets, and structure previews.</p>
+      </div>
+
+      <article class="card">
+        <h3>Optional SQL / Analysis Snippet</h3>
+<pre><code>-- Example analysis query snippet
+SELECT c.category_name,
+       MIN(p.price) AS cheapest_price,
+       MAX(p.price) AS highest_price
+FROM Parts p
+JOIN part_categories c ON p.category_id = c.category_id
+GROUP BY c.category_name
+ORDER BY cheapest_price ASC;</code></pre>
+      </article>
+
+      <div class="grid details" role="list" aria-label="Project screenshots grid">
+        <figure class="card" role="listitem">
+          <img src="images/pc-price-analysis.svg" alt="Screenshot 1: PC parts pricing dashboard overview" loading="lazy" />
+          <figcaption class="meta">Dashboard overview</figcaption>
+        </figure>
+        <figure class="card" role="listitem">
+          <img src="images/pc-price-analysis.svg" alt="Screenshot 2: Price comparison by province" loading="lazy" />
+          <figcaption class="meta">Price comparison by province</figcaption>
+        </figure>
+        <figure class="card" role="listitem">
+          <img src="images/pc-price-analysis.svg" alt="Screenshot 3: Category-level cheapest and highest pricing" loading="lazy" />
+          <figcaption class="meta">Category-level pricing extremes</figcaption>
+        </figure>
+        <figure class="card" role="listitem">
+          <img src="images/pc-price-analysis.svg" alt="Screenshot 4: Shop and warranty analysis snapshot" loading="lazy" />
+          <figcaption class="meta">Shop and warranty snapshot</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ray Mhlongo</p>
+      <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
