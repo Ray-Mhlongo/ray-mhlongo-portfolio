@@ -82,21 +82,22 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   height: 1.9rem;
   border-radius: 50%;
   border: 1px solid #3b5c90;
-  display: grid;
-  place-items: center;
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  color: #dff0ff;
-  background: linear-gradient(145deg, #173056, #0e1d35);
+  object-fit: cover;
+  display: block;
   box-shadow: 0 6px 14px rgb(8 20 40 / 45%);
-  transition: transform .25s var(--anim-ease), box-shadow .25s var(--anim-ease), border-color .25s var(--anim-ease);
+  animation: logo-in .65s var(--anim-ease) both;
+  transition: transform .25s var(--anim-ease), box-shadow .25s var(--anim-ease), border-color .25s var(--anim-ease), filter .25s var(--anim-ease);
 }
 .site-logo-link:hover .site-logo,
 .site-logo-link:focus-visible .site-logo {
   transform: translateY(-2px) scale(1.03);
   border-color: #5cc2ff;
   box-shadow: 0 10px 20px rgb(11 31 59 / 52%);
+  filter: saturate(1.08);
+}
+@keyframes logo-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .nav-toggle { border: 1px solid var(--border); border-radius: .45rem; background: var(--surface); color: var(--text); padding: .35rem .65rem; }
