@@ -346,4 +346,30 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
   z-index: 1;
 }
 
+/* Brand text with background logo */
+.brand-with-logo {
+  position: relative;
+  display: inline-block;
+  padding: .4rem .8rem;
+}
+
+.brand-with-logo::before {
+  content: "";
+  position: absolute;
+  inset: -0.6rem;
+  background-image: url("images/LOGO.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  opacity: 0.15;              /* transparency */
+  filter: blur(1px);          /* soft, premium look */
+  z-index: 0;
+}
+
+.brand-text {
+  position: relative;
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
 
