@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Project portfolio for Ray Mhlongo." />
+  <title>Projects | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand" href="index.html">Ray Mhlongo</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="section-heading">
+        <h1>Projects</h1>
+        <p>Selected work designed to answer practical business questions with data.</p>
+      </div>
+      <div class="grid cards-three">
+        <article class="card project-card">
+          <img src="images/pc-price-analysis.svg" alt="Project placeholder for PC Price Analysis" />
+          <h2>PC Price Analysis</h2>
+          <p>Advanced marketplace indexing using SQL and Power BI to standardize raw PC hardware data.</p>
+          <p class="meta">Tech: SQL, Power BI</p>
+          <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
+        </article>
+        <article class="card project-card">
+          <img src="images/cathdel-creamy.svg" alt="Project placeholder for Cathdel Creamy" />
+          <h2>Cathdel Creamy</h2>
+          <p>Sales analysis using real sales data to explore performance trends, product demand, and revenue patterns.</p>
+          <p class="meta">Tech: SQL, Excel, Power BI</p>
+          <a class="btn btn-secondary" href="cathdel-creamy.html">Open Case Study</a>
+        </article>
+        <article class="card project-card">
+          <img src="images/isp-price-comparison.svg" alt="Project placeholder for ISP comparison" />
+          <h2>Local ISP Price Comparison</h2>
+          <p>Compares local ISP pricing, package offerings, and value for money to guide better decisions.</p>
+          <p class="meta">Tech: SQL, Power BI</p>
+          <a class="btn btn-secondary" href="isp-price-comparison.html">Open Case Study</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
