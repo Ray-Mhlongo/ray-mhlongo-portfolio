@@ -164,6 +164,35 @@ h3 { margin: var(--space-3) 0 var(--space-2); font-size: var(--fs-xl); }
 }
 .tag:hover { transform: translateY(-2px); border-color: #3a5f94; box-shadow: var(--shadow-soft); }
 
+
+.skills-polish-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.skill-pill-card {
+  border: 1px solid var(--border);
+  border-radius: .85rem;
+  background: linear-gradient(170deg, var(--surface) 0%, var(--surface-2) 100%);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: .01em;
+  padding: .8rem 1rem;
+  min-width: 8.5rem;
+  text-align: center;
+  transition: transform .3s var(--anim-ease), box-shadow .3s var(--anim-ease), border-color .3s var(--anim-ease), color .3s var(--anim-ease);
+}
+
+.skill-pill-card:hover,
+.skill-pill-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: #4ab6ff;
+  box-shadow: var(--shadow-soft);
+  color: #f0f7ff;
+}
+
+
 .grid { display: grid; gap: var(--space-4); }
 .cards-three { grid-template-columns: 1fr; }
 .details, .project-layout { grid-template-columns: 1fr; }
@@ -252,6 +281,10 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
     margin-right: 2.25rem;
   }
   .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .skills-polish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .details,
   .project-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
