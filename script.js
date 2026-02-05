@@ -1,4 +1,4 @@
-/* Portfolio interactions: nav toggle, footer year, and performant staggered reveal animations */
+/* Portfolio interactions: nav toggle, footer year, and IntersectionObserver-powered reveals */
 (() => {
   const toggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list, .nav-menu');
@@ -19,23 +19,28 @@
   }
 
   const year = document.getElementById('year');
-  if (year) {
-    year.textContent = String(new Date().getFullYear());
-  }
+  if (year) year.textContent = String(new Date().getFullYear());
 
-  const animatedElements = document.querySelectorAll(
-    'main h1, main h2, main h3, main p, main li, main .card, main .detail-card, main .project-card, main img, main .btn, main .text-link, main .tag, main pre, main figure'
+  const revealTargets = Array.from(
+    new Set([
+      ...document.querySelectorAll('.reveal-item'),
+      ...document.querySelectorAll('.project-card'),
+      ...document.querySelectorAll('img'),
+    ])
   );
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) {
-    animatedElements.forEach((el) => el.classList.add('is-visible'));
+    revealTargets.forEach((el) => el.classList.add('is-visible'));
     return;
   }
 
-  animatedElements.forEach((el, index) => {
-    el.classList.add('reveal-item');
-    el.style.setProperty('--stagger-delay', `${(index % 10) * 65}ms`);
+  // Ensure targets participate in reveal animations.
+  revealTargets.forEach((el) => el.classList.add('reveal-item'));
+
+  // Stagger project card entrance timings.
+  document.querySelectorAll('.project-card').forEach((card, index) => {
+    card.style.setProperty('--stagger-delay', `${120 + index * 90}ms`);
   });
 
   if ('IntersectionObserver' in window) {
@@ -48,14 +53,16 @@
           }
         });
       },
-      {
-        threshold: 0.14,
-        rootMargin: '0px 0px -10% 0px',
-      }
+      { threshold: 0.14, rootMargin: '0px 0px -8% 0px' }
     );
 
-    animatedElements.forEach((el) => observer.observe(el));
+    revealTargets.forEach((el, index) => {
+      if (!el.style.getPropertyValue('--stagger-delay')) {
+        el.style.setProperty('--stagger-delay', `${(index % 8) * 50}ms`);
+      }
+      observer.observe(el);
+    });
   } else {
-    animatedElements.forEach((el) => el.classList.add('is-visible'));
+    revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 })();
