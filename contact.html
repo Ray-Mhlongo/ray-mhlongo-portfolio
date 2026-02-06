@@ -35,7 +35,7 @@
       </div>
     </section>
 
-   <section class="section reveal" aria-labelledby="form-heading">
+  <section class="section reveal" aria-labelledby="form-heading">
   <div class="section-heading">
     <h2 id="form-heading">Send a Message</h2>
     <p>I would love to hear from you.</p>
@@ -58,28 +58,22 @@
   </form>
 </section>
 
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
-  <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("kPArux2pCAK50eRHu"); // your public key
+  // Initialize EmailJS with your public key
+  emailjs.init("kPArux2pCAK50eRHu");
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop normal form submit
+  // Hook the form
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    emailjs.sendForm(
-      "service_w985lsf",    // your service ID
-      "template_p9upgp8",   // your template ID
-      this
-    ).then(
-      () => alert("Message sent!"),
-      (error) => alert("Failed to send: " + error.text)
-    );
+    emailjs.sendForm("service_w985lsf", "template_p9upgp8", this)
+      .then(() => alert("Message sent!"), 
+            (error) => alert("Failed to send: " + error.text));
   });
 </script>
+
 
 
 </body>
