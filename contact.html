@@ -37,7 +37,7 @@
 
     <section class="section reveal" aria-labelledby="form-heading">
       <div class="section-heading"><h2 id="form-heading">Send a Message</h2><p>I would love to hear from you.</p></div>
-      <form class="contact-form" action="<form class="contact-form" action="mailto:rodgersmhlongo@gmail.com" method="post" enctype="text/plain">
+      <form id="contact-form" class="contact-form">
         <div class="form-field">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" autocomplete="name" required />
@@ -57,5 +57,27 @@
 
   <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("kPArux2pCAK50eRHu"); // Replace with your EmailJS public key
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop normal form submit
+
+  emailjs.sendForm(
+    "service_uis20nj", // your service ID
+    "template_p9upgp8", // your template ID
+    this
+  ).then(
+    () => alert("Message sent!"),
+    (error) => alert("Failed to send: " + error.text)
+  );
+});
+</script>
+
+  
+</script>
+
 </body>
 </html>
