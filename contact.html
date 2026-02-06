@@ -57,24 +57,26 @@
 
   <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("kPArux2pCAK50eRHu"); // Replace with your EmailJS public key
+  // Initialize EmailJS with your public key
+  emailjs.init("kPArux2pCAK50eRHu"); // <-- your public key
 
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault(); // stop normal form submit
+  // Handle form submission
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal form submit
 
-  emailjs.sendForm(
-    "service_uis20nj", // your service ID
-    "template_p9upgp8", // your template ID
-    this
-  ).then(
-    () => alert("Message sent!"),
-    (error) => alert("Failed to send: " + error.text)
-  );
-});
+    emailjs.sendForm(
+      "service_uis20nj",    // your service ID
+      "template_p9upgp8",   // your template ID
+      this
+    ).then(
+      () => alert("Message sent!"),
+      (error) => alert("Failed to send: " + error.text)
+    );
+  });
 </script>
+
 
   
 </script>
