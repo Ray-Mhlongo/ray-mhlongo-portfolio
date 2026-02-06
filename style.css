@@ -83,7 +83,7 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   border-radius: 50%;
   border: 1px solid #3b5c90;
   object-fit: cover;
-  display: block;
+  display: none;
   box-shadow: 0 6px 14px rgb(8 20 40 / 45%);
   animation: logo-in .65s var(--anim-ease) both;
   transition: transform .25s var(--anim-ease), box-shadow .25s var(--anim-ease), border-color .25s var(--anim-ease), filter .25s var(--anim-ease);
