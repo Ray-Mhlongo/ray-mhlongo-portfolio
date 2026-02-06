@@ -382,3 +382,15 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
 .site-logo {
   height: 40px;
 }
+
+
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 3rem auto 0; /* top margin pushes it down, auto centers horizontally */
+  border-radius: 8px;
+}
+
+
+
