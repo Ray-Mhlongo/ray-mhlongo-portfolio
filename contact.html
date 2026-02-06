@@ -35,23 +35,29 @@
       </div>
     </section>
 
-    <section class="section reveal" aria-labelledby="form-heading">
-      <div class="section-heading"><h2 id="form-heading">Send a Message</h2><p>I would love to hear from you.</p></div>
-      <form id="contact-form" class="contact-form">
-        <div class="form-field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </form>
+   <section class="section reveal" aria-labelledby="form-heading">
+  <div class="section-heading">
+    <h2 id="form-heading">Send a Message</h2>
+    <p>I would love to hear from you.</p>
+  </div>
+
+  <form id="contact-form" class="contact-form">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <input id="name" name="from_name" type="text" autocomplete="name" required />
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" name="from_email" type="email" autocomplete="email" required />
+    </div>
+    <div class="form-field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</section>
+
     </section>
   </main>
 
