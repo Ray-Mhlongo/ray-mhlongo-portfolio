@@ -66,13 +66,3 @@
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 })();
-#code-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;       /* ensures full viewport width */
-    height: 100vh;      /* ensures full viewport height */
-    z-index: -1;        /* behind all content */
-    pointer-events: none; /* clicks pass through */
-    background-color: #0b1c2d; /* match your dark-blue theme */
-}
