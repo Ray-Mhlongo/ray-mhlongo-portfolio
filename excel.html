@@ -19,7 +19,7 @@
   <header class="site-header">
     <nav class="navbar container" aria-label="Primary">
       <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>&#9776;</button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
@@ -35,8 +35,8 @@
       <div class="skill-page-hero">
         <div>
           <p class="hero-eyebrow">Excel Portfolio</p>
-          <h1>Excel Analytics Workflow</h1>
-          <p class="lead">I build fast, auditable Excel models for South African teams, combining clean data, structured formulas, and executive-ready summaries. Use the filters below to see how I turn local sales rows into leadership-ready insights.</p>
+          <h1>Church Survey Insights (Excel)</h1>
+          <p class="lead">I turn church survey responses into clear, trustworthy insights for leaders. The dashboard below uses real response fields (welcoming, attendance, serving, communication) and updates instantly by tenure segment.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="projects.html">See Excel Projects</a>
             <a class="btn btn-secondary" href="index.html#skills-polish-title">Back to Skills</a>
@@ -62,38 +62,42 @@
     <section class="section reveal" aria-labelledby="excel-dashboard-title">
       <div class="section-heading">
         <h2 id="excel-dashboard-title">Interactive Excel Summary</h2>
-        <p>Simulated workbook: use filters to recalc the pivot summary.</p>
+        <p>Simulated workbook: filter by tenure to recalc the pivot summary from the survey.</p>
       </div>
       <div class="chip-row" data-filter-row>
-        <button class="filter-chip active" data-region="All">All Regions</button>
-        <button class="filter-chip" data-region="Gauteng">Gauteng</button>
-        <button class="filter-chip" data-region="Western Cape">Western Cape</button>
-        <button class="filter-chip" data-region="KwaZulu-Natal">KwaZulu-Natal</button>
-        <button class="filter-chip" data-region="Eastern Cape">Eastern Cape</button>
-        <button class="filter-chip" data-region="Free State">Free State</button>
+        <button class="filter-chip active" data-tenure="All">All Tenures</button>
+        <button class="filter-chip" data-tenure="New here">New here</button>
+        <button class="filter-chip" data-tenure="6–12 months">6–12 months</button>
+        <button class="filter-chip" data-tenure="1-3 years">1-3 years</button>
+        <button class="filter-chip" data-tenure="3+ years">3+ years</button>
       </div>
       <div class="metric-grid" data-metric-grid>
         <div class="metric-card">
-          <h4>Total Revenue</h4>
-          <p data-metric="revenue">$0</p>
+          <h4>Total Responses</h4>
+          <p data-metric="responses">0</p>
         </div>
         <div class="metric-card">
-          <h4>Average Order Value</h4>
-          <p data-metric="aov">$0</p>
+          <h4>Very Welcoming</h4>
+          <p data-metric="welcoming">0%</p>
         </div>
         <div class="metric-card">
-          <h4>Units Sold</h4>
-          <p data-metric="units">0</p>
+          <h4>Serving Rate</h4>
+          <p data-metric="serving">0%</p>
+        </div>
+        <div class="metric-card">
+          <h4>Likely to Invite</h4>
+          <p data-metric="invite">0%</p>
         </div>
       </div>
-      <table class="data-table" aria-label="Sales table">
+      <table class="data-table" aria-label="Survey responses table">
         <thead>
           <tr>
-            <th>Account</th>
-            <th>Region</th>
-            <th>Product</th>
-            <th>Revenue</th>
-            <th>Units</th>
+            <th>Timestamp</th>
+            <th>Tenure</th>
+            <th>Attendance</th>
+            <th>Welcoming</th>
+            <th>Serving</th>
+            <th>Invite Likelihood</th>
           </tr>
         </thead>
         <tbody data-table-body></tbody>
@@ -111,6 +115,7 @@
           <ul>
             <li>Power Query ingestion with standardized column mapping.</li>
             <li>Data validation, duplicates checks, and audit flags.</li>
+            <li>Consistent data types, trimming, and error trapping.</li>
           </ul>
         </article>
         <article class="detail-card">
@@ -118,15 +123,65 @@
           <ul>
             <li>Pivot summaries by region, account, and product.</li>
             <li>Dynamic arrays with structured references.</li>
+            <li>Lookup logic: XLOOKUP, INDEX/MATCH, and IFERROR.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Reporting Layer</h3>
+          <ul>
+            <li>Executive scorecards with clear KPI definitions.</li>
+            <li>Conditional formatting and variance highlights.</li>
+            <li>Scenario toggles for best/base/worst cases.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="excel-skills-title">
+      <div class="section-heading">
+        <h2 id="excel-skills-title">Junior Analyst Excel Skills</h2>
+        <p>Everyday skills I use to keep analysis accurate, readable, and trusted.</p>
+      </div>
+      <div class="grid details">
+        <article class="detail-card">
+          <h3>Core Functions</h3>
+          <ul>
+            <li>SUM, AVERAGE, COUNT, MIN/MAX, ROUND.</li>
+            <li>IF, IFS, AND/OR, IFERROR.</li>
+            <li>XLOOKUP, INDEX/MATCH, TEXT, DATE.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Data Cleaning</h3>
+          <ul>
+            <li>TRIM, CLEAN, SUBSTITUTE, LEFT/RIGHT/MID.</li>
+            <li>Remove duplicates, text-to-columns, data validation.</li>
+            <li>Consistent naming and structured tables.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Analysis & Summaries</h3>
+          <ul>
+            <li>Pivot tables, groupings, and filters.</li>
+            <li>Conditional formatting for insights.</li>
+            <li>Basic statistics and variance analysis.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Presentation</h3>
+          <ul>
+            <li>Charts: bar, line, combo, and waterfall.</li>
+            <li>Dashboard layout and visual hierarchy.</li>
+            <li>Clear labels, annotations, and footnotes.</li>
           </ul>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><p>&copy; <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script>
     window.vantaNet = VANTA.NET({
       el: "#vanta-net",
@@ -144,53 +199,145 @@
   <script type="module" src="tubes-cursor.js"></script>
   <script src="script.js"></script>
   <script>
-    const salesData = [
-      { account: "Khayelitsha Grocers", region: "Western Cape", product: "Cold Brew", revenue: 624000, units: 1220 },
-      { account: "Sandton Retail Co.", region: "Gauteng", product: "Protein Bars", revenue: 812000, units: 1980 },
-      { account: "Umhlanga Market", region: "KwaZulu-Natal", product: "Sparkling Water", revenue: 704000, units: 2140 },
-      { account: "Pretoria Wholesale", region: "Gauteng", product: "Cold Brew", revenue: 538000, units: 1260 },
-      { account: "Cape Town Foods", region: "Western Cape", product: "Protein Bars", revenue: 689000, units: 1760 },
-      { account: "Durban Deli Group", region: "KwaZulu-Natal", product: "Cold Brew", revenue: 472000, units: 980 },
-      { account: "Bloemfontein Stores", region: "Free State", product: "Sparkling Water", revenue: 395000, units: 1320 },
-      { account: "Gqeberha Retail", region: "Eastern Cape", product: "Protein Bars", revenue: 418000, units: 1150 }
-    ];
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxJjE9vK1zeGHt-CwLPsriQqh3gNYdDqF24kjMvTTuShdzOcmWzQ0Tr7jaaJ-XZL2TUFa88lTORk5U/pub?output=csv";
 
-    const formatCurrency = value => value.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR', maximumFractionDigits: 0 });
+    const parseCSV = text => {
+      const rows = [];
+      let row = [];
+      let current = "";
+      let inQuotes = false;
 
-    const renderDashboard = region => {
-      const filtered = region === "All" ? salesData : salesData.filter(row => row.region === region);
-      const totalRevenue = filtered.reduce((sum, row) => sum + row.revenue, 0);
-      const totalUnits = filtered.reduce((sum, row) => sum + row.units, 0);
-      const aov = filtered.length ? totalRevenue / filtered.length : 0;
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
 
-      document.querySelector('[data-metric="revenue"]').textContent = formatCurrency(totalRevenue);
-      document.querySelector('[data-metric="aov"]').textContent = formatCurrency(Math.round(aov));
-      document.querySelector('[data-metric="units"]').textContent = totalUnits.toLocaleString('en-US');
+        if (char === '"' && inQuotes && next === '"') {
+          current += '"';
+          i++;
+          continue;
+        }
+        if (char === '"') {
+          inQuotes = !inQuotes;
+          continue;
+        }
+        if (char === "," && !inQuotes) {
+          row.push(current.trim());
+          current = "";
+          continue;
+        }
+        if ((char === "\n" || char === "\r") && !inQuotes) {
+          if (current.length || row.length) {
+            row.push(current.trim());
+            rows.push(row);
+          }
+          row = [];
+          current = "";
+          continue;
+        }
+        current += char;
+      }
+
+      if (current.length || row.length) {
+        row.push(current.trim());
+        rows.push(row);
+      }
+      return rows.filter(r => r.length && r.some(cell => cell.length));
+    };
+
+    const normalize = value => (value || "").trim();
+
+    const toSurveyRows = rows => {
+      const [header, ...dataRows] = rows;
+      const index = name => header.indexOf(name);
+
+      const idx = {
+        timestamp: index("Timestamp"),
+        tenure: index("How long have you been attending the church?"),
+        attendance: index("How often do you usually attend?"),
+        welcoming: index("How welcoming does the church feel to you?"),
+        serving: index("Are you currently serving in a team?"),
+        servingFrequency: index("If you are serving, how often do you serve?"),
+        invite: index("How likely are you to invite someone to church?"),
+        navigation: index("How easy is it to find your way around the church?"),
+        communication: index("How satisfied are you with the church communication (WhatsApp, emails, announcements)?")
+      };
+
+      return dataRows.map(row => ({
+        timestamp: normalize(row[idx.timestamp]),
+        tenure: normalize(row[idx.tenure]) || "Unspecified",
+        attendance: normalize(row[idx.attendance]) || "Unspecified",
+        welcoming: normalize(row[idx.welcoming]) || "Unspecified",
+        serving: normalize(row[idx.serving]) || "No",
+        servingFrequency: normalize(row[idx.servingFrequency]) || "Not serving",
+        invite: normalize(row[idx.invite]) || "Not sure",
+        navigation: normalize(row[idx.navigation]) || "Unspecified",
+        communication: normalize(row[idx.communication]) || "Unspecified"
+      }));
+    };
+
+    const formatPercent = value => `${Math.round(value)}%`;
+
+    const renderDashboard = (surveyData, tenure) => {
+      const filtered = tenure === "All" ? surveyData : surveyData.filter(row => row.tenure === tenure);
+      const total = filtered.length;
+
+      const veryWelcoming = filtered.filter(row => row.welcoming.toLowerCase() === "very welcoming").length;
+      const serving = filtered.filter(row => row.serving.toLowerCase() === "yes").length;
+      const inviteLikely = filtered.filter(row => ["likely", "very likely"].includes(row.invite.toLowerCase())).length;
+
+      document.querySelector('[data-metric="responses"]').textContent = total.toLocaleString("en-ZA");
+      document.querySelector('[data-metric="welcoming"]').textContent = total ? formatPercent((veryWelcoming / total) * 100) : "0%";
+      document.querySelector('[data-metric="serving"]').textContent = total ? formatPercent((serving / total) * 100) : "0%";
+      document.querySelector('[data-metric="invite"]').textContent = total ? formatPercent((inviteLikely / total) * 100) : "0%";
 
       const body = document.querySelector('[data-table-body]');
       body.innerHTML = "";
-      filtered.forEach(row => {
+      filtered.slice(0, 18).forEach(row => {
         const tr = document.createElement('tr');
+        const servingDisplay = row.serving === "Yes"
+          ? (row.servingFrequency && row.servingFrequency !== "Not serving" ? row.servingFrequency : "Serving (frequency not provided)")
+          : "Not serving";
         tr.innerHTML = `
-          <td>${row.account}</td>
-          <td>${row.region}</td>
-          <td>${row.product}</td>
-          <td>${formatCurrency(row.revenue)}</td>
-          <td>${row.units.toLocaleString('en-US')}</td>
+          <td>${row.timestamp || "-"}</td>
+          <td>${row.tenure}</td>
+          <td>${row.attendance}</td>
+          <td>${row.welcoming}</td>
+          <td>${servingDisplay}</td>
+          <td>${row.invite}</td>
         `;
         body.appendChild(tr);
       });
     };
 
-    document.querySelectorAll('[data-region]').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('[data-region]').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        renderDashboard(button.dataset.region);
+    const setupFilters = surveyData => {
+      document.querySelectorAll('[data-tenure]').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('[data-tenure]').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          renderDashboard(surveyData, button.dataset.tenure);
+        });
       });
-    });
+    };
 
-    renderDashboard("All");
+    fetch(sheetUrl)
+      .then(response => response.text())
+      .then(csvText => {
+        const rows = parseCSV(csvText);
+        const surveyData = toSurveyRows(rows).filter(row => row.timestamp);
+        setupFilters(surveyData);
+        renderDashboard(surveyData, "All");
+      })
+      .catch(() => {
+        const fallback = [
+          { timestamp: "18/01/2026 13:59:46", tenure: "3+ years", attendance: "Every week", welcoming: "Slightly welcoming", serving: "Yes", servingFrequency: "Every week", invite: "Likely" },
+          { timestamp: "21/01/2026 09:26:31", tenure: "1-3 years", attendance: "Most weeks", welcoming: "Very welcoming", serving: "No", servingFrequency: "Not serving", invite: "Very likely" },
+          { timestamp: "01/02/2026 20:44:38", tenure: "1-3 years", attendance: "Most weeks", welcoming: "Not welcoming", serving: "No", servingFrequency: "Not serving", invite: "Not sure" },
+          { timestamp: "02/02/2026 16:53:11", tenure: "New here", attendance: "Most weeks", welcoming: "Very welcoming", serving: "No", servingFrequency: "Not serving", invite: "Not sure" }
+        ];
+        setupFilters(fallback);
+        renderDashboard(fallback, "All");
+      });
   </script>
 </body>
 </html>
+

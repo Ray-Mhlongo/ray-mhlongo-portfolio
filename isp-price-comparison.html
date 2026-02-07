@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Local ISP retail hardware sales analysis project by Ray Mhlongo." />
-  <title>Local ISP – Retail Hardware Sales Analysis | Ray Mhlongo</title>
+  <title>Local ISP - Retail Hardware Sales Analysis | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
       <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
         <span class="sr-only">Open menu</span>
-        â˜°
+        &#9776;
       </button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
@@ -29,13 +29,14 @@
         <li><a class="nav-link active" href="projects.html">Projects</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   </header>
 
   <main id="main-content" class="container page-main">
     <section class="section fade-in project-heading">
       <p class="project-status reveal-item">Completed Project</p>
-      <h1 class="reveal-item">Local ISP – Retail Hardware Sales Analysis</h1>
+      <h1 class="reveal-item">Local ISP - Retail Hardware Sales Analysis</h1>
       <p class="lead reveal-item">
         The Local ISP Project is a data analytics initiative focused on analyzing the sales and profitability of hardware
         devices such as routers, modems, and network equipment sold by a local Internet Service Provider (ISP).
@@ -62,10 +63,10 @@
           <li>Unit Cost (R): Purchase cost of each unit</li>
           <li>Unit Sale Price (R): Selling price per unit</li>
           <li>Quantity Sold: Number of units sold</li>
-          <li>Total Cost: Calculated as Unit Cost × Quantity Sold</li>
-          <li>Total Sales: Calculated as Unit Sale Price × Quantity Sold</li>
-          <li>Profit: Calculated as Total Sales − Total Cost</li>
-          <li>Profit %: Calculated as Profit ÷ Total Cost</li>
+          <li>Total Cost: Calculated as Unit Cost x Quantity Sold</li>
+          <li>Total Sales: Calculated as Unit Sale Price x Quantity Sold</li>
+          <li>Profit: Calculated as Total Sales - Total Cost</li>
+          <li>Profit %: Calculated as Profit / Total Cost</li>
         </ul>
       </article>
 
@@ -81,10 +82,10 @@
       <article class="detail-card">
         <h2 class="reveal-item">Key Formulas Used</h2>
         <ul>
-          <li>Total Cost = Unit Cost × Quantity Sold</li>
-          <li>Total Sales = Unit Sale Price × Quantity Sold</li>
-          <li>Profit = Total Sales − Total Cost</li>
-          <li>Profit % = Profit ÷ Total Cost</li>
+          <li>Total Cost = Unit Cost x Quantity Sold</li>
+          <li>Total Sales = Unit Sale Price x Quantity Sold</li>
+          <li>Profit = Total Sales - Total Cost</li>
+          <li>Profit % = Profit / Total Cost</li>
         </ul>
       </article>
 
@@ -146,14 +147,14 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Â© <span id="year"></span> Ray Mhlongo</p>
+      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
       <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script>
-    VANTA.NET({
+    window.vantaNet = VANTA.NET({
       el: "#vanta-net",
       mouseControls: true,
       touchControls: true,
@@ -171,3 +172,7 @@
 </body>
 </html>
  
+
+
+
+
