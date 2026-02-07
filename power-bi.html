@@ -35,8 +35,8 @@
       <div class="skill-page-hero">
         <div>
           <p class="hero-eyebrow">Power BI Portfolio</p>
-          <h1>Executive Dashboard Design</h1>
-          <p class="lead">I translate complex South African datasets into clear Power BI stories: KPI scorecards, trend visuals, and decision-ready narratives. Use the time filters below to see the dashboard update in real time.</p>
+          <h1>Church Survey Dashboard</h1>
+          <p class="lead">I translate church survey responses into clear Power BI stories: KPI scorecards, trend visuals, and decision-ready narratives. Use the time filters below to see the dashboard update in real time.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="projects.html">See Power BI Projects</a>
             <a class="btn btn-secondary" href="index.html#skills-polish-title">Back to Skills</a>
@@ -62,7 +62,7 @@
     <section class="section reveal" aria-labelledby="bi-dashboard-title">
       <div class="section-heading">
         <h2 id="bi-dashboard-title">Interactive KPI Dashboard</h2>
-        <p>Simulated Power BI view with dynamic filters.</p>
+        <p>Survey data view with dynamic time filters.</p>
       </div>
       <div class="chip-row" data-range-row>
         <button class="filter-chip active" data-range="30">Last 30 Days</button>
@@ -73,35 +73,35 @@
         <div>
           <div class="metric-grid" data-bi-metrics>
             <div class="metric-card">
-              <h4>Total Pipeline</h4>
-              <p data-bi-metric="pipeline">$0</p>
+              <h4>Total Responses</h4>
+              <p data-bi-metric="responses">0</p>
             </div>
             <div class="metric-card">
-              <h4>Win Rate</h4>
-              <p data-bi-metric="win">0%</p>
+              <h4>Very Welcoming</h4>
+              <p data-bi-metric="welcoming">0%</p>
             </div>
             <div class="metric-card">
-              <h4>Avg Deal Cycle</h4>
-              <p data-bi-metric="cycle">0 days</p>
+              <h4>Serving Rate</h4>
+              <p data-bi-metric="serving">0%</p>
             </div>
           </div>
-          <div class="chart-bar" aria-label="Pipeline by segment">
+          <div class="chart-bar" aria-label="Attendance frequency">
             <div class="legend-row">
-              <span>Pipeline by Segment</span>
+              <span>Attendance Frequency</span>
               <span data-bi-total></span>
             </div>
             <div class="bar-row" data-bi-bars>
               <div>
-                <div class="legend-row"><span>Enterprise</span><span data-bi-label="Enterprise">$0</span></div>
-                <div class="bar" data-bi-bar="Enterprise" style="width: 0%"></div>
+                <div class="legend-row"><span>Every week</span><span data-bi-label="Every week">0</span></div>
+                <div class="bar" data-bi-bar="Every week" style="width: 0%"></div>
               </div>
               <div>
-                <div class="legend-row"><span>Mid-Market</span><span data-bi-label="Mid-Market">$0</span></div>
-                <div class="bar" data-bi-bar="Mid-Market" style="width: 0%"></div>
+                <div class="legend-row"><span>Most weeks</span><span data-bi-label="Most weeks">0</span></div>
+                <div class="bar" data-bi-bar="Most weeks" style="width: 0%"></div>
               </div>
               <div>
-                <div class="legend-row"><span>SMB</span><span data-bi-label="SMB">$0</span></div>
-                <div class="bar" data-bi-bar="SMB" style="width: 0%"></div>
+                <div class="legend-row"><span>Once in a while</span><span data-bi-label="Once in a while">0</span></div>
+                <div class="bar" data-bi-bar="Once in a while" style="width: 0%"></div>
               </div>
             </div>
           </div>
@@ -109,9 +109,9 @@
         <article class="detail-card">
           <h3>Executive Notes</h3>
           <ul>
-            <li>Highest deal velocity is concentrated in Mid-Market accounts.</li>
-            <li>Enterprise pipeline requires tighter qualification to improve win rate.</li>
-            <li>SMB growth is steady with short sales cycles and high conversion.</li>
+            <li>Monitor welcoming scores for newcomers to improve first-time retention.</li>
+            <li>Serving rate highlights where ministry teams may need onboarding support.</li>
+            <li>Communication satisfaction signals if updates are landing effectively.</li>
           </ul>
         </article>
       </div>
@@ -126,8 +126,10 @@
         <article class="detail-card">
           <h3>Model</h3>
           <ul>
-            <li>Star schema with fact opportunities + dimensions.</li>
-            <li>DAX measures for pipeline, velocity, and funnel stage.</li>
+            <li>Star schema with fact responses + dimensions.</li>
+            <li>DAX measures for sentiment, serving rate, and invite likelihood.</li>
+            <li>Relationship design: one-to-many, many-to-one, and bi-directional when justified.</li>
+            <li>Bridge tables and role-playing dimensions for time intelligence.</li>
           </ul>
         </article>
         <article class="detail-card">
@@ -135,6 +137,15 @@
           <ul>
             <li>Role-based views for Sales, Revenue Ops, and Leadership.</li>
             <li>Automated refresh and alerting for KPI dips.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Junior Analyst Power BI Skills</h3>
+          <ul>
+            <li>Data modeling: relationships, cardinality, and filter direction.</li>
+            <li>Power Query basics: merge, append, data types, and columns.</li>
+            <li>Visualization: KPI cards, slicers, tooltips, and drill-through.</li>
+            <li>Governance: naming standards, measure folders, and QA checks.</li>
           </ul>
         </article>
       </div>
@@ -161,67 +172,160 @@
   <script type="module" src="tubes-cursor.js"></script>
   <script src="script.js"></script>
   <script>
-    const biData = {
-      30: {
-        pipeline: 27.8,
-        win: 36,
-        cycle: 24,
-        segments: {
-          "Enterprise": 11.4,
-          "Mid-Market": 9.2,
-          "SMB": 7.2
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxJjE9vK1zeGHt-CwLPsriQqh3gNYdDqF24kjMvTTuShdzOcmWzQ0Tr7jaaJ-XZL2TUFa88lTORk5U/pub?output=csv";
+
+    const parseCSV = text => {
+      const rows = [];
+      let row = [];
+      let current = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && inQuotes && next === '"') {
+          current += '"';
+          i++;
+          continue;
         }
-      },
-      90: {
-        pipeline: 86.5,
-        win: 39,
-        cycle: 29,
-        segments: {
-          "Enterprise": 35.2,
-          "Mid-Market": 29.3,
-          "SMB": 22.0
+        if (char === '"') {
+          inQuotes = !inQuotes;
+          continue;
         }
-      },
-      180: {
-        pipeline: 162.4,
-        win: 42,
-        cycle: 33,
-        segments: {
-          "Enterprise": 68.6,
-          "Mid-Market": 55.1,
-          "SMB": 38.7
+        if (char === "," && !inQuotes) {
+          row.push(current.trim());
+          current = "";
+          continue;
         }
+        if ((char === "\n" || char === "\r") && !inQuotes) {
+          if (current.length || row.length) {
+            row.push(current.trim());
+            rows.push(row);
+          }
+          row = [];
+          current = "";
+          continue;
+        }
+        current += char;
       }
+
+      if (current.length || row.length) {
+        row.push(current.trim());
+        rows.push(row);
+      }
+      return rows.filter(r => r.length && r.some(cell => cell.length));
     };
 
-    const formatMillions = value => `R${value.toFixed(2)}M`;
+    const normalize = value => (value || "").trim();
 
-    const updateDashboard = range => {
-      const snapshot = biData[range];
-      const total = snapshot.segments["Enterprise"] + snapshot.segments["Mid-Market"] + snapshot.segments["SMB"];
+    const toSurveyRows = rows => {
+      const [header, ...dataRows] = rows;
+      const index = name => header.indexOf(name);
 
-      document.querySelector('[data-bi-metric="pipeline"]').textContent = formatMillions(snapshot.pipeline);
-      document.querySelector('[data-bi-metric="win"]').textContent = `${snapshot.win}%`;
-      document.querySelector('[data-bi-metric="cycle"]').textContent = `${snapshot.cycle} days`;
-      document.querySelector('[data-bi-total]').textContent = formatMillions(total);
+      const idx = {
+        timestamp: index("Timestamp"),
+        tenure: index("How long have you been attending the church?"),
+        attendance: index("How often do you usually attend?"),
+        welcoming: index("How welcoming does the church feel to you?"),
+        serving: index("Are you currently serving in a team?"),
+        invite: index("How likely are you to invite someone to church?"),
+        communication: index("How satisfied are you with the church communication (WhatsApp, emails, announcements)?")
+      };
 
-      Object.keys(snapshot.segments).forEach(segment => {
-        const value = snapshot.segments[segment];
-        const width = total === 0 ? 0 : Math.round((value / total) * 100);
-        document.querySelector(`[data-bi-label="${segment}"]`).textContent = formatMillions(value);
+      return dataRows.map(row => ({
+        timestamp: normalize(row[idx.timestamp]),
+        tenure: normalize(row[idx.tenure]) || "Unspecified",
+        attendance: normalize(row[idx.attendance]) || "Unspecified",
+        welcoming: normalize(row[idx.welcoming]) || "Unspecified",
+        serving: normalize(row[idx.serving]) || "No",
+        invite: normalize(row[idx.invite]) || "Not sure",
+        communication: normalize(row[idx.communication]) || "Unspecified"
+      })).filter(row => row.timestamp);
+    };
+
+    const parseDate = value => {
+      const match = value.match(/^(\d{2})\/(\d{2})\/(\d{4})/);
+      if (!match) return null;
+      const [, day, month, year] = match;
+      return new Date(Number(year), Number(month) - 1, Number(day));
+    };
+
+    const formatPercent = value => `${Math.round(value)}%`;
+
+    const updateDashboard = (surveyData, rangeDays) => {
+      const now = new Date();
+      const cutoff = new Date(now.getFullYear(), now.getMonth(), now.getDate() - rangeDays);
+      const filtered = surveyData.filter(row => {
+        const date = parseDate(row.timestamp);
+        return date && date >= cutoff;
+      });
+
+      const total = filtered.length;
+      const veryWelcoming = filtered.filter(row => row.welcoming.toLowerCase() === "very welcoming").length;
+      const serving = filtered.filter(row => row.serving.toLowerCase() === "yes").length;
+
+      document.querySelector('[data-bi-metric="responses"]').textContent = total.toLocaleString("en-ZA");
+      document.querySelector('[data-bi-metric="welcoming"]').textContent = total ? formatPercent((veryWelcoming / total) * 100) : "0%";
+      document.querySelector('[data-bi-metric="serving"]').textContent = total ? formatPercent((serving / total) * 100) : "0%";
+      document.querySelector('[data-bi-total]').textContent = `${total} responses`;
+
+      const attendanceBuckets = {
+        "Every week": 0,
+        "Most weeks": 0,
+        "Once in a while": 0
+      };
+
+      filtered.forEach(row => {
+        if (attendanceBuckets[row.attendance] !== undefined) {
+          attendanceBuckets[row.attendance] += 1;
+        }
+      });
+
+      const attendanceTotal = Object.values(attendanceBuckets).reduce((sum, value) => sum + value, 0);
+
+      Object.keys(attendanceBuckets).forEach(segment => {
+        const value = attendanceBuckets[segment];
+        const width = attendanceTotal === 0 ? 0 : Math.round((value / attendanceTotal) * 100);
+        document.querySelector(`[data-bi-label="${segment}"]`).textContent = value.toLocaleString("en-ZA");
         document.querySelector(`[data-bi-bar="${segment}"]`).style.width = `${width}%`;
       });
     };
 
-    document.querySelectorAll('[data-range]').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('[data-range]').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        updateDashboard(button.dataset.range);
-      });
-    });
+    fetch(sheetUrl)
+      .then(response => response.text())
+      .then(csvText => {
+        const rows = parseCSV(csvText);
+        const surveyData = toSurveyRows(rows);
 
-    updateDashboard(30);
+        document.querySelectorAll('[data-range]').forEach(button => {
+          button.addEventListener('click', () => {
+            document.querySelectorAll('[data-range]').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            updateDashboard(surveyData, Number(button.dataset.range));
+          });
+        });
+
+        updateDashboard(surveyData, 30);
+      })
+      .catch(() => {
+        const fallback = [
+          { timestamp: "18/01/2026 13:59:46", attendance: "Every week", welcoming: "Slightly welcoming", serving: "Yes" },
+          { timestamp: "21/01/2026 09:26:31", attendance: "Most weeks", welcoming: "Very welcoming", serving: "No" },
+          { timestamp: "01/02/2026 20:44:38", attendance: "Most weeks", welcoming: "Not welcoming", serving: "No" },
+          { timestamp: "02/02/2026 16:53:11", attendance: "Most weeks", welcoming: "Very welcoming", serving: "No" }
+        ];
+
+        document.querySelectorAll('[data-range]').forEach(button => {
+          button.addEventListener('click', () => {
+            document.querySelectorAll('[data-range]').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            updateDashboard(fallback, Number(button.dataset.range));
+          });
+        });
+
+        updateDashboard(fallback, 30);
+      });
   </script>
 </body>
 </html>
