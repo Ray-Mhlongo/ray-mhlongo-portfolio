@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="vanta-net" aria-hidden="true"></div>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header"><nav class="navbar container" aria-label="Primary"><a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
 <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button><ul id="nav-list" class="nav-list"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li><li><a class="nav-link active" href="projects.html">Projects</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul></nav></header>
@@ -35,20 +39,56 @@ Average Monthly Profit (R6) = AVERAGEIF(Product_Column, "R6", Profit_Column)</co
       <h3>Outcome</h3>
       <p>The dashboard transforms raw sales data into clear, actionable insights so the owner can make confident, data-driven decisions.</p>
       <h3>Screenshots</h3>
-      <ul>
-        <li>Clean data sheet with formulas
-          <img src="path-to-screenshot-1" alt="Screenshot 1" style="max-width: 100%; height: auto;" />
-        </li>
-        <li>Pivot table showing monthly profits per product
-          <img src="path-to-screenshot-2" alt="Screenshot 2" style="max-width: 100%; height: auto;" />
-        </li>
-        <li>Final dashboard with charts, tables, and insights
-          <img src="images/Dashboard Cathdel.png" alt="Cathdel Creamy final dashboard" style="max-width: 100%; height: auto;" />
-        </li>
-      </ul>
+      <div class="video-container">
+        <h2>Clean data sheet with formulas</h2>
+        <div class="video-wrapper">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/e/PLACEHOLDER/pubhtml?widget=true&headers=false"
+            title="Clean data sheet with formulas"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-container">
+        <h2>Pivot table showing monthly profits per product</h2>
+        <div class="video-wrapper">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/e/PLACEHOLDER/pubhtml?widget=true&headers=false"
+            title="Pivot table showing monthly profits per product"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-container">
+        <h2>Final dashboard with charts, tables, and insights</h2>
+        <div class="video-wrapper">
+          <iframe
+            src="https://app.powerbi.com/view?r=PLACEHOLDER"
+            title="Cathdel Creamy final dashboard"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script>
+    VANTA.NET({
+      el: "#vanta-net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x164cc9,
+      backgroundColor: 0x090f1b
+    });
+  </script>
+  <script type="module" src="tubes-cursor.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
