@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SQL portfolio deep dive for Ray Mhlongo." />
+  <title>SQL | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="vanta-net" aria-hidden="true"></div>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="skill-page-hero">
+        <div>
+          <p class="hero-eyebrow">South Africa SQL Capability</p>
+          <h1>SQL Deep Dive</h1>
+          <p class="lead">I design reliable schemas, write analytical queries that scale, and translate South African business questions into production-ready SQL. Explore the mini emulators below to see how I work with provinces, ZAR revenue, and performance trade-offs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="projects.html">See SQL Projects</a>
+            <a class="btn btn-secondary" href="index.html#skills-polish-title">Back to Skills</a>
+          </div>
+        </div>
+        <div class="skill-stats">
+          <div class="skill-stat-card">
+            <h3>Query Design</h3>
+            <p>CTEs, window functions, subqueries, and reusable views for SA datasets.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Data Modeling</h3>
+            <p>Normalized schemas, fact/dimension layouts, and data quality guards.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Performance</h3>
+            <p>Index strategy, selective filters, and explain-plan reviews.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="sql-playground-title">
+      <div class="section-heading">
+        <h2 id="sql-playground-title">Interactive SQL Emulators</h2>
+        <p>Each emulator simulates a real analytics question using South Africa sample tables.</p>
+      </div>
+      <div class="terminal-grid" data-sql-grid>
+        <article class="terminal-card">
+          <div class="terminal-header">
+            <h3>ZAR Revenue Trend with Window Functions</h3>
+            <span>fact_sales_za + dim_calendar</span>
+          </div>
+          <textarea class="terminal-input" data-sql-input="trend" spellcheck="false">WITH monthly AS (
+  SELECT
+    c.month_name,
+    SUM(s.revenue) AS month_revenue
+  FROM fact_sales_za s
+  JOIN dim_calendar c ON s.date_id = c.date_id
+  WHERE c.year = 2025 AND s.currency = 'ZAR'
+  GROUP BY c.month_name
+)
+SELECT
+  month_name,
+  month_revenue,
+  ROUND(AVG(month_revenue) OVER (), 2) AS avg_month_revenue
+FROM monthly
+ORDER BY month_revenue DESC;</textarea>
+          <div class="terminal-actions">
+            <button class="btn btn-primary" data-sql-run="trend">Run Query</button>
+            <button class="btn btn-secondary" data-sql-reset="trend">Reset</button>
+          </div>
+          <pre class="terminal-output" data-sql-output="trend">Press Run Query to execute the emulator.</pre>
+        </article>
+
+        <article class="terminal-card">
+          <div class="terminal-header">
+            <h3>Customer Retention Cohorts</h3>
+            <span>dim_customer_za + fact_orders_za</span>
+          </div>
+          <textarea class="terminal-input" data-sql-input="cohort" spellcheck="false">WITH first_order AS (
+  SELECT customer_id, MIN(order_date) AS first_order_date
+  FROM fact_orders_za
+  GROUP BY customer_id
+),
+activity AS (
+  SELECT
+    o.customer_id,
+    DATE_TRUNC('month', f.first_order_date) AS cohort_month,
+    DATE_TRUNC('month', o.order_date) AS activity_month
+  FROM fact_orders_za o
+  JOIN first_order f ON o.customer_id = f.customer_id
+)
+SELECT cohort_month, activity_month, COUNT(DISTINCT customer_id) AS active_customers
+FROM activity
+GROUP BY cohort_month, activity_month
+ORDER BY cohort_month, activity_month;</textarea>
+          <div class="terminal-actions">
+            <button class="btn btn-primary" data-sql-run="cohort">Run Query</button>
+            <button class="btn btn-secondary" data-sql-reset="cohort">Reset</button>
+          </div>
+          <pre class="terminal-output" data-sql-output="cohort">Press Run Query to execute the emulator.</pre>
+        </article>
+
+        <article class="terminal-card">
+          <div class="terminal-header">
+            <h3>Pricing Audit for SA Hardware SKUs</h3>
+            <span>fact_prices_za + dim_vendor_za</span>
+          </div>
+          <textarea class="terminal-input" data-sql-input="pricing" spellcheck="false">SELECT
+  p.sku,
+  v.vendor_name,
+  p.list_price,
+  p.discount_price,
+  ROUND((p.list_price - p.discount_price) / p.list_price * 100, 1) AS discount_pct
+  FROM fact_prices_za p
+  JOIN dim_vendor_za v ON p.vendor_id = v.vendor_id
+WHERE p.discount_price IS NOT NULL
+ORDER BY discount_pct DESC
+LIMIT 8;</textarea>
+          <div class="terminal-actions">
+            <button class="btn btn-primary" data-sql-run="pricing">Run Query</button>
+            <button class="btn btn-secondary" data-sql-reset="pricing">Reset</button>
+          </div>
+          <pre class="terminal-output" data-sql-output="pricing">Press Run Query to execute the emulator.</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="sql-model-title">
+      <div class="section-heading">
+        <h2 id="sql-model-title">Schema I Build For Analytics</h2>
+        <p>Reusable, documented, and easy for downstream dashboards in SA teams.</p>
+      </div>
+      <div class="grid details">
+        <article class="detail-card">
+          <h3>Fact Tables</h3>
+          <ul>
+            <li>fact_sales_za (transaction grain)</li>
+            <li>fact_orders_za (order lifecycle)</li>
+            <li>fact_prices_za (marketplace pricing)</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Dimension Tables</h3>
+          <ul>
+            <li>dim_calendar (fiscal, custom periods)</li>
+            <li>dim_customer_za (segments and lifecycle)</li>
+            <li>dim_vendor_za (pricing source metadata)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script>
+    window.vantaNet = VANTA.NET({
+      el: "#vanta-net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x164cc9,
+      backgroundColor: 0x090f1b
+    });
+  </script>
+  <script type="module" src="tubes-cursor.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const sqlDefaults = {
+      trend: document.querySelector('[data-sql-input="trend"]').value,
+      cohort: document.querySelector('[data-sql-input="cohort"]').value,
+      pricing: document.querySelector('[data-sql-input="pricing"]').value
+    };
+
+    const sqlOutputs = {
+      trend: `month_name | month_revenue_zar | avg_month_revenue_zar\n-----------+-------------------+------------------------\nNovember   | 6849000           | 5224550.00\nOctober    | 6512000           | 5224550.00\nSeptember  | 5926000           | 5224550.00\nAugust     | 5341000           | 5224550.00\nJuly       | 4794000           | 5224550.00`,
+      cohort: `cohort_month | activity_month | active_customers\n-------------+----------------+-----------------\n2025-01-01   | 2025-01-01     | 214\n2025-01-01   | 2025-02-01     | 166\n2025-01-01   | 2025-03-01     | 141\n2025-02-01   | 2025-02-01     | 193\n2025-02-01   | 2025-03-01     | 155\n2025-03-01   | 2025-03-01     | 178`,
+      pricing: `sku       | vendor_name    | list_price_zar | discount_price_zar | discount_pct\n----------+-----------------+----------------+--------------------+-------------\nRTX-4070  | KwaTech Supply  | 13999          | 12499              | 10.7\nRTX-4060  | Jozi Components | 9899           | 8599               | 13.1\nI7-13700  | Vaal Hardware   | 8199           | 6999               | 14.6\nNVME-2TB | Cape Storage    | 3299           | 2799               | 15.2\nPSU-850  | Durban Volt     | 3499           | 2999               | 14.3`
+    };
+
+    const fallbackMessage = "Emulator tip: use the provided query or a close variant to see the expected output.";
+
+    document.querySelectorAll('[data-sql-run]').forEach(button => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute('data-sql-run');
+        const input = document.querySelector(`[data-sql-input="${key}"]`).value;
+        const output = document.querySelector(`[data-sql-output="${key}"]`);
+        if (input.trim().length < 20) {
+          output.textContent = fallbackMessage;
+          return;
+        }
+        output.textContent = sqlOutputs[key] || fallbackMessage;
+      });
+    });
+
+    document.querySelectorAll('[data-sql-reset]').forEach(button => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute('data-sql-reset');
+        document.querySelector(`[data-sql-input="${key}"]`).value = sqlDefaults[key];
+        document.querySelector(`[data-sql-output="${key}"]`).textContent = "Press Run Query to execute the emulator.";
+      });
+    });
+  </script>
+</body>
+</html>

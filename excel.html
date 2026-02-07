@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Excel portfolio deep dive for Ray Mhlongo." />
+  <title>Excel | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="vanta-net" aria-hidden="true"></div>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="skill-page-hero">
+        <div>
+          <p class="hero-eyebrow">Excel Portfolio</p>
+          <h1>Excel Analytics Workflow</h1>
+          <p class="lead">I build fast, auditable Excel models for South African teams, combining clean data, structured formulas, and executive-ready summaries. Use the filters below to see how I turn local sales rows into leadership-ready insights.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="projects.html">See Excel Projects</a>
+            <a class="btn btn-secondary" href="index.html#skills-polish-title">Back to Skills</a>
+          </div>
+        </div>
+        <div class="skill-stats">
+          <div class="skill-stat-card">
+            <h3>Modeling</h3>
+            <p>Structured tables, consistent naming, validation, and error checks.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Analysis</h3>
+            <p>Pivot tables, conditional aggregations, and scenario planning.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Reporting</h3>
+            <p>Clean dashboards, KPI scorecards, and commentary-ready outputs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="excel-dashboard-title">
+      <div class="section-heading">
+        <h2 id="excel-dashboard-title">Interactive Excel Summary</h2>
+        <p>Simulated workbook: use filters to recalc the pivot summary.</p>
+      </div>
+      <div class="chip-row" data-filter-row>
+        <button class="filter-chip active" data-region="All">All Regions</button>
+        <button class="filter-chip" data-region="Gauteng">Gauteng</button>
+        <button class="filter-chip" data-region="Western Cape">Western Cape</button>
+        <button class="filter-chip" data-region="KwaZulu-Natal">KwaZulu-Natal</button>
+        <button class="filter-chip" data-region="Eastern Cape">Eastern Cape</button>
+        <button class="filter-chip" data-region="Free State">Free State</button>
+      </div>
+      <div class="metric-grid" data-metric-grid>
+        <div class="metric-card">
+          <h4>Total Revenue</h4>
+          <p data-metric="revenue">$0</p>
+        </div>
+        <div class="metric-card">
+          <h4>Average Order Value</h4>
+          <p data-metric="aov">$0</p>
+        </div>
+        <div class="metric-card">
+          <h4>Units Sold</h4>
+          <p data-metric="units">0</p>
+        </div>
+      </div>
+      <table class="data-table" aria-label="Sales table">
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th>Region</th>
+            <th>Product</th>
+            <th>Revenue</th>
+            <th>Units</th>
+          </tr>
+        </thead>
+        <tbody data-table-body></tbody>
+      </table>
+    </section>
+
+    <section class="section reveal" aria-labelledby="excel-tech-title">
+      <div class="section-heading">
+        <h2 id="excel-tech-title">Workbook Architecture</h2>
+        <p>Designed for clarity, speed, and stakeholder trust.</p>
+      </div>
+      <div class="grid details">
+        <article class="detail-card">
+          <h3>Input Layer</h3>
+          <ul>
+            <li>Power Query ingestion with standardized column mapping.</li>
+            <li>Data validation, duplicates checks, and audit flags.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Analysis Layer</h3>
+          <ul>
+            <li>Pivot summaries by region, account, and product.</li>
+            <li>Dynamic arrays with structured references.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script>
+    window.vantaNet = VANTA.NET({
+      el: "#vanta-net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x164cc9,
+      backgroundColor: 0x090f1b
+    });
+  </script>
+  <script type="module" src="tubes-cursor.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const salesData = [
+      { account: "Khayelitsha Grocers", region: "Western Cape", product: "Cold Brew", revenue: 624000, units: 1220 },
+      { account: "Sandton Retail Co.", region: "Gauteng", product: "Protein Bars", revenue: 812000, units: 1980 },
+      { account: "Umhlanga Market", region: "KwaZulu-Natal", product: "Sparkling Water", revenue: 704000, units: 2140 },
+      { account: "Pretoria Wholesale", region: "Gauteng", product: "Cold Brew", revenue: 538000, units: 1260 },
+      { account: "Cape Town Foods", region: "Western Cape", product: "Protein Bars", revenue: 689000, units: 1760 },
+      { account: "Durban Deli Group", region: "KwaZulu-Natal", product: "Cold Brew", revenue: 472000, units: 980 },
+      { account: "Bloemfontein Stores", region: "Free State", product: "Sparkling Water", revenue: 395000, units: 1320 },
+      { account: "Gqeberha Retail", region: "Eastern Cape", product: "Protein Bars", revenue: 418000, units: 1150 }
+    ];
+
+    const formatCurrency = value => value.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR', maximumFractionDigits: 0 });
+
+    const renderDashboard = region => {
+      const filtered = region === "All" ? salesData : salesData.filter(row => row.region === region);
+      const totalRevenue = filtered.reduce((sum, row) => sum + row.revenue, 0);
+      const totalUnits = filtered.reduce((sum, row) => sum + row.units, 0);
+      const aov = filtered.length ? totalRevenue / filtered.length : 0;
+
+      document.querySelector('[data-metric="revenue"]').textContent = formatCurrency(totalRevenue);
+      document.querySelector('[data-metric="aov"]').textContent = formatCurrency(Math.round(aov));
+      document.querySelector('[data-metric="units"]').textContent = totalUnits.toLocaleString('en-US');
+
+      const body = document.querySelector('[data-table-body]');
+      body.innerHTML = "";
+      filtered.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.account}</td>
+          <td>${row.region}</td>
+          <td>${row.product}</td>
+          <td>${formatCurrency(row.revenue)}</td>
+          <td>${row.units.toLocaleString('en-US')}</td>
+        `;
+        body.appendChild(tr);
+      });
+    };
+
+    document.querySelectorAll('[data-region]').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-region]').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        renderDashboard(button.dataset.region);
+      });
+    });
+
+    renderDashboard("All");
+  </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Power BI portfolio deep dive for Ray Mhlongo." />
+  <title>Power BI | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="vanta-net" aria-hidden="true"></div>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="skill-page-hero">
+        <div>
+          <p class="hero-eyebrow">Power BI Portfolio</p>
+          <h1>Executive Dashboard Design</h1>
+          <p class="lead">I translate complex South African datasets into clear Power BI stories: KPI scorecards, trend visuals, and decision-ready narratives. Use the time filters below to see the dashboard update in real time.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="projects.html">See Power BI Projects</a>
+            <a class="btn btn-secondary" href="index.html#skills-polish-title">Back to Skills</a>
+          </div>
+        </div>
+        <div class="skill-stats">
+          <div class="skill-stat-card">
+            <h3>Data Prep</h3>
+            <p>Power Query transformations, KPI definitions, and model refresh checks.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Modeling</h3>
+            <p>Star schema, DAX measures, and governance-friendly datasets.</p>
+          </div>
+          <div class="skill-stat-card">
+            <h3>Storytelling</h3>
+            <p>Clean visuals, commentary callouts, and action-based dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="bi-dashboard-title">
+      <div class="section-heading">
+        <h2 id="bi-dashboard-title">Interactive KPI Dashboard</h2>
+        <p>Simulated Power BI view with dynamic filters.</p>
+      </div>
+      <div class="chip-row" data-range-row>
+        <button class="filter-chip active" data-range="30">Last 30 Days</button>
+        <button class="filter-chip" data-range="90">Last 90 Days</button>
+        <button class="filter-chip" data-range="180">Last 180 Days</button>
+      </div>
+      <div class="dashboard">
+        <div>
+          <div class="metric-grid" data-bi-metrics>
+            <div class="metric-card">
+              <h4>Total Pipeline</h4>
+              <p data-bi-metric="pipeline">$0</p>
+            </div>
+            <div class="metric-card">
+              <h4>Win Rate</h4>
+              <p data-bi-metric="win">0%</p>
+            </div>
+            <div class="metric-card">
+              <h4>Avg Deal Cycle</h4>
+              <p data-bi-metric="cycle">0 days</p>
+            </div>
+          </div>
+          <div class="chart-bar" aria-label="Pipeline by segment">
+            <div class="legend-row">
+              <span>Pipeline by Segment</span>
+              <span data-bi-total></span>
+            </div>
+            <div class="bar-row" data-bi-bars>
+              <div>
+                <div class="legend-row"><span>Enterprise</span><span data-bi-label="Enterprise">$0</span></div>
+                <div class="bar" data-bi-bar="Enterprise" style="width: 0%"></div>
+              </div>
+              <div>
+                <div class="legend-row"><span>Mid-Market</span><span data-bi-label="Mid-Market">$0</span></div>
+                <div class="bar" data-bi-bar="Mid-Market" style="width: 0%"></div>
+              </div>
+              <div>
+                <div class="legend-row"><span>SMB</span><span data-bi-label="SMB">$0</span></div>
+                <div class="bar" data-bi-bar="SMB" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <article class="detail-card">
+          <h3>Executive Notes</h3>
+          <ul>
+            <li>Highest deal velocity is concentrated in Mid-Market accounts.</li>
+            <li>Enterprise pipeline requires tighter qualification to improve win rate.</li>
+            <li>SMB growth is steady with short sales cycles and high conversion.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="bi-stack-title">
+      <div class="section-heading">
+        <h2 id="bi-stack-title">Power BI Stack</h2>
+        <p>Built for trust, performance, and stakeholder adoption.</p>
+      </div>
+      <div class="grid details">
+        <article class="detail-card">
+          <h3>Model</h3>
+          <ul>
+            <li>Star schema with fact opportunities + dimensions.</li>
+            <li>DAX measures for pipeline, velocity, and funnel stage.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Distribution</h3>
+          <ul>
+            <li>Role-based views for Sales, Revenue Ops, and Leadership.</li>
+            <li>Automated refresh and alerting for KPI dips.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script>
+    window.vantaNet = VANTA.NET({
+      el: "#vanta-net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x164cc9,
+      backgroundColor: 0x090f1b
+    });
+  </script>
+  <script type="module" src="tubes-cursor.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const biData = {
+      30: {
+        pipeline: 27.8,
+        win: 36,
+        cycle: 24,
+        segments: {
+          "Enterprise": 11.4,
+          "Mid-Market": 9.2,
+          "SMB": 7.2
+        }
+      },
+      90: {
+        pipeline: 86.5,
+        win: 39,
+        cycle: 29,
+        segments: {
+          "Enterprise": 35.2,
+          "Mid-Market": 29.3,
+          "SMB": 22.0
+        }
+      },
+      180: {
+        pipeline: 162.4,
+        win: 42,
+        cycle: 33,
+        segments: {
+          "Enterprise": 68.6,
+          "Mid-Market": 55.1,
+          "SMB": 38.7
+        }
+      }
+    };
+
+    const formatMillions = value => `R${value.toFixed(2)}M`;
+
+    const updateDashboard = range => {
+      const snapshot = biData[range];
+      const total = snapshot.segments["Enterprise"] + snapshot.segments["Mid-Market"] + snapshot.segments["SMB"];
+
+      document.querySelector('[data-bi-metric="pipeline"]').textContent = formatMillions(snapshot.pipeline);
+      document.querySelector('[data-bi-metric="win"]').textContent = `${snapshot.win}%`;
+      document.querySelector('[data-bi-metric="cycle"]').textContent = `${snapshot.cycle} days`;
+      document.querySelector('[data-bi-total]').textContent = formatMillions(total);
+
+      Object.keys(snapshot.segments).forEach(segment => {
+        const value = snapshot.segments[segment];
+        const width = total === 0 ? 0 : Math.round((value / total) * 100);
+        document.querySelector(`[data-bi-label="${segment}"]`).textContent = formatMillions(value);
+        document.querySelector(`[data-bi-bar="${segment}"]`).style.width = `${width}%`;
+      });
+    };
+
+    document.querySelectorAll('[data-range]').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-range]').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        updateDashboard(button.dataset.range);
+      });
+    });
+
+    updateDashboard(30);
+  </script>
+</body>
+</html>

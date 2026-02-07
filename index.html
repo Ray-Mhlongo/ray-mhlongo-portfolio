@@ -32,6 +32,7 @@
         <li><a class="nav-link" href="projects.html">Projects</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   
   </header>
@@ -58,23 +59,24 @@
 
 
     <section class="section container reveal" aria-labelledby="skills-polish-title">
-      <div class="section-heading">
+      <div class="section-heading skills-heading">
         <h2 id="skills-polish-title" class="reveal-item">Skills</h2>
+        <span class="heading-note reveal-item">Click an icon to open the dedicated skill page.</span>
         <p class="reveal-item">Tools I use to turn data into insights</p>
       </div>
       <div class="skills-polish-grid" role="list" aria-label="Skills cards">
-        <article class="skill-pill-card reveal-item" role="listitem" style="--stagger-delay: 80ms;">
+        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 80ms;" href="sql.html" aria-label="Open SQL skill page">
           <img class="skill-icon" src="images/SQL.png" alt="SQL icon" loading="lazy" />
           <span class="skill-name">SQL</span>
-        </article>
-        <article class="skill-pill-card reveal-item" role="listitem" style="--stagger-delay: 170ms;">
+        </a>
+        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 170ms;" href="excel.html" aria-label="Open Excel skill page">
           <img class="skill-icon" src="images/EXCEL.png" alt="Excel icon" loading="lazy" />
           <span class="skill-name">Excel</span>
-        </article>
-        <article class="skill-pill-card reveal-item" role="listitem" style="--stagger-delay: 260ms;">
+        </a>
+        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 260ms;" href="power-bi.html" aria-label="Open Power BI skill page">
           <img class="skill-icon" src="images/POWER_BI.png" alt="Power BI icon" loading="lazy" />
           <span class="skill-name">Power BI</span>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -119,7 +121,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
   <script>
-    VANTA.NET({
+    window.vantaNet = VANTA.NET({
       el: "#vanta-net",
       mouseControls: true,
       touchControls: true,
@@ -136,4 +138,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
