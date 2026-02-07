@@ -382,7 +382,7 @@ h3 { margin: var(--space-3) 0 var(--space-2); font-size: var(--fs-xl); }
 
 .terminal-input {
   width: 100%;
-  min-height: 130px;
+  min-height: 220px;
   background: #0a1222;
   border: 1px solid var(--border);
   border-radius: .65rem;
