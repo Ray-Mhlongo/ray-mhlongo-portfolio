@@ -109,7 +109,8 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   min-height: 4.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--space-3);
   padding-right: 2.6rem;
 }
 .brand { font-weight: 700; text-decoration: none; color: var(--text); }
@@ -145,13 +146,14 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   to { opacity: 1; transform: translateY(0); }
 }
 
-.nav-toggle { border: 1px solid var(--border); border-radius: .45rem; background: var(--surface); color: var(--text); padding: .35rem .65rem; }
+.nav-toggle { border: 1px solid var(--border); border-radius: .45rem; background: var(--surface); color: var(--text); padding: .35rem .65rem; margin-left: auto; }
 .theme-toggle {
   border: 1px solid var(--border);
   border-radius: .55rem;
   background: var(--surface);
   color: var(--text);
   padding: .35rem .75rem;
+  margin-left: var(--space-2);
   font-weight: 600;
   cursor: pointer;
   transition: transform .25s var(--anim-ease), box-shadow .25s var(--anim-ease), border-color .25s var(--anim-ease);
@@ -735,7 +737,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
     border: 0;
     padding: 0;
     background: transparent;
-    margin-right: 2.25rem;
+    margin-left: auto;
+    margin-right: var(--space-3);
   }
   .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .skills-polish-grid {
@@ -778,37 +781,49 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
   z-index: 1;
 }
 
-/* Brand text with background logo */
+/* Brand text with inline logo */
 .brand-with-logo {
   position: relative;
-  display: inline-block;
-  padding: .4rem .8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .2rem 0;
+  color: var(--muted);
 }
 
-.brand-with-logo::before {
-  content: "";
-  position: absolute;
-  inset: -0.6rem;
-  background-image: url("images/LOGO.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-  opacity: 0.15;              /* transparency */
-  filter: blur(1px);          /* soft, premium look */
-  z-index: 0;
+.brand-logo {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgb(6 16 34 / 35%);
+  flex-shrink: 0;
+}
+
+.brand-lines {
+  display: flex;
+  flex-direction: column;
+  gap: .05rem;
+  line-height: 1.05;
+  letter-spacing: .05em;
 }
 
 .brand-text {
-  position: relative;
-  z-index: 1;
-  font-weight: 800;
-  letter-spacing: .03em;
+  font-weight: 700;
+  font-size: .85rem;
+  color: inherit;
+}
+
+.brand-text:last-child {
+  color: var(--accent);
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--space-3);
 }
 
 .site-logo {
@@ -884,6 +899,16 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* subtle default shadow */
+}
+
+.video-wrapper.is-image {
+  padding-top: 0;
+}
+
+.video-wrapper.is-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .video-wrapper:hover {

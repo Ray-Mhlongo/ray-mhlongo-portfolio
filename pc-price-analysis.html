@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,7 +17,15 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand brand-with-logo" href="index.html">Data Insights by Ray</a>
+      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
+  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
+  <span class="brand-lines">
+    <span class="brand-text">Data</span>
+    <span class="brand-text">Insights</span>
+    <span class="brand-text">by</span>
+    <span class="brand-text">Ray</span>
+  </span>
+</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Toggle navigation</span>
         &#9776;
@@ -31,7 +39,7 @@
       <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
     <a class="site-logo-link reveal-item" href="index.html" aria-label="Return to Home">
-      <img class="site-logo reveal-item" src="images/LOGO.png" alt="Ray Mhlongo logo" loading="eager" />
+      <img class="site-logo reveal-item" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" loading="eager" />
     </a>
   </header>
 
@@ -57,33 +65,59 @@
       <article class="detail-card">
         <h2 class="reveal-item">Project Overview</h2>
         <p class="reveal-item">
-          This project consolidates PC hardware listings from multiple marketplace sources into a standardized analytical dataset.
-          The goal is to improve price transparency by aligning inconsistent naming, specifications, and listing structures.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Problem Statement</h2>
-        <p class="reveal-item">
-          Raw listings often include inconsistent product names, duplicate records, and missing specification fields.
-          Without normalization, comparing prices across vendors can produce unreliable conclusions and poor decision support.
+          This portfolio project analyzes PC component prices across shops and provinces in South Africa to build practical SQL
+          data modeling and analytics skills. The dataset is cleaned and standardized, then structured for visualization in
+          tools like Power BI. The work is learning-focused but follows analyst-grade discipline.
         </p>
       </article>
 
       <article class="detail-card">
         <h2 class="reveal-item">Tools Used</h2>
         <ul>
-          <li>SQL for extraction, cleaning, and relational modeling</li>
-          <li>Power BI for dashboard design and comparative insights</li>
+          <li>SQL (MySQL)</li>
+          <li>Power BI</li>
+          <li>GitHub</li>
         </ul>
       </article>
 
       <article class="detail-card">
-        <h2 class="reveal-item">Key Insights</h2>
+        <h2 class="reveal-item">What I Did</h2>
         <ul>
-          <li>Placeholder: Vendor-level price variance by component class</li>
-          <li>Placeholder: Value-focused configurations by budget tier</li>
-          <li>Placeholder: Recurring pricing outliers by listing source</li>
+          <li>Designed a relational database to capture PC parts pricing and attributes</li>
+          <li>Inserted raw product data from multiple sources</li>
+          <li>Cleaned and standardized inconsistent names and formatting</li>
+          <li>Built dimension tables for categories, provinces, shops, and manufacturers</li>
+          <li>Applied primary keys and foreign keys to enforce data integrity</li>
+          <li>Ran analytical queries to answer business-style questions</li>
+        </ul>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="reveal-item">Database Structure</h2>
+        <p class="reveal-item">Core table: <strong>Parts</strong></p>
+        <p class="reveal-item">Dimension tables: <strong>part_categories</strong>, <strong>Province</strong>, <strong>Shop</strong>, <strong>Manufacturer</strong></p>
+        <p class="reveal-item">
+          This structure enables filtering by category (CPU, GPU, RAM, etc.), province, shop, and manufacturer for consistent comparison.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="reveal-item">Key Questions Answered</h2>
+        <ul>
+          <li>What products are available in each province?</li>
+          <li>What are the cheapest products per category?</li>
+          <li>How do prices differ between shops?</li>
+          <li>Which products have the highest warranties?</li>
+          <li>What are the most and least expensive items per category?</li>
+        </ul>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="reveal-item">Folder Structure</h2>
+        <ul>
+          <li>/scripts/ → SQL scripts to create tables and insert data</li>
+          <li>/data/ → CSV files of raw or cleaned data</li>
+          <li>/PowerBI/ → Power BI files and dashboards</li>
         </ul>
       </article>
 
@@ -123,6 +157,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
