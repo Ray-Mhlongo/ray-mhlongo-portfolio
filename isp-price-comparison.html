@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="vanta-net" aria-hidden="true"></div>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <nav class="navbar container" aria-label="Primary">
@@ -146,6 +150,23 @@
       <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vantavanta.net.min.js"></script>
+  <script>
+    VANTA.NET({
+      el: "#vanta-net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x164cc9,
+      backgroundColor: 0x090f1b
+    });
+  </script>
+  <script type="module" src="tubes-cursor.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
