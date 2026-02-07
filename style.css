@@ -54,16 +54,6 @@ body {
   z-index: 0;
 }
 
-#vanta-net {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  width: 100dvw;
-  height: 100dvh;
-  min-width: 100%;
-  min-height: 100%;
-}
-
 #app {
   position: fixed;
   inset: 0;

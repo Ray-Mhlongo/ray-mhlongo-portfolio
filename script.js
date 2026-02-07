@@ -1,5 +1,31 @@
 /* Portfolio interactions: nav toggle, footer year, and IntersectionObserver-powered reveals */
 (() => {
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('.theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    root.classList.add('theme-light');
+  }
+
+  const syncThemeToggle = () => {
+    if (!themeToggle) return;
+    const isLight = root.classList.contains('theme-light');
+    themeToggle.setAttribute('aria-pressed', String(isLight));
+    themeToggle.textContent = isLight ? 'Dark mode' : 'Light mode';
+  };
+
+  syncThemeToggle();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('theme-light');
+      const isLight = root.classList.contains('theme-light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      syncThemeToggle();
+    });
+  }
+
   const toggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list, .nav-menu');
 
