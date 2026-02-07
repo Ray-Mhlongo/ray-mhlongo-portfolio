@@ -28,13 +28,49 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: radial-gradient(circle at top right, #16233e 0%, var(--bg) 46%);
+}
 body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
-  background: radial-gradient(circle at top right, #16233e 0%, var(--bg) 46%);
+  background: transparent;
   color: var(--text);
   line-height: 1.65;
+  position: relative;
+  z-index: 0;
+}
+
+#vanta-net {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100dvw;
+  height: 100dvh;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100dvw;
+  height: 100dvh;
+  min-width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+}
+
+#canvas {
+  position: absolute;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
 }
 
 .container { width: min(1120px, 92%); margin-inline: auto; }
@@ -58,6 +94,13 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   background: rgb(9 15 27 / 82%);
+}
+
+.site-header,
+.page-main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
@@ -457,5 +500,15 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
 .video-wrapper:hover {
   transform: scale(1.02); /* tiny zoom */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* stronger shadow on hover */
+}
+
+@media (max-width: 760px) {
+  .card,
+  .detail-card,
+  .project-card,
+  .video-container {
+    background: linear-gradient(170deg, rgb(17 26 42 / 78%), rgb(20 32 56 / 78%));
+    backdrop-filter: blur(6px);
+  }
 }
 
