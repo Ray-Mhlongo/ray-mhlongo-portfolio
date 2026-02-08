@@ -26,10 +26,17 @@
     });
   }
 
-  const toggle = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.nav-list, .nav-menu');
+  const navPairs = [];
 
-  if (toggle && navList) {
+  document.querySelectorAll('.nav-toggle').forEach((toggle) => {
+    const targetId = toggle.getAttribute('aria-controls');
+    const navList = targetId
+      ? document.getElementById(targetId)
+      : toggle.closest('nav')?.querySelector('.nav-list, .nav-menu');
+
+    if (!navList) return;
+    navPairs.push({ toggle, navList });
+
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
@@ -41,6 +48,26 @@
         navList.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       }
+    });
+  });
+
+  if (navPairs.length) {
+    document.addEventListener('click', (event) => {
+      navPairs.forEach(({ toggle, navList }) => {
+        if (!navList.classList.contains('open')) return;
+        if (navList.contains(event.target) || toggle.contains(event.target)) return;
+        navList.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      navPairs.forEach(({ toggle, navList }) => {
+        if (!navList.classList.contains('open')) return;
+        navList.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 

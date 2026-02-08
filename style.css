@@ -99,6 +99,7 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
 }
 
 .site-header,
+#main-content,
 .page-main,
 .site-footer {
   position: relative;
@@ -112,6 +113,8 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   justify-content: flex-start;
   gap: var(--space-3);
   padding-right: 2.6rem;
+  flex-wrap: wrap;
+  row-gap: var(--space-2);
 }
 .brand { font-weight: 700; text-decoration: none; color: var(--text); }
 
@@ -169,19 +172,19 @@ img:hover { transform: translateY(-3px); border-color: #3f5d8e; box-shadow: var(
   list-style: none;
   margin: 0;
   padding: var(--space-3);
-  position: absolute;
-  top: 4.6rem;
-  right: 4%;
-  min-width: 12rem;
   display: none;
   flex-direction: column;
   gap: .25rem;
   border: 1px solid var(--border);
   border-radius: .8rem;
   background: var(--surface);
+  width: 100%;
+  order: 3;
+  margin-top: var(--space-2);
+  box-shadow: var(--shadow-soft);
 }
 .nav-list.open,
-.nav-menu.open { display: flex; }
+.nav-menu.open { display: flex; animation: navDrop .2s var(--anim-ease) both; }
 .nav-link {
   display: inline-block;
   color: var(--muted);
@@ -849,8 +852,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
 .reveal { opacity: 1; transform: none; }
 .reveal-item {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .72s var(--anim-ease), transform .72s var(--anim-ease);
+  transform: translateY(12px);
+  transition: opacity .55s var(--anim-ease), transform .55s var(--anim-ease);
   transition-delay: var(--stagger-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -860,6 +863,10 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
 }
 
 @media (min-width: 760px) {
+  .navbar {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
   .nav-toggle { display: none; }
   .nav-list,
   .nav-menu {
@@ -872,6 +879,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
     background: transparent;
     margin-left: auto;
     margin-right: var(--space-3);
+    width: auto;
+    order: 0;
   }
   .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .skills-polish-grid {
@@ -1065,5 +1074,10 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
     background: linear-gradient(170deg, rgb(17 26 42 / 78%), rgb(20 32 56 / 78%));
     backdrop-filter: blur(6px);
   }
+}
+
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
