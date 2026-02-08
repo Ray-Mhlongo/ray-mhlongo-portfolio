@@ -54,7 +54,7 @@ html.theme-light {
 }
 
 html.theme-light #app {
-  opacity: 0.16;
+  opacity: 0.08;
 }
 body {
   margin: 0;
@@ -75,7 +75,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.12;
 }
 
 #canvas {
@@ -86,7 +86,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   display: block;
-  filter: saturate(0.7) blur(0.5px);
+  filter: brightness(1.15) saturate(0.55) blur(0.6px);
 }
 
 .container { width: min(1120px, 92%); margin-inline: auto; }
@@ -215,7 +215,10 @@ h1 { margin: .35rem 0; font-size: var(--fs-hero); line-height: 1.1; }
 h2 { margin: 0 0 var(--space-2); font-size: var(--fs-2xl); }
 h3 { margin: var(--space-3) 0 var(--space-2); font-size: var(--fs-xl); }
 .tagline { margin: 0; font-size: var(--fs-lg); letter-spacing: .1em; font-weight: 700; color: rgb(var(--accent-rgb) / 0.85); }
-.hero-copy, .lead, .prose p, .section-heading p, .card p, .card li, .detail-card p, .detail-card li { color: var(--muted); }
+.hero-copy, .lead, .prose p, .section-heading p, .card p, .card li, .detail-card p, .detail-card li {
+  color: var(--muted);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 35%);
+}
 .hero-copy { max-width: 65ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
 
