@@ -47,6 +47,103 @@
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const ratingGroup = document.querySelector('[data-rating-group]');
+  const ratingOutput = document.querySelector('[data-rating-output]');
+
+  if (ratingGroup && ratingOutput) {
+    const updateRatingOutput = (value) => {
+      ratingOutput.textContent = value ? `Selected: ${value} / 5` : 'Select a rating';
+    };
+
+    const initial = ratingGroup.querySelector('input[type="radio"]:checked');
+    updateRatingOutput(initial ? initial.value : '');
+
+    ratingGroup.addEventListener('change', (event) => {
+      if (event.target instanceof HTMLInputElement) {
+        updateRatingOutput(event.target.value);
+      }
+    });
+  }
+
+  const reviewsList = document.querySelector('[data-review-list]');
+  if (reviewsList) {
+    const emptyState = document.querySelector('[data-review-empty]');
+    const normalizeReview = (review) => {
+      if (!review || typeof review !== 'object') return null;
+      const name = typeof review.name === 'string' ? review.name.trim() : '';
+      const comment = typeof review.comment === 'string' ? review.comment.trim() : '';
+      const rating = Number(review.rating);
+      if (!comment || !Number.isFinite(rating)) return null;
+      const safeRating = Math.min(5, Math.max(1, Math.round(rating)));
+      return {
+        name: name || 'Anonymous',
+        comment,
+        rating: safeRating,
+      };
+    };
+
+    const renderStars = (rating) => {
+      const stars = document.createElement('div');
+      stars.className = 'review-stars';
+      stars.setAttribute('aria-label', `${rating} out of 5 stars`);
+      for (let i = 1; i <= 5; i += 1) {
+        const star = document.createElement('span');
+        star.className = 'review-star';
+        if (i <= rating) star.classList.add('is-filled');
+        star.textContent = '★';
+        star.setAttribute('aria-hidden', 'true');
+        stars.appendChild(star);
+      }
+      return stars;
+    };
+
+    const renderReviews = (reviews) => {
+      reviewsList.innerHTML = '';
+      reviews.forEach((review) => {
+        const card = document.createElement('article');
+        card.className = 'review-card reveal-item is-visible';
+
+        const header = document.createElement('div');
+        header.className = 'review-header';
+
+        const nameEl = document.createElement('h3');
+        nameEl.className = 'review-name';
+        nameEl.textContent = review.name;
+
+        header.appendChild(nameEl);
+        header.appendChild(renderStars(review.rating));
+
+        const commentEl = document.createElement('p');
+        commentEl.className = 'review-comment';
+        commentEl.textContent = review.comment;
+
+        card.appendChild(header);
+        card.appendChild(commentEl);
+        reviewsList.appendChild(card);
+      });
+    };
+
+    fetch('reviews.json', { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) throw new Error('Failed to load reviews');
+        return response.json();
+      })
+      .then((data) => {
+        const reviews = Array.isArray(data) ? data.map(normalizeReview).filter(Boolean) : [];
+        if (!reviews.length) {
+          if (emptyState) emptyState.textContent = 'No reviews have been published yet.';
+          return;
+        }
+        if (emptyState) emptyState.remove();
+        renderReviews(reviews);
+      })
+      .catch(() => {
+        if (emptyState) {
+          emptyState.textContent = 'Reviews are unavailable at the moment. Please check back soon.';
+        }
+      });
+  }
+
   const revealTargets = Array.from(
     new Set([
       ...document.querySelectorAll('.reveal-item'),

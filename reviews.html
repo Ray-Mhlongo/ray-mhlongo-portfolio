@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reviews for Ray Mhlongo's data analytics portfolio." />
+  <title>Reviews | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
+        <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
+        <span class="brand-lines">
+          <span class="brand-text">Data</span>
+          <span class="brand-text">Insights</span>
+          <span class="brand-text">by</span>
+          <span class="brand-text">Ray</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
+        <span class="sr-only">Open menu</span>&#9776;
+      </button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link active" href="reviews.html" aria-current="page">Reviews</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="section-heading">
+        <h1 class="reveal-item">Reviews</h1>
+        <p class="reveal-item">Feedback on my data analytics work and the experience of this site.</p>
+      </div>
+
+      <div class="reviews-layout">
+        <div class="reviews-column">
+          <h2 class="reveal-item">Approved Reviews</h2>
+          <p class="lead reveal-item">Reviews are published after a quick moderation check. New submissions do not appear instantly.</p>
+          <div class="reviews-list" data-review-list>
+            <div class="reviews-empty reveal-item" data-review-empty>Loading reviews...</div>
+          </div>
+        </div>
+
+        <div class="reviews-column">
+          <h2 class="reveal-item">Leave a Review</h2>
+          <p class="lead reveal-item">Share your thoughts about my work or this portfolio.</p>
+          <form class="review-form" name="reviews" method="POST" action="reviews-success.html" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="reviews" />
+            <p class="sr-only">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <div class="form-field">
+              <label for="review-name">Name (optional)</label>
+              <input id="review-name" name="name" type="text" autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <span class="form-label">Star rating</span>
+              <div class="star-rating" data-rating-group aria-label="Star rating" role="radiogroup">
+                <input type="radio" id="rating-5" name="rating" value="5" required />
+                <label for="rating-5" aria-label="5 stars"></label>
+                <input type="radio" id="rating-4" name="rating" value="4" />
+                <label for="rating-4" aria-label="4 stars"></label>
+                <input type="radio" id="rating-3" name="rating" value="3" />
+                <label for="rating-3" aria-label="3 stars"></label>
+                <input type="radio" id="rating-2" name="rating" value="2" />
+                <label for="rating-2" aria-label="2 stars"></label>
+                <input type="radio" id="rating-1" name="rating" value="1" />
+                <label for="rating-1" aria-label="1 star"></label>
+              </div>
+              <div class="rating-output" data-rating-output>Select a rating</div>
+            </div>
+            <div class="form-field">
+              <label for="review-comment">Review</label>
+              <textarea id="review-comment" name="comment" rows="5" placeholder="Share your experience..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="reveal-item">&copy; <span id="year"></span> Ray Mhlongo</p>
+      <p class="reveal-item">Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+    </div>
+  </footer>
+  <script type="module" src="tubes-cursor.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

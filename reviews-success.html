@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Review submission confirmation for Ray Mhlongo's portfolio." />
+  <title>Thank You | Ray Mhlongo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" aria-hidden="true">
+    <canvas id="canvas"></canvas>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
+        <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
+        <span class="brand-lines">
+          <span class="brand-text">Data</span>
+          <span class="brand-text">Insights</span>
+          <span class="brand-text">by</span>
+          <span class="brand-text">Ray</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
+        <span class="sr-only">Open menu</span>&#9776;
+      </button>
+      <ul id="nav-list" class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <section class="section reveal">
+      <div class="section-heading">
+        <h1 class="reveal-item">Thank You</h1>
+        <p class="reveal-item">Your review was received and will appear once approved.</p>
+      </div>
+      <div class="card reveal-item">
+        <p class="lead">I appreciate the feedback. It helps me improve the work and the site experience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="reviews.html">Back to Reviews</a>
+          <a class="btn btn-secondary" href="index.html">Return Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="reveal-item">&copy; <span id="year"></span> Ray Mhlongo</p>
+      <p class="reveal-item">Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+    </div>
+  </footer>
+  <script type="module" src="tubes-cursor.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
