@@ -33,7 +33,7 @@ if (canvas) {
     tubes: {
       colors: startPalette,
       lights: {
-        intensity: 140,
+        intensity: 70,
         colors: [...startPalette, "#9eb0ce"]
       }
     }
