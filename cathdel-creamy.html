@@ -1,81 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Cathdel Creamy sales analysis by Ray Mhlongo." />
-  <title>Cathdel Creamy | Ray Mhlongo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header"><nav class="navbar container" aria-label="Primary"><a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-  <span class="brand-lines">
-    <span class="brand-text">Data</span>
-    <span class="brand-text">Insights</span>
-    <span class="brand-text">by</span>
-    <span class="brand-text">Ray</span>
-  </span>
-</a>
-<button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>&#9776;</button><ul id="nav-list" class="nav-list"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li><li><a class="nav-link active" href="projects.html">Projects</a></li><li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button></nav></header>
-
-  <main id="main-content" class="container page-main">
-    <section id="cathdel-creamy" class="section reveal" style="padding: 2rem 0;">
-      <h2>Cathdel Creamy - Retail Ice Cream Sales Analysis (Jan-Oct 2025)</h2>
-      <p>This project analyzes R5 and R6 ice cream sales to deliver actionable insights that help the business owner optimize stock, pricing, and promotions.</p>
-      <h3>Key Features of the Dashboard</h3>
-      <ul>
-        <li>Monthly profit line chart comparing R5 and R6.</li>
-        <li>Summary table showing total profit per product and best/worst months.</li>
-        <li>Forecast table with average monthly profit per product.</li>
-        <li>Actionable insights with recommendations for stock and promotions.</li>
-      </ul>
-      <h3>Excel Formulas Used</h3>
-      <pre><code>Revenue = Units_Sold * Unit_Sale_Price
-Cost = Units_Sold * Unit_Cost
-Profit = Revenue - Cost
-Average Monthly Profit (R5) = AVERAGEIF(Product_Column, "R5", Profit_Column)
-Average Monthly Profit (R6) = AVERAGEIF(Product_Column, "R6", Profit_Column)</code></pre>
-      <h3>Outcome</h3>
-      <p>The dashboard transforms raw sales data into clear, actionable insights so the owner can make confident, data-driven decisions.</p>
-      <h3>Screenshots</h3>
-      <div class="video-container">
-        <h2>Clean data sheet with formulas</h2>
-        <div class="video-wrapper is-image">
-          <img src="images/Clean-Data.png" alt="Clean data sheet with formulas" loading="lazy" />
-        </div>
-      </div>
-      <div class="video-container">
-        <h2>Pivot table showing monthly profits per product</h2>
-        <div class="video-wrapper is-image">
-          <img src="images/Pivot table- monthly profits.png" alt="Pivot table showing monthly profits per product" loading="lazy" />
-        </div>
-      </div>
-      <div class="video-container">
-        <h2>Final dashboard with charts, tables, and insights</h2>
-        <div class="video-wrapper is-image">
-          <img src="images/Final dashboard with charts, tables, and insights.png" alt="Final dashboard with charts, tables, and insights" loading="lazy" />
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer"><div class="container footer-inner"><p>&copy; <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
-<script type="module" src="tubes-cursor.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-
-
-
-
-
+diff --git a/isp-price-comparison.html b/isp-price-comparison.html
+index a57cba5fe4ce303f28fc448c2af628437dd19317..767d3ce85d5b01e4d66ae0ca02597d6e35eda19a 100644
+--- a/isp-price-comparison.html
++++ b/isp-price-comparison.html
+@@ -1,183 +1,98 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+-  <meta name="description" content="Local ISP value-for-money analysis for a small South African town by Ray Mhlongo." />
+-  <title>Local ISP Value-for-Money Analysis | Ray Mhlongo</title>
++  <meta name="description" content="Simple Internet Service Provider price and speed comparison for a small South African town by Ray Mhlongo." />
++  <title>Local Internet Service Provider Price and Value Analysis | Ray Mhlongo</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+ <div id="app" aria-hidden="true">
+     <canvas id="canvas"></canvas>
+   </div>
+   <a class="skip-link" href="#main-content">Skip to main content</a>
+   <header class="site-header">
+     <nav class="navbar container" aria-label="Primary">
+       <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
+   <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
+   <span class="brand-lines">
+     <span class="brand-text">Data</span>
+     <span class="brand-text">Insights</span>
+     <span class="brand-text">by</span>
+     <span class="brand-text">Ray</span>
+   </span>
+ </a>
+       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
+         <span class="sr-only">Open menu</span>
+         &#9776;
+       </button>
+       <ul id="nav-list" class="nav-list">
+         <li><a class="nav-link" href="index.html">Home</a></li>
+         <li><a class="nav-link" href="about.html">About</a></li>
+         <li><a class="nav-link active" href="projects.html">Projects</a></li>
+         <li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li>
+       </ul>
+       <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+     </nav>
+   </header>
+ 
+   <main id="main-content" class="container page-main">
+-    <section class="section fade-in project-heading">
+-      <p class="project-status reveal-item">Completed Project</p>
+-      <h1 class="reveal-item">Local ISP Value-for-Money Analysis – Small Town Case Study (South Africa)</h1>
+-      <p class="lead reveal-item">
+-        This project evaluates the value-for-money of ISP packages offered to residents and businesses in a small South African
+-        town, using objective price and performance metrics to guide better decisions.
+-      </p>
+-    </section>
+-
+-    <section class="section project-layout fade-in">
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Project Overview</h2>
+-        <p class="reveal-item">
+-          This analysis compares ISP packages available in a small South African town to determine whether long-standing ISP
+-          choices truly deliver the best value. Using publicly available data, the project evaluates fibre and wireless
+-          offerings across download speed, monthly cost, installation cost, and overall cost efficiency. The outcome is a
+-          decision-ready view of value-for-money that does not rely on internal business data.
+-        </p>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Project Objective</h2>
+-        <ul>
+-          <li>Compare ISP packages objectively using cost-per-Mbps</li>
+-          <li>Identify the best-value package offered by each ISP</li>
+-          <li>Demonstrate how public data can be transformed into actionable insights</li>
+-          <li>Showcase practical analytics skills aligned to business decision-making</li>
+-        </ul>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Methodology: Data Collection</h2>
+-        <p class="reveal-item">
+-          Data was collected manually from official ISP websites and publicly available sources. The dataset focuses on ISPs
+-          that actively serve the selected town, avoiding nationwide averages.
+-        </p>
+-        <ul>
+-          <li>ISP name</li>
+-          <li>Connection type (Fibre or Wireless)</li>
+-          <li>Coverage scope (town-level availability)</li>
+-          <li>Package name</li>
+-          <li>Download speed (Mbps)</li>
+-          <li>Monthly price</li>
+-          <li>Installation cost</li>
+-          <li>Router inclusion</li>
+-          <li>Source URL</li>
+-        </ul>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Methodology: Data Preparation</h2>
+-        <p class="reveal-item">Data cleaning and preparation were performed in Microsoft Excel.</p>
+-        <ul>
+-          <li>Structured data into relational tables (ISPs and Packages)</li>
+-          <li>Standardized package naming for consistency</li>
+-          <li>Removed unused or null columns</li>
+-          <li>Created calculated fields for analysis</li>
+-        </ul>
+-        <p class="reveal-item"><strong>Cost per Mbps</strong> = Monthly Price ÷ Download Speed (Mbps)</p>
+-        <p class="reveal-item">
+-          A “Best Value” flag was created using Excel formulas to identify the lowest cost-per-Mbps package for each ISP.
+-        </p>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Methodology: Data Visualization</h2>
+-        <p class="reveal-item">
+-          The cleaned dataset was imported into Power BI to create an interactive dashboard with consistent styling for
+-          portfolio presentation.
+-        </p>
+-        <ul>
+-          <li>Bar chart: Best-value ISP plans (cost per Mbps)</li>
+-          <li>Column chart: Download speed of best-value plans</li>
+-          <li>Table: ISP package details for best-value plans</li>
+-        </ul>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Key Features of the Dashboard</h2>
+-        <ul>
+-          <li>Best-value comparison to highlight the most cost-efficient package per ISP</li>
+-          <li>Speed vs cost insight showing that higher speeds do not always equal better value</li>
+-          <li>ISP-level analysis for direct comparison between providers serving the same town</li>
+-          <li>Clean visual design optimized for clarity and portfolio presentation</li>
+-        </ul>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Outcomes</h2>
+-        <p class="reveal-item">
+-          The analysis shows that objective price-performance comparison can reveal better alternatives than those chosen
+-          through habit or brand loyalty. For local businesses, it provides a practical framework to reassess internet
+-          expenses and value. For the portfolio, it demonstrates end-to-end analytics skills in data sourcing, Excel-based
+-          calculations, and Power BI visualization within a real-world business context.
+-        </p>
+-      </article>
+-    </section>
+-
+-    <section class="video-container">
+-      <h2>ISP Package Sheet</h2>
+-      <div class="video-wrapper">
+-        <iframe
+-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVYKshC826jqjyeakO4hJN9BpsX6W_QqSupetX1SIuCPXYIF-VUwGWehzYgtGN-Q/pubhtml?widget=true&headers=false"
+-          title="ISP Package Sheet"
+-          allowfullscreen>
+-        </iframe>
++    <section id="isp-price-comparison" class="section reveal" style="padding: 2rem 0;">
++      <h2>Internet Service Provider Plan Comparison - Small Town Case Study (South Africa)</h2>
++      <p>This project compares internet plans in one small South African town to help residents and businesses pick better value options.</p>
++      <h3>Key Features of the Dashboard</h3>
++      <ul>
++        <li>Simple side-by-side plan comparison for providers in the same town.</li>
++        <li>Best-value highlight for each provider using cost per Mbps.</li>
++        <li>Clear view of speed and monthly price together.</li>
++        <li>Practical insights to support faster, confident plan choices.</li>
++      </ul>
++      <h3>Tools and Methodology Used</h3>
++      <pre><code>Data Collection = Public provider websites for local plan details
++Data Cleaning = Microsoft Excel (organize and standardize plan data)
++Comparison Metric = Cost per Mbps = Monthly Price / Download Speed (Mbps)
++Visualization = Power BI dashboard for easy plan comparison</code></pre>
++      <h3>Outcome</h3>
++      <p>The dashboard turns public pricing and speed data into clear guidance. It helps users avoid overpaying and choose internet plans that fit their needs and budget.</p>
++      <h3>Screenshots</h3>
++      <div class="video-container">
++        <h2>Internet plan data sheet</h2>
++        <div class="video-wrapper is-image">
++          <img src="images/pc-header.jpg" alt="Internet plan data sheet" loading="lazy" />
++        </div>
+       </div>
+-    </section>
+-
+-    <section class="video-container">
+-      <h2>Value-for-Money Dashboard</h2>
+-      <div class="video-wrapper">
+-        <iframe
+-          src="https://app.powerbi.com/view?r=eyJrIjoiMDA2MjY3ZWUtZWUzMS00NzBjLTljNmQtNTA0MDAzYzliYjlmIiwidCI6ImRiMjk2YWE2LTVlM2YtNGNmOS04ZjRjLTc3MTBjMjNhNjNiYyJ9&pageName=ab75ed4c70c3fca14449"
+-          title="Value-for-Money Dashboard"
+-          allowfullscreen>
+-        </iframe>
++      <div class="video-container">
++        <h2>Provider comparison view</h2>
++        <div class="video-wrapper is-image">
++          <img src="images/pc-header.jpg" alt="Provider comparison view" loading="lazy" />
++        </div>
++      </div>
++      <div class="video-container">
++        <h2>Final value-for-money dashboard</h2>
++        <div class="video-wrapper is-image">
++          <img src="images/pc-header.jpg" alt="Final value-for-money dashboard" loading="lazy" />
++        </div>
+       </div>
+     </section>
+-
+   </main>
+ 
+   <footer class="site-footer">
+     <div class="container footer-inner">
+       <p>&copy; <span id="year"></span> Ray Mhlongo</p>
+       <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+     </div>
+   </footer>
+ <script type="module" src="tubes-cursor.js"></script>
+   <script src="script.js"></script>
+ </body>
+ </html>
+  
+ 
+ 
+ 
+ 
+ 
+-
+-
