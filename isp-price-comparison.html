@@ -1,4 +1,8 @@
-
+diff --git a/isp-price-comparison.html b/isp-price-comparison.html
+index a57cba5fe4ce303f28fc448c2af628437dd19317..94aae3a062a987e7e244f6a9791337e64555d333 100644
+--- a/isp-price-comparison.html
++++ b/isp-price-comparison.html
+@@ -1,183 +1,159 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -46,12 +50,13 @@
    <main id="main-content" class="container page-main">
      <section class="section fade-in project-heading">
        <p class="project-status reveal-item">Completed Project</p>
-+      <h1 class="reveal-item">Local Internet Service Provider Price and Value Analysis – Small Town Case Study (South Africa)</h1>
+-      <h1 class="reveal-item">Local ISP Value-for-Money Analysis – Small Town Case Study (South Africa)</h1>
++      <h1 class="reveal-item">Local Internet Service Provider Plan Comparison – Small Town Case Study (South Africa)</h1>
        <p class="lead reveal-item">
 -        This project evaluates the value-for-money of ISP packages offered to residents and businesses in a small South African
 -        town, using objective price and performance metrics to guide better decisions.
-+        This project compares internet package options from different Internet Service Providers in a small South African town.
-+        The goal is to help people and businesses pick plans that give good speed for a fair monthly price.
++        This project helps people compare internet plans in a simple and practical way.
++        It shows which plan gives the best value for money, based on speed and monthly cost.
        </p>
      </section>
  
@@ -59,123 +64,131 @@
        <article class="detail-card">
          <h2 class="reveal-item">Project Overview</h2>
          <p class="reveal-item">
-          This analysis compares ISP packages available in a small South African town to determine whether long-standing ISP
-          choices truly deliver the best value. Using publicly available data, the project evaluates fibre and wireless
-          offerings across download speed, monthly cost, installation cost, and overall cost efficiency. The outcome is a
-          decision-ready view of value-for-money that does not rely on internal business data.
-          Many people choose an internet company because they are used to it, not because it is the best deal. This project
-          checks if that choice is really saving money. I compared fibre and wireless plans from Internet Service Providers in
-          one town using public information. I looked at internet speed, monthly cost, and setup cost. Then I turned that into
-          a simple comparison so anyone can quickly see which plans give better value.
+-          This analysis compares ISP packages available in a small South African town to determine whether long-standing ISP
+-          choices truly deliver the best value. Using publicly available data, the project evaluates fibre and wireless
+-          offerings across download speed, monthly cost, installation cost, and overall cost efficiency. The outcome is a
+-          decision-ready view of value-for-money that does not rely on internal business data.
++          This project compares internet plans from providers that serve one small South African town.
++          It is designed for residents, small businesses, and anyone who wants to avoid overpaying for internet.
++          The main purpose is to make plan choices clear, fair, and easy to understand.
          </p>
        </article>
  
        <article class="detail-card">
-         <h2 class="reveal-item">Project Objective</h2>
-         <ul>
-          <li>Compare ISP packages objectively using cost-per-Mbps</li>
-          <li>Identify the best-value package offered by each ISP</li>
-          <li>Demonstrate how public data can be transformed into actionable insights</li>
-          <li>Showcase practical analytics skills aligned to business decision-making</li>
-          <li>Compare internet plans fairly by using the same math for every plan</li>
-          <li>Find the best-value package from each Internet Service Provider</li>
-          <li>Show how public information can be turned into useful decision support</li>
-          <li>Present the results in a clear way that non-technical people can understand</li>
-         </ul>
-       </article>
- 
-       <article class="detail-card">
-         <h2 class="reveal-item">Methodology: Data Collection</h2>
+-        <h2 class="reveal-item">Project Objective</h2>
+-        <ul>
+-          <li>Compare ISP packages objectively using cost-per-Mbps</li>
+-          <li>Identify the best-value package offered by each ISP</li>
+-          <li>Demonstrate how public data can be transformed into actionable insights</li>
+-          <li>Showcase practical analytics skills aligned to business decision-making</li>
+-        </ul>
+-      </article>
+-
+-      <article class="detail-card">
+-        <h2 class="reveal-item">Methodology: Data Collection</h2>
++        <h2 class="reveal-item">The Problem (Why this project exists)</h2>
          <p class="reveal-item">
-          Data was collected manually from official ISP websites and publicly available sources. The dataset focuses on ISPs
-          that actively serve the selected town, avoiding nationwide averages.
-          I collected data by hand from official Internet Service Provider websites and other public sources. I only included
-          providers that actually serve the selected town, instead of using general national averages.
+-          Data was collected manually from official ISP websites and publicly available sources. The dataset focuses on ISPs
+-          that actively serve the selected town, avoiding nationwide averages.
++          Many people pick an internet provider out of habit, ads, or brand name.
++          In real life, that can mean paying more for less speed.
++          For example, two homes in the same town can pay different prices for similar internet quality.
++          Without a clear comparison, it is hard to know which plan is truly worth it.
          </p>
-         <ul>
-          <li>ISP name</li>
-          <li>Internet Service Provider name</li>
-           <li>Connection type (Fibre or Wireless)</li>
-           <li>Coverage scope (town-level availability)</li>
-           <li>Package name</li>
-           <li>Download speed (Mbps)</li>
-           <li>Monthly price</li>
-           <li>Installation cost</li>
-           <li>Router inclusion</li>
-           <li>Source URL</li>
-         </ul>
+-        <ul>
+-          <li>ISP name</li>
+-          <li>Connection type (Fibre or Wireless)</li>
+-          <li>Coverage scope (town-level availability)</li>
+-          <li>Package name</li>
+-          <li>Download speed (Mbps)</li>
+-          <li>Monthly price</li>
+-          <li>Installation cost</li>
+-          <li>Router inclusion</li>
+-          <li>Source URL</li>
+-        </ul>
        </article>
  
        <article class="detail-card">
-         <h2 class="reveal-item">Methodology: Data Preparation</h2>
-        <p class="reveal-item">Data cleaning and preparation were performed in Microsoft Excel.</p>
-        <p class="reveal-item">I cleaned and prepared the data in Microsoft Excel.</p>
+-        <h2 class="reveal-item">Methodology: Data Preparation</h2>
+-        <p class="reveal-item">Data cleaning and preparation were performed in Microsoft Excel.</p>
++        <h2 class="reveal-item">The Solution (How my system helps)</h2>
++        <p class="reveal-item">
++          I built a simple comparison process focused on what users care about most.
++        </p>
          <ul>
-          <li>Structured data into relational tables (ISPs and Packages)</li>
-          <li>Standardized package naming for consistency</li>
-          <li>Removed unused or null columns</li>
-          <li>Created calculated fields for analysis</li>
-          <li>Organized the data into clear tables (providers and packages)</li>
-          <li>Renamed package labels so similar plans follow one format</li>
-          <li>Removed empty or unused columns</li>
-          <li>Added calculated fields for easier comparison</li>
+-          <li>Structured data into relational tables (ISPs and Packages)</li>
+-          <li>Standardized package naming for consistency</li>
+-          <li>Removed unused or null columns</li>
+-          <li>Created calculated fields for analysis</li>
++          <li>I collected plan details from public provider websites for this town only.</li>
++          <li>I listed key details like speed, monthly price, and setup cost in one place.</li>
++          <li>I used one simple measure: <strong>Cost per Mbps</strong> (price divided by speed).</li>
++          <li>I marked the best-value plan for each provider.</li>
++          <li>I shared the results in a dashboard so users can compare plans quickly.</li>
          </ul>
-         <p class="reveal-item"><strong>Cost per Mbps</strong> = Monthly Price ÷ Download Speed (Mbps)</p>
+-        <p class="reveal-item"><strong>Cost per Mbps</strong> = Monthly Price ÷ Download Speed (Mbps)</p>
          <p class="reveal-item">
-          A “Best Value” flag was created using Excel formulas to identify the lowest cost-per-Mbps package for each ISP.
-          I also added a “Best Value” label using Excel formulas to mark the lowest cost-per-Mbps package for each Internet Service Provider.
+-          A “Best Value” flag was created using Excel formulas to identify the lowest cost-per-Mbps package for each ISP.
++          In simple terms, users can open the dashboard, compare plans side by side, and choose a plan with better value.
          </p>
        </article>
  
        <article class="detail-card">
-         <h2 class="reveal-item">Methodology: Data Visualization</h2>
-         <p class="reveal-item">
-          The cleaned dataset was imported into Power BI to create an interactive dashboard with consistent styling for
-          portfolio presentation.+          After cleaning the data, I imported it into Power BI and built an interactive dashboard. The dashboard uses a clear
-          layout so viewers can quickly understand the results.
-         </p>
+-        <h2 class="reveal-item">Methodology: Data Visualization</h2>
+-        <p class="reveal-item">
+-          The cleaned dataset was imported into Power BI to create an interactive dashboard with consistent styling for
+-          portfolio presentation.
+-        </p>
++        <h2 class="reveal-item">Key Features</h2>
          <ul>
-          <li>Bar chart: Best-value ISP plans (cost per Mbps)</li>+          <li>Bar chart: Best-value internet plans by provider (cost per Mbps)</li>
-           <li>Column chart: Download speed of best-value plans</li>
-          <li>Table: ISP package details for best-value plans</li>
-          <li>Table: Package details for each best-value plan</li>
+-          <li>Bar chart: Best-value ISP plans (cost per Mbps)</li>
+-          <li>Column chart: Download speed of best-value plans</li>
+-          <li>Table: ISP package details for best-value plans</li>
++          <li>Clear plan comparison for the same town.</li>
++          <li>Best-value highlight for each provider.</li>
++          <li>Simple view of speed versus monthly cost.</li>
++          <li>Interactive dashboard for fast decision-making.</li>
++          <li>Practical insights for homes and small businesses.</li>
          </ul>
        </article>
  
        <article class="detail-card">
-         <h2 class="reveal-item">Key Features of the Dashboard</h2>
-         <ul>-          <li>Best-value comparison to highlight the most cost-efficient package per ISP</li>
-          <li>Speed vs cost insight showing that higher speeds do not always equal better value</li>
-          <li>ISP-level analysis for direct comparison between providers serving the same town</li>
-          <li>Clean visual design optimized for clarity and portfolio presentation</li>
-         <li>Easy best-value comparison so users can spot the cheapest speed option per provider</li>
-          <li>Speed vs cost view to show that faster is not always better value</li>
-          <li>Side-by-side provider comparison for companies serving the same town</li>
-          <li>Simple, clean visuals made for quick reading</li>
+-        <h2 class="reveal-item">Key Features of the Dashboard</h2>
++        <h2 class="reveal-item">Tools &amp; Technologies Used</h2>
+         <ul>
+-          <li>Best-value comparison to highlight the most cost-efficient package per ISP</li>
+-          <li>Speed vs cost insight showing that higher speeds do not always equal better value</li>
+-          <li>ISP-level analysis for direct comparison between providers serving the same town</li>
+-          <li>Clean visual design optimized for clarity and portfolio presentation</li>
++          <li><strong>Microsoft Excel</strong> - Used to organize, clean, and calculate the plan data.</li>
++          <li><strong>Power BI</strong> - Used to build the interactive dashboard and visual comparisons.</li>
++          <li><strong>Public Provider Websites</strong> - Source of package prices, speeds, and setup details.</li>
          </ul>
        </article>
  
        <article class="detail-card">
-         <h2 class="reveal-item">Outcomes</h2>
+-        <h2 class="reveal-item">Outcomes</h2>
++        <h2 class="reveal-item">What I Learned</h2>
          <p class="reveal-item">
-          The analysis shows that objective price-performance comparison can reveal better alternatives than those chosen
-          through habit or brand loyalty. For local businesses, it provides a practical framework to reassess internet
-          expenses and value. For the portfolio, it demonstrates end-to-end analytics skills in data sourcing, Excel-based
-          calculations, and Power BI visualization within a real-world business context.
-          The results show that a simple price-versus-speed check can uncover better plans than the ones people choose out of
-          habit. For local businesses, this gives a practical way to review internet spending and reduce wasted cost. For my
-        portfolio, it shows full project skills from data collection, to Excel calculations, to Power BI dashboard design.
+-          The analysis shows that objective price-performance comparison can reveal better alternatives than those chosen
+-          through habit or brand loyalty. For local businesses, it provides a practical framework to reassess internet
+-          expenses and value. For the portfolio, it demonstrates end-to-end analytics skills in data sourcing, Excel-based
+-          calculations, and Power BI visualization within a real-world business context.
++          This project taught me how to turn raw public data into useful, real-world guidance.
++          I improved my skills in data collection, data cleaning, and visual storytelling.
++          I also learned how to present technical findings in plain language for non-technical audiences.
          </p>
        </article>
      </section>
  
-     <section class="video-container">      <h2>ISP Package Sheet</h2>
-     <h2>Internet Service Provider Package Sheet</h2>
+     <section class="video-container">
+-      <h2>ISP Package Sheet</h2>
++      <h2>Internet Service Provider Package Sheet</h2>
        <div class="video-wrapper">
          <iframe
            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVYKshC826jqjyeakO4hJN9BpsX6W_QqSupetX1SIuCPXYIF-VUwGWehzYgtGN-Q/pubhtml?widget=true&headers=false"
-         title="ISP Package Sheet"
-         title="Internet Service Provider Package Sheet"
+-          title="ISP Package Sheet"
++          title="Internet Service Provider Package Sheet"
            allowfullscreen>
          </iframe>
        </div>
@@ -210,5 +223,5 @@
  
  
  
- 
+-
 -
