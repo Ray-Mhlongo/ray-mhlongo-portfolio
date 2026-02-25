@@ -1,41 +1,45 @@
-/* Portfolio interactions: nav toggle, footer year, and IntersectionObserver-powered reveals */
+/* Portfolio interactions: theme, mobile nav, ratings, reviews, and reveal animations */
 (() => {
   const root = document.documentElement;
   const themeToggle = document.querySelector('.theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
+  const year = document.getElementById('year');
 
-  if (savedTheme === 'light') {
-    root.classList.add('theme-light');
-  }
-
-  const syncThemeToggle = () => {
+  const applyThemeState = () => {
     if (!themeToggle) return;
     const isLight = root.classList.contains('theme-light');
     themeToggle.setAttribute('aria-pressed', String(isLight));
     themeToggle.textContent = isLight ? 'Dark mode' : 'Light mode';
   };
 
-  syncThemeToggle();
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      root.classList.toggle('theme-light');
-      const isLight = root.classList.contains('theme-light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      syncThemeToggle();
-    });
+  if (localStorage.getItem('theme') === 'light') {
+    root.classList.add('theme-light');
   }
+  applyThemeState();
 
-  const navPairs = [];
+  themeToggle?.addEventListener('click', () => {
+    root.classList.toggle('theme-light');
+    const isLight = root.classList.contains('theme-light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    applyThemeState();
+  });
 
-  document.querySelectorAll('.nav-toggle').forEach((toggle) => {
-    const targetId = toggle.getAttribute('aria-controls');
-    const navList = targetId
-      ? document.getElementById(targetId)
-      : toggle.closest('nav')?.querySelector('.nav-list, .nav-menu');
+  if (year) year.textContent = String(new Date().getFullYear());
 
-    if (!navList) return;
-    navPairs.push({ toggle, navList });
+  const navPairs = Array.from(document.querySelectorAll('.nav-toggle'))
+    .map((toggle) => {
+      const id = toggle.getAttribute('aria-controls');
+      const navList = id
+        ? document.getElementById(id)
+        : toggle.closest('nav')?.querySelector('.nav-list, .nav-menu');
+      return navList ? { toggle, navList } : null;
+    })
+    .filter(Boolean);
+
+  navPairs.forEach(({ toggle, navList }) => {
+    const closeNav = () => {
+      navList.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
 
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -44,10 +48,7 @@
     });
 
     navList.addEventListener('click', (event) => {
-      if (event.target instanceof HTMLAnchorElement) {
-        navList.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      if (event.target instanceof HTMLAnchorElement) closeNav();
     });
   });
 
@@ -64,15 +65,11 @@
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
       navPairs.forEach(({ toggle, navList }) => {
-        if (!navList.classList.contains('open')) return;
         navList.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
-
-  const year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
 
   const ratingGroup = document.querySelector('[data-rating-group]');
   const ratingOutput = document.querySelector('[data-rating-output]');
@@ -83,7 +80,7 @@
     };
 
     const initial = ratingGroup.querySelector('input[type="radio"]:checked');
-    updateRatingOutput(initial ? initial.value : '');
+    updateRatingOutput(initial?.value || '');
 
     ratingGroup.addEventListener('change', (event) => {
       if (event.target instanceof HTMLInputElement) {
@@ -95,17 +92,19 @@
   const reviewsList = document.querySelector('[data-review-list]');
   if (reviewsList) {
     const emptyState = document.querySelector('[data-review-empty]');
+
     const normalizeReview = (review) => {
       if (!review || typeof review !== 'object') return null;
       const name = typeof review.name === 'string' ? review.name.trim() : '';
       const comment = typeof review.comment === 'string' ? review.comment.trim() : '';
       const rating = Number(review.rating);
+
       if (!comment || !Number.isFinite(rating)) return null;
-      const safeRating = Math.min(5, Math.max(1, Math.round(rating)));
+
       return {
         name: name || 'Anonymous',
         comment,
-        rating: safeRating,
+        rating: Math.min(5, Math.max(1, Math.round(rating))),
       };
     };
 
@@ -113,14 +112,15 @@
       const stars = document.createElement('div');
       stars.className = 'review-stars';
       stars.setAttribute('aria-label', `${rating} out of 5 stars`);
+
       for (let i = 1; i <= 5; i += 1) {
         const star = document.createElement('span');
-        star.className = 'review-star';
-        if (i <= rating) star.classList.add('is-filled');
+        star.className = `review-star${i <= rating ? ' is-filled' : ''}`;
         star.textContent = '★';
         star.setAttribute('aria-hidden', 'true');
         stars.appendChild(star);
       }
+
       return stars;
     };
 
@@ -137,15 +137,12 @@
         nameEl.className = 'review-name';
         nameEl.textContent = review.name;
 
-        header.appendChild(nameEl);
-        header.appendChild(renderStars(review.rating));
-
         const commentEl = document.createElement('p');
         commentEl.className = 'review-comment';
         commentEl.textContent = review.comment;
 
-        card.appendChild(header);
-        card.appendChild(commentEl);
+        header.append(nameEl, renderStars(review.rating));
+        card.append(header, commentEl);
         reviewsList.appendChild(card);
       });
     };
@@ -161,7 +158,8 @@
           if (emptyState) emptyState.textContent = 'No reviews have been published yet.';
           return;
         }
-        if (emptyState) emptyState.remove();
+
+        emptyState?.remove();
         renderReviews(reviews);
       })
       .catch(() => {
@@ -171,48 +169,37 @@
       });
   }
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealTargets = Array.from(
     new Set([
       ...document.querySelectorAll('.reveal-item'),
       ...document.querySelectorAll('.project-card'),
-      ...document.querySelectorAll('img'),
+      ...document.querySelectorAll('.section .card img, .hero img, .video-wrapper'),
     ])
   );
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
+  revealTargets.forEach((el, index) => {
+    el.classList.add('reveal-item');
+    if (!el.style.getPropertyValue('--stagger-delay')) {
+      el.style.setProperty('--stagger-delay', `${(index % 10) * 45}ms`);
+    }
+  });
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
     return;
   }
 
-  // Ensure targets participate in reveal animations.
-  revealTargets.forEach((el) => el.classList.add('reveal-item'));
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14, rootMargin: '0px 0px -8% 0px' }
+  );
 
-  // Stagger project card entrance timings.
-  document.querySelectorAll('.project-card').forEach((card, index) => {
-    card.style.setProperty('--stagger-delay', `${120 + index * 90}ms`);
-  });
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.14, rootMargin: '0px 0px -8% 0px' }
-    );
-
-    revealTargets.forEach((el, index) => {
-      if (!el.style.getPropertyValue('--stagger-delay')) {
-        el.style.setProperty('--stagger-delay', `${(index % 8) * 50}ms`);
-      }
-      observer.observe(el);
-    });
-  } else {
-    revealTargets.forEach((el) => el.classList.add('is-visible'));
-  }
+  revealTargets.forEach((el) => observer.observe(el));
 })();
