@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-label="Services image placeholder">
+  <rect width="900" height="650" fill="#edf5f6"/>
+  <rect x="80" y="70" width="740" height="510" rx="24" fill="#ffffff" stroke="#96b8c4" stroke-width="5"/>
+  <rect x="160" y="150" width="580" height="74" rx="14" fill="#d6e8ee"/>
+  <rect x="160" y="250" width="580" height="74" rx="14" fill="#d6eee8"/>
+  <rect x="160" y="350" width="580" height="74" rx="14" fill="#d6e8ee"/>
+  <circle cx="210" cy="187" r="16" fill="#1f5d77"/>
+  <circle cx="210" cy="287" r="16" fill="#2d8b7f"/>
+  <circle cx="210" cy="387" r="16" fill="#1f5d77"/>
+  <text x="450" y="520" font-family="Arial, sans-serif" font-size="30" fill="#1f5d77" text-anchor="middle">Image Placeholder</text>
+</svg>
