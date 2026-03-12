@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="theme-light">
 <head>
   <meta charset="UTF-8" />
@@ -8,6 +8,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+    (() => {
+      const root = document.documentElement;
+      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
+      let savedTheme = null;
+
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch {
+        savedTheme = null;
+      }
+
+      if (!savedTheme && match) {
+        try {
+          savedTheme = decodeURIComponent(match[1]);
+        } catch {
+          savedTheme = match[1];
+        }
+      }
+
+      if (savedTheme === "dark") {
+        root.classList.remove("theme-light");
+        return;
+      }
+
+      if (savedTheme === "light") {
+        root.classList.add("theme-light");
+        return;
+      }
+
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        root.classList.remove("theme-light");
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -230,6 +265,7 @@ ORDER BY responses DESC;</textarea>
   </script>
 </body>
 </html>
+
 
 
 

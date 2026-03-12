@@ -2,28 +2,61 @@
 (() => {
   const root = document.documentElement;
   const themeToggle = document.querySelector(".theme-toggle");
+  const themeCookieName = "theme";
 
-  const safeGetTheme = () => {
+  const readThemeCookie = () => {
+    const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
+    if (!match) return null;
     try {
-      return localStorage.getItem("theme");
+      return decodeURIComponent(match[1]);
     } catch {
-      return null;
+      return match[1];
     }
   };
 
+  const writeThemeCookie = (value) => {
+    try {
+      document.cookie = `${themeCookieName}=${encodeURIComponent(value)}; path=/; max-age=31536000; SameSite=Lax`;
+    } catch {
+      // Ignore cookie write failures in restricted contexts.
+    }
+  };
+
+  const safeGetTheme = () => {
+    try {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark" || storedTheme === "light") return storedTheme;
+    } catch {
+      // Fall back to cookie.
+    }
+    const cookieTheme = readThemeCookie();
+    return cookieTheme === "dark" || cookieTheme === "light" ? cookieTheme : null;
+  };
+
   const safeSetTheme = (value) => {
+    if (value !== "dark" && value !== "light") return;
     try {
       localStorage.setItem("theme", value);
     } catch {
       // Ignore storage errors in private/sandboxed contexts.
     }
+    writeThemeCookie(value);
   };
 
   const applySavedTheme = () => {
     const savedTheme = safeGetTheme();
     if (savedTheme === "dark") {
       root.classList.remove("theme-light");
-    } else if (savedTheme === "light") {
+      return;
+    }
+    if (savedTheme === "light") {
+      root.classList.add("theme-light");
+      return;
+    }
+
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      root.classList.remove("theme-light");
+    } else {
       root.classList.add("theme-light");
     }
   };

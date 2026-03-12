@@ -49,7 +49,7 @@ html.theme-light {
   --surface-2: #f0f4fa;
   --surface-3: #e9eff8;
   --text: #0f1b2d;
-  --muted: #4f6077;
+  --muted: #32465e;
   --accent: #2f6dff;
   --accent-2: #1f5df2;
   --accent-rgb: 47 109 255;
@@ -183,6 +183,11 @@ h3 {
 p,
 li {
   color: var(--muted);
+}
+
+html.theme-light p,
+html.theme-light li {
+  color: #1f3248;
 }
 
 img {
@@ -611,6 +616,88 @@ pre {
 
 .cta-copy p {
   margin: 0;
+}
+
+/* Homepage portfolio sections */
+.analyst-skill-card h3,
+.tool-stack-card h3 {
+  margin-bottom: 0.35rem;
+}
+
+.analyst-skill-card p,
+.tool-stack-card p {
+  margin: 0;
+}
+
+.questions-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+.question-tile {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(170deg, var(--surface) 0%, var(--surface-2) 100%);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem 1rem 1rem 1.1rem;
+  transition:
+    transform 0.24s var(--anim-ease),
+    box-shadow 0.24s var(--anim-ease),
+    border-color 0.24s var(--anim-ease);
+}
+
+.question-tile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+
+.question-tile p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.question-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgb(var(--accent-rgb) / 0.58);
+  box-shadow: var(--shadow-strong);
+}
+
+.learning-card {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.learning-card p {
+  margin: 0;
+}
+
+.learning-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.62rem;
+}
+
+.learning-points li {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgb(var(--accent-rgb) / 0.12);
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  padding: 0.45rem 0.76rem;
 }
 
 /* Project pages */
@@ -1300,6 +1387,10 @@ textarea:focus-visible {
 
   .cards-three {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .questions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .details,
