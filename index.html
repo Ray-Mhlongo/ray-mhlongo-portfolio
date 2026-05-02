@@ -7,7 +7,7 @@
   <title>Ray Mhlongo | Junior Data Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,11 +28,18 @@
         <li><a class="nav-link" href="projects.html">Projects</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
+      <a class="header-action" href="contact.html">Hire Me</a>
     </nav>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" class="page-enter">
     <section class="hero container">
+      <div class="hero-visual" aria-label="Data analyst portfolio visual placeholder">
+        <div class="visual-label">
+          <strong>SQL<br />Excel<br />Power BI</strong>
+          <p>Project-based data analysis portfolio.</p>
+        </div>
+      </div>
       <div>
         <p class="eyebrow">Junior Data Analyst</p>
         <h1>Turning raw data into business insights.</h1>
@@ -43,9 +50,6 @@
           <a class="btn btn-primary" href="projects.html">View Projects</a>
           <a class="btn btn-secondary" href="contact.html">Contact Me</a>
         </div>
-      </div>
-      <div class="portrait-card" aria-label="Portfolio visual">
-        <img src="images/brand_logo3.jpg" alt="Ray Mhlongo portfolio brand visual" />
       </div>
     </section>
 
@@ -92,11 +96,11 @@
             </div>
             <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
           </div>
-          <img src="images/PC_HARDWARE.jpg" alt="PC hardware project visual" />
+          <div class="project-media"><span class="media-placeholder">PC Price Analysis<br />Image Coming Soon</span></div>
         </article>
 
         <article class="project-card">
-          <img src="images/ISSP.jpg" alt="Internet service provider project visual" />
+          <div class="project-media"><span class="media-placeholder">ISP Price Comparison<br />Image Coming Soon</span></div>
           <p class="meta">Flagship - Value Analysis</p>
           <h3>ISP Price Comparison</h3>
           <p>I compared local internet packages using cost per Mbps to identify better value options.</p>
@@ -104,7 +108,7 @@
         </article>
 
         <article class="project-card">
-          <img src="images/Cathel.png" alt="Cathdel Creamy project visual" />
+          <div class="project-media"><span class="media-placeholder">Cathdel Creamy<br />Image Coming Soon</span></div>
           <p class="meta">Business Sales Analytics</p>
           <h3>Cathdel Creamy</h3>
           <p>I designed a sales tracking and customer insight system for a small business workflow.</p>
@@ -125,6 +129,8 @@
       </div>
     </section>
   </main>
+
+  <a class="hire-me" href="contact.html">Hire<br />Me</a>
 
   <footer class="site-footer">
     <div class="container footer-inner">

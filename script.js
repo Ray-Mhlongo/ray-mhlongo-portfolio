@@ -20,7 +20,7 @@
   }
 
   const revealTargets = document.querySelectorAll(
-    ".section-heading, .page-hero, .hero-copy, .hero-actions, .portrait-card, .card, .project-card, .detail-card, .contact-card, .media-frame"
+    ".section-heading, .page-title, .hero-copy, .hero-actions, .hero-visual, .project-media, .card, .project-card, .detail-card, .contact-card, .media-frame"
   );
 
   revealTargets.forEach((target) => target.classList.add("reveal-item"));
