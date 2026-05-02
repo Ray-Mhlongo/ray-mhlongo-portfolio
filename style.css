@@ -602,9 +602,12 @@ img {
   }
 
   .insight-container,
-  .project-grid,
   .work-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-links {

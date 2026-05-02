@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Insight Rides operations analytics case study by Ray Mhlongo." />
+  <title>Insight Rides | Ray Mhlongo</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="l-main">
+    <section class="about section">
+      <h2 class="section-title">Insight Rides</h2>
+      <div class="about-container bd-grid">
+        <div class="project-visual">Trips<br>Payments<br>Reports</div>
+        <div>
+          <h2 class="about-subtitle">Cleaner operations for school transport</h2>
+          <p class="about-text">I built Insight Rides to help small school transport operators replace scattered spreadsheet tracking with one clear system for trips, students, payments, vehicles, routes, income, expenses, and reports.</p>
+          <a href="projects.html" class="button">Back to Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Case Study</h2>
+      <div class="case-container bd-grid">
+        <article class="case-card">
+          <h3>Problem</h3>
+          <p>Small transport operators often track students, trips, payments, vehicles, and costs in separate spreadsheets. That makes it hard to see income, outstanding fees, daily trips, and route performance in one place.</p>
+        </article>
+        <article class="case-card">
+          <h3>What I did</h3>
+          <ul>
+            <li>Created a dashboard for income, expenses, trips, students, fuel, and alerts.</li>
+            <li>Built pages for students, trips, routes, maps, vehicles, payments, finance, and reports.</li>
+            <li>Added Google Drive sync so records can be stored as structured data files.</li>
+            <li>Added offline saving so operators can keep working when connection is weak.</li>
+          </ul>
+        </article>
+        <article class="case-card">
+          <h3>Tools used</h3>
+          <p>React, Vite, Tailwind CSS, Chart.js, Leaflet maps, Google Drive API, local storage, and structured JSON data.</p>
+        </article>
+        <article class="case-card">
+          <h3>Key outcome</h3>
+          <p>The project turns daily transport activity into useful business insight. An operator can see income, unpaid students, trip activity, route data, fuel estimates, and reports without digging through separate files.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Data Thinking</h2>
+      <div class="insight-container bd-grid">
+        <article class="insight-card">
+          <h3>Cleaner records</h3>
+          <p>Students, trips, routes, vehicles, payments, income, and expenses are stored as structured records that can be analyzed.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Better visibility</h3>
+          <p>The dashboard highlights daily income, monthly profit, outstanding payments, fuel costs, and route activity.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Actionable alerts</h3>
+          <p>The system flags missing trips, unpaid students, and high fuel estimates so the operator knows what needs attention.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Demo Video</h2>
+      <div class="bd-grid">
+        <div class="media-frame">
+          <video controls preload="metadata" playsinline aria-label="Insight Rides demo video">
+            <source src="insight-rides-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+    </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
+</body>
+</html>
