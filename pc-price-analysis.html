@@ -3,124 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PC Price Analysis case study by Ray Mhlongo using SQL and Power BI." />
+  <meta name="description" content="PC Price Analysis case study by Ray Mhlongo." />
   <title>PC Price Analysis | Ray Mhlongo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
-        <span class="brand-mark">RM</span>
-        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
-        <li><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-      <a class="header-action" href="contact.html">Hire Me</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
     </nav>
   </header>
 
-  <main id="main-content" class="container page-main page-enter">
-    <section class="project-hero">
-      <div>
-        <p class="eyebrow">Flagship Project - SQL + Power BI</p>
-        <h1>PC Price Analysis</h1>
-        <p class="hero-copy">
-          I cleaned and modeled PC hardware pricing data so buyers could compare products more clearly across shops, provinces, and categories.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://github.com/Ray-Mhlongo/PC-SALES-PROJECT-1" target="_blank" rel="noopener noreferrer">View GitHub</a>
-          <a class="btn btn-secondary" href="projects.html">Back to Projects</a>
+  <main id="main-content" class="l-main">
+    <section class="about section">
+      <h2 class="section-title">PC Price Analysis</h2>
+      <div class="about-container bd-grid">
+        <div class="project-visual">SQL<br>Power BI<br>Price comparison</div>
+        <div>
+          <h2 class="about-subtitle">Cleaner data for better price decisions</h2>
+          <p class="about-text">I cleaned and modeled PC hardware pricing data so buyers could compare products across shops, provinces, and categories more clearly.</p>
+          <a href="projects.html" class="button">Back to Projects</a>
         </div>
       </div>
-      <div class="project-media"><span class="media-placeholder">PC Price Analysis<br />Image Coming Soon</span></div>
     </section>
 
-    <section class="section" aria-labelledby="case-title">
-      <div class="section-heading">
-        <h2 id="case-title">Case Study</h2>
-        <p>Short version: raw product prices were messy, so I cleaned and structured them for fair comparison.</p>
-      </div>
-      <div class="grid case-grid">
-        <article class="detail-card">
-          <h2>Problem</h2>
-          <p>PC component prices were difficult to compare because product data came from different shops and locations.</p>
+    <section class="section">
+      <h2 class="section-title">Case Study</h2>
+      <div class="case-container bd-grid">
+        <article class="case-card">
+          <h3>Problem</h3>
+          <p>Product prices were hard to compare because the data came from different shops and locations.</p>
         </article>
-        <article class="detail-card">
-          <h2>What I Did</h2>
+        <article class="case-card">
+          <h3>What I did</h3>
           <ul>
-            <li>Cleaned raw hardware pricing data.</li>
-            <li>Standardized product categories, shops, provinces, and manufacturers.</li>
-            <li>Created a relational SQL structure for analysis.</li>
-            <li>Built dashboard views for product and price comparison.</li>
+            <li>Cleaned raw pricing data.</li>
+            <li>Standardized categories, shops, provinces, and manufacturers.</li>
+            <li>Created a SQL structure for analysis.</li>
+            <li>Built dashboard views for comparison.</li>
           </ul>
         </article>
-        <article class="detail-card">
-          <h2>Tools Used</h2>
-          <div class="pill-row">
-            <span class="pill">SQL</span>
-            <span class="pill">MySQL</span>
-            <span class="pill">Power BI</span>
-            <span class="pill">GitHub</span>
-          </div>
+        <article class="case-card">
+          <h3>Tools used</h3>
+          <p>SQL, MySQL, Power BI, and GitHub.</p>
         </article>
-        <article class="detail-card outcome-card">
-          <h2>Key Outcome</h2>
-          <p>The project made it easier to identify low-cost products, compare shops, and spot price differences by category and province.</p>
+        <article class="case-card">
+          <h3>Key outcome</h3>
+          <p>The project made it easier to identify lower cost products, compare shops, and spot price differences by category and province.</p>
         </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="insights-title">
-      <div class="section-heading">
-        <h2 id="insights-title">Key Insights</h2>
-        <p>The analysis turned messy product listings into clearer price comparison answers.</p>
-      </div>
-      <div class="grid cards-three">
-        <article class="card">
-          <h3>Cheapest Options</h3>
-          <p>The cleaned data helped surface lower-cost products by category.</p>
-        </article>
-        <article class="card">
-          <h3>Shop Comparison</h3>
-          <p>Standardized fields made cross-shop price comparison more reliable.</p>
-        </article>
-        <article class="card">
-          <h3>Regional View</h3>
-          <p>Province-level filtering showed where product availability differed.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="media-title">
-      <div class="section-heading">
-        <h2 id="media-title">Dashboard Demo</h2>
-        <p>A short dashboard walkthrough for the PC pricing project.</p>
-      </div>
-      <div class="media-frame">
-        <iframe src="https://www.youtube.com/embed/WyhQL3mcCBc?modestbranding=1&amp;rel=0&amp;controls=1" title="PC Price Analysis dashboard demo" allowfullscreen></iframe>
+    <section class="section">
+      <h2 class="section-title">Dashboard</h2>
+      <div class="bd-grid">
+        <div class="media-frame">
+          <iframe src="https://www.youtube.com/embed/WyhQL3mcCBc?modestbranding=1&amp;rel=0&amp;controls=1" title="PC Price Analysis dashboard demo" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
   </main>
 
-  <a class="hire-me" href="contact.html">Hire<br />Me</a>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Built with HTML, CSS, and JavaScript.</p>
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
     </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
   </footer>
 
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>

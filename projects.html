@@ -3,96 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Three data analysis projects by Ray Mhlongo: PC Price Analysis, ISP Price Comparison, and Cathdel Creamy." />
+  <meta name="description" content="Ray Mhlongo data analysis projects." />
   <title>Projects | Ray Mhlongo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
-        <span class="brand-mark">RM</span>
-        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
-        <li><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-      <a class="header-action" href="contact.html">Hire Me</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
     </nav>
   </header>
 
-  <main id="main-content" class="container page-main page-enter">
-    <section class="page-title">
-      <p class="eyebrow">Projects</p>
-      <h1>Insight beats guesswork.</h1>
-      <p>
-        Each project is written for quick recruiter scanning: problem, what I did, tools, and outcome.
-      </p>
-    </section>
-
-    <section class="section" aria-label="Project list">
-      <div class="grid cards-three">
-        <article class="project-card featured">
-          <div>
-            <p class="meta">Flagship Project</p>
-            <h2>PC Price Analysis</h2>
-            <p>Cleaned and structured PC hardware price data to compare products across shops, provinces, and categories.</p>
-            <div class="pill-row">
-              <span class="pill">SQL</span>
-              <span class="pill">Power BI</span>
-              <span class="pill">Data Cleaning</span>
-            </div>
-            <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
-          </div>
-          <div class="project-media"><span class="media-placeholder">PC Price Analysis<br />Image Coming Soon</span></div>
+  <main id="main-content" class="l-main">
+    <section class="work section">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid bd-grid">
+        <article class="project-card">
+          <p class="project-meta">Flagship project</p>
+          <h3>PC Price Analysis</h3>
+          <p class="project-card-text">Cleaned and structured PC hardware pricing data to compare products across shops, provinces, and categories.</p>
+          <a href="pc-price-analysis.html" class="button">Open Case Study</a>
         </article>
 
         <article class="project-card">
-          <div class="project-media"><span class="media-placeholder">ISP Price Comparison<br />Image Coming Soon</span></div>
-          <p class="meta">Flagship Project</p>
-          <h2>ISP Price Comparison</h2>
-          <p>Compared internet packages using cost per Mbps to find better value options for local customers.</p>
-          <div class="pill-row">
-            <span class="pill">Excel</span>
-            <span class="pill">Power BI</span>
-            <span class="pill">Value Analysis</span>
-          </div>
-          <a class="btn btn-secondary" href="isp-price-comparison.html">Open Case Study</a>
+          <p class="project-meta">Flagship project</p>
+          <h3>ISP Price Comparison</h3>
+          <p class="project-card-text">Compared internet packages using cost per Mbps to find better value options for local customers.</p>
+          <a href="isp-price-comparison.html" class="button">Open Case Study</a>
         </article>
 
         <article class="project-card">
-          <div class="project-media"><span class="media-placeholder">Cathdel Creamy<br />Image Coming Soon</span></div>
-          <p class="meta">Business Sales Analytics</p>
-          <h2>Cathdel Creamy</h2>
-          <p>Built a small business analytics concept for sales tracking, customer records, and loyalty insights.</p>
-          <div class="pill-row">
-            <span class="pill">Sales Data</span>
-            <span class="pill">Dashboards</span>
-            <span class="pill">Customer Insights</span>
-          </div>
-          <a class="btn btn-secondary" href="cathdel-creamy.html">Open Case Study</a>
+          <p class="project-meta">Business sales analytics</p>
+          <h3>Cathdel Creamy</h3>
+          <p class="project-card-text">Designed a small business analytics concept for sales tracking, customer activity, and loyalty insights.</p>
+          <a href="cathdel-creamy.html" class="button">Open Case Study</a>
         </article>
       </div>
     </section>
   </main>
 
-  <a class="hire-me" href="contact.html">Hire<br />Me</a>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Built with HTML, CSS, and JavaScript.</p>
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
     </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
   </footer>
 
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>

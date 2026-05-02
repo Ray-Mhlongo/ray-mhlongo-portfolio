@@ -5,84 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Contact Ray Mhlongo for junior data analyst opportunities." />
   <title>Contact | Ray Mhlongo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
-        <span class="brand-mark">RM</span>
-        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link" href="projects.html">Projects</a></li>
-        <li><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-      <a class="header-action" href="contact.html">Hire Me</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
     </nav>
   </header>
 
-  <main id="main-content" class="container page-main page-enter">
-    <section class="page-title">
-      <p class="eyebrow">Contact</p>
-      <h1>Let's work with data.</h1>
-      <p>I am open to junior data analyst opportunities, internships, and project feedback.</p>
-    </section>
+  <main id="main-content" class="l-main">
+    <section class="contact section">
+      <h2 class="section-title">Contact</h2>
 
-    <section class="section" aria-label="Contact links">
-      <div class="grid contact-grid">
+      <div class="contact-links bd-grid">
         <article class="contact-card">
-          <h2>Email</h2>
-          <a class="text-link" href="mailto:rodgersmhlongo@gmail.com">rodgersmhlongo@gmail.com</a>
+          <h3>Email</h3>
+          <a href="mailto:rodgersmhlongo@gmail.com"><i class="bx bx-envelope"></i> rodgersmhlongo@gmail.com</a>
         </article>
         <article class="contact-card">
-          <h2>GitHub</h2>
-          <a class="text-link" href="https://github.com/Ray-Mhlongo" target="_blank" rel="noopener noreferrer">github.com/Ray-Mhlongo</a>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/raymhlongo" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i> linkedin.com/in/raymhlongo</a>
         </article>
         <article class="contact-card">
-          <h2>LinkedIn</h2>
-          <a class="text-link" href="https://www.linkedin.com/in/raymhlongo" target="_blank" rel="noopener noreferrer">linkedin.com/in/raymhlongo</a>
+          <h3>GitHub</h3>
+          <a href="https://github.com/Ray-Mhlongo" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i> github.com/Ray Mhlongo</a>
+        </article>
+        <article class="contact-card">
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/27600000000" target="_blank" rel="noopener noreferrer"><i class="bx bxl-whatsapp"></i> Message on WhatsApp</a>
         </article>
       </div>
-    </section>
 
-    <section class="section" aria-labelledby="form-title">
-      <div class="section-heading">
-        <h2 id="form-title">Send a Message</h2>
-        <p>Use this form or email me directly.</p>
+      <div class="contact-container bd-grid">
+        <form id="contact-form" class="contact-form">
+          <input id="name" name="from_name" type="text" placeholder="Name" class="contact-input" autocomplete="name" required />
+          <input id="email" name="from_email" type="email" placeholder="Email" class="contact-input" autocomplete="email" required />
+          <textarea id="message" name="message" rows="8" placeholder="Message" class="contact-input" required></textarea>
+          <button class="contact-button button" type="submit">Send</button>
+        </form>
       </div>
-      <form id="contact-form" class="contact-form">
-        <div class="form-field">
-          <label for="name">Name</label>
-          <input id="name" name="from_name" type="text" autocomplete="name" required />
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input id="email" name="from_email" type="email" autocomplete="email" required />
-        </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </form>
     </section>
   </main>
 
-  <a class="hire-me" href="contact.html">Hire<br />Me</a>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Built with HTML, CSS, and JavaScript.</p>
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
     </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -97,6 +82,7 @@
       });
     }
   </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>

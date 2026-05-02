@@ -3,108 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="About Ray Mhlongo, junior data analyst focused on SQL, Excel, Power BI, and data analysis." />
+  <meta name="description" content="About Ray Mhlongo junior data analyst." />
   <title>About | Ray Mhlongo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
-        <span class="brand-mark">RM</span>
-        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
-        <li><a class="nav-link" href="projects.html">Projects</a></li>
-        <li><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-      <a class="header-action" href="contact.html">Hire Me</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
     </nav>
   </header>
 
-  <main id="main-content" class="container page-main page-enter">
-    <section class="page-title">
-      <p class="eyebrow">About</p>
-      <h1>Clarity fuels decisions.</h1>
-      <p>
-        I am Ray Mhlongo, a junior data analyst focused on SQL, Excel, Power BI, and data cleaning. I enjoy turning raw information into simple insights that help people compare options, understand performance, and make better decisions.
-      </p>
-    </section>
-
-    <section class="section" aria-labelledby="education-title">
-      <div class="grid cards-two">
-        <article class="card">
-          <h2 id="education-title">Education</h2>
-          <p>I am majoring in Information Science and Organizational &amp; Industrial Psychology.</p>
-          <p>This gives me a useful mix of data, systems, and human behavior knowledge.</p>
-        </article>
-        <article class="card">
-          <h2>Current Focus</h2>
-          <p>I am building job-ready data analysis skills through hands-on projects.</p>
-          <p>My focus is clean data, clear dashboards, and simple business storytelling.</p>
-        </article>
+  <main id="main-content" class="l-main">
+    <section class="about section">
+      <h2 class="section-title">About</h2>
+      <div class="about-container bd-grid">
+        <div class="about-img">Information<br>Systems<br>People</div>
+        <div>
+          <h2 class="about-subtitle">I am Ray</h2>
+          <p class="about-text">I am a junior data analyst focused on SQL, Excel, Power BI, and data cleaning. I enjoy making raw information easier to trust, compare, and explain.</p>
+          <p class="about-text">I am majoring in Information Science and Organizational and Industrial Psychology. This helps me understand both data systems and the people who use them.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="skills-title">
-      <div class="section-heading">
-        <h2 id="skills-title">Skills</h2>
-        <p>Grouped by how I use each skill in analysis work.</p>
-      </div>
-      <div class="grid skill-list">
-        <article class="card skill-card">
-          <h3>SQL</h3>
-          <p>Query data, join tables, clean records, group results, and build analysis-ready datasets.</p>
-        </article>
-        <article class="card skill-card">
-          <h3>Excel</h3>
-          <p>Clean spreadsheet data, use formulas, build summaries, and check calculations.</p>
-        </article>
-        <article class="card skill-card">
-          <h3>Power BI</h3>
-          <p>Create dashboards that show trends, comparisons, and business performance clearly.</p>
-        </article>
-        <article class="card skill-card">
-          <h3>Data Cleaning &amp; Analysis</h3>
-          <p>Structure raw data, remove noise, compare performance, and explain the result in plain language.</p>
-        </article>
+    <section class="skills section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-container bd-grid">
+        <div>
+          <h2 class="skills-subtitle">How I work with data</h2>
+          <p class="skills-text">I keep analysis simple. First I clean the data. Then I check patterns. Then I explain the result in plain language.</p>
+
+          <div class="skills-data">
+            <div class="skills-names"><i class="bx bx-data skills-icon"></i><span class="skills-name">SQL querying</span></div>
+            <span class="skills-percentage">88%</span>
+            <div class="skills-bar skills-sql"></div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names"><i class="bx bx-spreadsheet skills-icon"></i><span class="skills-name">Excel analysis</span></div>
+            <span class="skills-percentage">84%</span>
+            <div class="skills-bar skills-excel"></div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names"><i class="bx bx-bar-chart-alt-2 skills-icon"></i><span class="skills-name">Power BI dashboards</span></div>
+            <span class="skills-percentage">78%</span>
+            <div class="skills-bar skills-bi"></div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names"><i class="bx bx-check-shield skills-icon"></i><span class="skills-name">Data cleaning</span></div>
+            <span class="skills-percentage">82%</span>
+            <div class="skills-bar skills-analysis"></div>
+          </div>
+        </div>
+        <div class="skills-img">Clean<br>Compare<br>Explain</div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="credentials-title">
-      <div class="section-heading">
-        <h2 id="credentials-title">Foundational Learning</h2>
-        <p>These certificates support my technical foundation. They are learning credentials, not work experience.</p>
-      </div>
-      <div class="grid cards-two">
-        <article class="card">
-          <h3>Data &amp; Analytics</h3>
-          <p>Cisco Data Analytics badge and project-based practice in SQL, Excel, and Power BI.</p>
+    <section class="section">
+      <h2 class="section-title">Learning</h2>
+      <div class="insight-container bd-grid">
+        <article class="insight-card">
+          <h3>Data and analytics</h3>
+          <p>Cisco Data Analytics badge and project practice in SQL, Excel, and Power BI.</p>
         </article>
-        <article class="card">
-          <h3>IT Foundations</h3>
+        <article class="insight-card">
+          <h3>IT foundations</h3>
           <p>Google IT Support, Cisco networking foundations, Microsoft 365 fundamentals, and security basics.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Project learning</h3>
+          <p>Hands on projects focused on pricing, sales, customer activity, and business value.</p>
         </article>
       </div>
     </section>
   </main>
 
-  <a class="hire-me" href="contact.html">Hire<br />Me</a>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Built with HTML, CSS, and JavaScript.</p>
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
     </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
   </footer>
 
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>
