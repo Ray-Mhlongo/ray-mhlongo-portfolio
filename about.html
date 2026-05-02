@@ -1,115 +1,107 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="theme-light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="About Ray Mhlongo and his analytical approach to data." />
+  <meta name="description" content="About Ray Mhlongo, junior data analyst focused on SQL, Excel, Power BI, and data analysis." />
   <title>About | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script>
-    (() => {
-      const root = document.documentElement;
-      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
-      let savedTheme = null;
-
-      try {
-        savedTheme = localStorage.getItem("theme");
-      } catch {
-        savedTheme = null;
-      }
-
-      if (!savedTheme && match) {
-        try {
-          savedTheme = decodeURIComponent(match[1]);
-        } catch {
-          savedTheme = match[1];
-        }
-      }
-
-      if (savedTheme === "dark") {
-        root.classList.remove("theme-light");
-        return;
-      }
-
-      if (savedTheme === "light") {
-        root.classList.add("theme-light");
-        return;
-      }
-
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.remove("theme-light");
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Primary">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-  <span class="brand-lines">
-    <span class="brand-text">Data</span>
-    <span class="brand-text">Insights</span>
-    <span class="brand-text">by</span>
-    <span class="brand-text">Ray</span>
-  </span>
-</a> 
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>&#9776;</button>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
+        <span class="brand-mark">RM</span>
+        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
         <li><a class="nav-link" href="projects.html">Projects</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   </header>
 
   <main id="main-content" class="container page-main">
-    <section class="section reveal">
-      <div class="section-heading"><h1>About</h1></div>
-      <div class="prose">
-        <p>I'm Ray Mhlongo, a data-driven individual drawn to patterns, structure, and the way information is organized and interpreted. My focus is on databases and data analysis, with hands-on work in data cleaning, structuring datasets, querying, and extracting insights using Excel, SQL/MySQL, and Power BI.</p>
-        <p>I am majoring in Information Science and Organizational &amp; Industrial Psychology, which gives me a unique perspective on how data, systems, and human behavior intersect.</p>
+    <section class="page-hero">
+      <p class="eyebrow">About</p>
+      <h1>Clear analysis for practical decisions.</h1>
+      <p>
+        I am Ray Mhlongo, a junior data analyst focused on SQL, Excel, Power BI, and data cleaning. I enjoy turning raw information into simple insights that help people compare options, understand performance, and make better decisions.
+      </p>
+    </section>
 
-        <h2>Technical Skills</h2>
-        <p><strong>Data &amp; Databases:</strong> Excel, SQL/MySQL, Power BI</p>
-        <p><strong>Data Handling:</strong> data cleaning, structuring datasets, querying, basic reporting</p>
-        <p><strong>IT Foundations:</strong> operating systems basics, computer hardware fundamentals, networking fundamentals</p>
+    <section class="section" aria-labelledby="education-title">
+      <div class="grid cards-two">
+        <article class="card">
+          <h2 id="education-title">Education</h2>
+          <p>I am majoring in Information Science and Organizational &amp; Industrial Psychology.</p>
+          <p>This gives me a useful mix of data, systems, and human behavior knowledge.</p>
+        </article>
+        <article class="card">
+          <h2>Current Focus</h2>
+          <p>I am building job-ready data analysis skills through hands-on projects.</p>
+          <p>My focus is clean data, clear dashboards, and simple business storytelling.</p>
+        </article>
+      </div>
+    </section>
 
-        <h2>Certifications &amp; Badges</h2>
-        <p>These credentials represent foundational learning rather than professional experience.</p>
-        <p><strong>Data &amp; Analytics Foundations:</strong> Cisco Data Analytics badge</p>
-        <p><strong>IT Support &amp; Systems:</strong> Google IT Support Certificate, IT Essentials, Computer Hardware Basics, Operating Systems</p>
-        <p><strong>Networking Foundations:</strong> CCNA Introduction to Networks, Switching Routing &amp; Wireless Essentials, Enterprise Networking Security &amp; Automation, Network Addressing &amp; Basic Troubleshooting, Networking Basics, Networking Devices &amp; Initial Configuration, Network Technician Career Path</p>
-        <p><strong>Cloud &amp; Security Fundamentals:</strong> Microsoft 365 Fundamentals, Microsoft SC-900, Cisco Security &amp; Connectivity</p>
+    <section class="section" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <h2 id="skills-title">Skills</h2>
+        <p>Grouped by how I use each skill in analysis work.</p>
+      </div>
+      <div class="grid skill-list">
+        <article class="card skill-card">
+          <h3>SQL</h3>
+          <p>Query data, join tables, clean records, group results, and build analysis-ready datasets.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Excel</h3>
+          <p>Clean spreadsheet data, use formulas, build summaries, and check calculations.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Power BI</h3>
+          <p>Create dashboards that show trends, comparisons, and business performance clearly.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Data Cleaning &amp; Analysis</h3>
+          <p>Structure raw data, remove noise, compare performance, and explain the result in plain language.</p>
+        </article>
+      </div>
+    </section>
 
-        <h2>Project-Based Learning</h2>
-        <p>I have completed data-focused academic and personal projects involving dataset organization, cleaning, basic analysis, visualization, and insight communication, with a clear emphasis on learning and skill development.</p>
-        <p>Currently focused on Data Analysis, building strong foundations in data, systems, and information.</p>
+    <section class="section" aria-labelledby="credentials-title">
+      <div class="section-heading">
+        <h2 id="credentials-title">Foundational Learning</h2>
+        <p>These certificates support my technical foundation. They are learning credentials, not work experience.</p>
+      </div>
+      <div class="grid cards-two">
+        <article class="card">
+          <h3>Data &amp; Analytics</h3>
+          <p>Cisco Data Analytics badge and project-based practice in SQL, Excel, and Power BI.</p>
+        </article>
+        <article class="card">
+          <h3>IT Foundations</h3>
+          <p>Google IT Support, Cisco networking foundations, Microsoft 365 fundamentals, and security basics.</p>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><p>&copy; <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
-<script type="module" src="tubes-cursor.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
+      <p>Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

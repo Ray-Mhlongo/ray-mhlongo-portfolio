@@ -1,184 +1,95 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="theme-light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Project portfolio for Ray Mhlongo." />
+  <meta name="description" content="Three data analysis projects by Ray Mhlongo: PC Price Analysis, ISP Price Comparison, and Cathdel Creamy." />
   <title>Projects | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script>
-    (() => {
-      const root = document.documentElement;
-      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
-      let savedTheme = null;
-
-      try {
-        savedTheme = localStorage.getItem("theme");
-      } catch {
-        savedTheme = null;
-      }
-
-      if (!savedTheme && match) {
-        try {
-          savedTheme = decodeURIComponent(match[1]);
-        } catch {
-          savedTheme = match[1];
-        }
-      }
-
-      if (savedTheme === "dark") {
-        root.classList.remove("theme-light");
-        return;
-      }
-
-      if (savedTheme === "light") {
-        root.classList.add("theme-light");
-        return;
-      }
-
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.remove("theme-light");
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Primary">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-  <span class="brand-lines">
-    <span class="brand-text">Data</span>
-    <span class="brand-text">Insights</span>
-    <span class="brand-text">by</span>
-    <span class="brand-text">Ray</span>
-  </span>
-</a>
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>&#9776;</button>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
+        <span class="brand-mark">RM</span>
+        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   </header>
 
   <main id="main-content" class="container page-main">
-    <section class="section reveal">
-      <div class="section-heading">
-        <h1>Projects</h1>
-        <p>Selected work designed to answer practical business questions with data.</p>
-      </div>
-      <div class="grid cards-three">
-        <article class="card project-card">
-          <img src="images/PC_HARDWARE.jpg" alt="Project placeholder for PC Price Analysis" />
-          <h2>PC Price Analysis</h2>
-          <p>Advanced marketplace indexing using SQL and Power BI to standardize raw PC hardware data.</p>
-          <p class="meta">Tech: SQL, Power BI</p>
-          <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
-        </article>
-        <article class="card project-card">
-          <img src="images/Cathel.png" alt="Project placeholder for Cathdel Creamy" />
-          <h2>Cathdel Creamy</h2>
-          <p>Sales analysis using real sales data to explore performance trends, product demand, and revenue patterns.</p>
-          <p class="meta">Tech: SQL, Excel, Power BI</p>
-          <a class="btn btn-secondary" href="cathdel-creamy.html">Open Case Study</a>
-        </article>
-        <article class="card project-card">
-          <img src="images/ISSP.jpg" alt="Project placeholder for ISP comparison" />
-          <h2>Local ISP Price Comparison</h2>
-          <p>Compares local ISP pricing, package offerings, and value for money to guide better decisions.</p>
-          <p class="meta">Tech: SQL, Power BI</p>
-          <a class="btn btn-secondary" href="isp-price-comparison.html">Open Case Study</a>
-        </article>
-      </div>
+    <section class="page-hero">
+      <p class="eyebrow">Projects</p>
+      <h1>Three focused data projects.</h1>
+      <p>
+        Each project is written for quick recruiter scanning: problem, what I did, tools, and outcome.
+      </p>
     </section>
 
-    <section class="section reveal">
-      <div class="section-heading">
-        <h2>Business Workbook Portfolio</h2>
-        <p>Simple project pages based on real analyst workflows: problem, solution, data process, metrics, and business impact.</p>
-      </div>
+    <section class="section" aria-label="Project list">
       <div class="grid cards-three">
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for GNOSIS Therapy and Wellness Service" />
-          <h3>GNOSIS Therapy and Wellness Service</h3>
-          <p>Clinical operations tracking for clients, appointments, sessions, and payments.</p>
-          <p class="meta">Tech: Excel, KPI Reporting</p>
-          <a class="btn btn-secondary" href="gnosis-therapy-wellness.html">Open Case Study</a>
+        <article class="project-card featured">
+          <div>
+            <p class="meta">Flagship Project</p>
+            <h2>PC Price Analysis</h2>
+            <p>Cleaned and structured PC hardware price data to compare products across shops, provinces, and categories.</p>
+            <div class="pill-row">
+              <span class="pill">SQL</span>
+              <span class="pill">Power BI</span>
+              <span class="pill">Data Cleaning</span>
+            </div>
+            <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
+          </div>
+          <img src="images/PC_HARDWARE.jpg" alt="PC hardware project visual" />
         </article>
 
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for Personal Budget Tracker 2026" />
-          <h3>Personal Budget Tracker 2026</h3>
-          <p>Monthly finance model with category variance, savings tracking, and spend analysis.</p>
-          <p class="meta">Tech: Excel, Financial Analysis</p>
-          <a class="btn btn-secondary" href="personal-budget-tracker-2026.html">Open Case Study</a>
+        <article class="project-card">
+          <img src="images/ISSP.jpg" alt="ISP price comparison visual" />
+          <p class="meta">Flagship Project</p>
+          <h2>ISP Price Comparison</h2>
+          <p>Compared internet packages using cost per Mbps to find better value options for local customers.</p>
+          <div class="pill-row">
+            <span class="pill">Excel</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Value Analysis</span>
+          </div>
+          <a class="btn btn-secondary" href="isp-price-comparison.html">Open Case Study</a>
         </article>
 
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for Rental Property Manager" />
-          <h3>Rental Property Manager</h3>
-          <p>Multi-property tracking for occupancy, rent collection, maintenance, and costs.</p>
-          <p class="meta">Tech: Excel, Operations Analytics</p>
-          <a class="btn btn-secondary" href="rental-property-manager.html">Open Case Study</a>
-        </article>
-
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for BEE Business Tracker 2026" />
-          <h3>BEE Business Tracker 2026</h3>
-          <p>Hive-rental client analytics with automated invoice tracking and revenue summaries.</p>
-          <p class="meta">Tech: Excel, Workflow Automation</p>
-          <a class="btn btn-secondary" href="bee-business-tracker-2026.html">Open Case Study</a>
-        </article>
-
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for Taxi and Transport Tracker" />
-          <h3>Taxi and Transport Tracker</h3>
-          <p>Trip-level profitability analysis with platform commissions and operating costs.</p>
-          <p class="meta">Tech: Excel, Profitability Analytics</p>
-          <a class="btn btn-secondary" href="taxi-transport-tracker.html">Open Case Study</a>
-        </article>
-
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for X-Factor Tutoring System" />
-          <h3>X-Factor Tutoring System</h3>
-          <p>Student performance and tutoring business analytics in one reporting workflow.</p>
-          <p class="meta">Tech: Excel, Education Analytics</p>
-          <a class="btn btn-secondary" href="xfactor-tutoring-system.html">Open Case Study</a>
-        </article>
-
-        <article class="card project-card">
-          <img src="images/EXCEL.png" alt="Project placeholder for Ubuntu Kitchen Restaurant Management" />
-          <h3>Ubuntu Kitchen Restaurant Management</h3>
-          <p>Restaurant BI across sales, payroll, inventory, loyalty, and expense data.</p>
-          <p class="meta">Tech: Excel, Business Intelligence</p>
-          <a class="btn btn-secondary" href="ubuntu-kitchen-restaurant-management.html">Open Case Study</a>
+        <article class="project-card">
+          <img src="images/Cathel.png" alt="Cathdel Creamy sales analytics visual" />
+          <p class="meta">Business Sales Analytics</p>
+          <h2>Cathdel Creamy</h2>
+          <p>Built a small business analytics concept for sales tracking, customer records, and loyalty insights.</p>
+          <div class="pill-row">
+            <span class="pill">Sales Data</span>
+            <span class="pill">Dashboards</span>
+            <span class="pill">Customer Insights</span>
+          </div>
+          <a class="btn btn-secondary" href="cathdel-creamy.html">Open Case Study</a>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><p>&copy; <span id="year"></span> Ray Mhlongo</p><p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p></div></footer>
-<script type="module" src="tubes-cursor.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
+      <p>Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

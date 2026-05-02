@@ -1,220 +1,122 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="theme-light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Local ISP value-for-money analysis for a small South African town by Ray Mhlongo." />
-  <title>Local ISP Value-for-Money Analysis | Ray Mhlongo</title>
+  <meta name="description" content="ISP Price Comparison case study by Ray Mhlongo using cost-per-Mbps analysis." />
+  <title>ISP Price Comparison | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script>
-    (() => {
-      const root = document.documentElement;
-      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
-      let savedTheme = null;
-
-      try {
-        savedTheme = localStorage.getItem("theme");
-      } catch {
-        savedTheme = null;
-      }
-
-      if (!savedTheme && match) {
-        try {
-          savedTheme = decodeURIComponent(match[1]);
-        } catch {
-          savedTheme = match[1];
-        }
-      }
-
-      if (savedTheme === "dark") {
-        root.classList.remove("theme-light");
-        return;
-      }
-
-      if (savedTheme === "light") {
-        root.classList.add("theme-light");
-        return;
-      }
-
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.remove("theme-light");
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Primary">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-  <span class="brand-lines">
-    <span class="brand-text">Data</span>
-    <span class="brand-text">Insights</span>
-    <span class="brand-text">by</span>
-    <span class="brand-text">Ray</span>
-  </span>
-</a>
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
-        <span class="sr-only">Open menu</span>
-        &#9776;
-      </button>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
+        <span class="brand-mark">RM</span>
+        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link active" href="projects.html">Projects</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   </header>
 
   <main id="main-content" class="container page-main">
-    <section class="section fade-in project-heading">
-      <p class="project-status reveal-item">Completed Project</p>
-      <h1 class="reveal-item">Local ISP Value-for-Money Analysis â€“ Small Town Case Study (South Africa)</h1>
-      <p class="lead reveal-item">
-        This project evaluates the value-for-money of ISP packages offered to residents and businesses in a small South African
-        town, using objective price and performance metrics to guide better decisions.
-      </p>
+    <section class="project-hero">
+      <div>
+        <p class="eyebrow">Flagship Project - Value Analysis</p>
+        <h1>ISP Price Comparison</h1>
+        <p class="hero-copy">
+          I compared internet packages in a small South African town to show which plans offered better value for money.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#dashboard">View Dashboard</a>
+          <a class="btn btn-secondary" href="projects.html">Back to Projects</a>
+        </div>
+      </div>
+      <img src="images/ISSP.jpg" alt="Internet service provider comparison visual" />
     </section>
 
-    <section class="section project-layout fade-in">
-      <article class="detail-card">
-        <h2 class="reveal-item">Project Overview</h2>
-        <p class="reveal-item">
-          This analysis compares ISP packages available in a small South African town to determine whether long-standing ISP
-          choices truly deliver the best value. Using publicly available data, the project evaluates fibre and wireless
-          offerings across download speed, monthly cost, installation cost, and overall cost efficiency. The outcome is a
-          decision-ready view of value-for-money that does not rely on internal business data.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Project Objective</h2>
-        <ul>
-          <li>Compare ISP packages objectively using cost-per-Mbps</li>
-          <li>Identify the best-value package offered by each ISP</li>
-          <li>Demonstrate how public data can be transformed into actionable insights</li>
-          <li>Showcase practical analytics skills aligned to business decision-making</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Methodology: Data Collection</h2>
-        <p class="reveal-item">
-          Data was collected manually from official ISP websites and publicly available sources. The dataset focuses on ISPs
-          that actively serve the selected town, avoiding nationwide averages.
-        </p>
-        <ul>
-          <li>ISP name</li>
-          <li>Connection type (Fibre or Wireless)</li>
-          <li>Coverage scope (town-level availability)</li>
-          <li>Package name</li>
-          <li>Download speed (Mbps)</li>
-          <li>Monthly price</li>
-          <li>Installation cost</li>
-          <li>Router inclusion</li>
-          <li>Source URL</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Methodology: Data Preparation</h2>
-        <p class="reveal-item">Data cleaning and preparation were performed in Microsoft Excel.</p>
-        <ul>
-          <li>Structured data into relational tables (ISPs and Packages)</li>
-          <li>Standardized package naming for consistency</li>
-          <li>Removed unused or null columns</li>
-          <li>Created calculated fields for analysis</li>
-        </ul>
-        <p class="reveal-item"><strong>Cost per Mbps</strong> = Monthly Price Ã· Download Speed (Mbps)</p>
-        <p class="reveal-item">
-          A â€œBest Valueâ€ flag was created using Excel formulas to identify the lowest cost-per-Mbps package for each ISP.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Methodology: Data Visualization</h2>
-        <p class="reveal-item">
-          The cleaned dataset was imported into Power BI to create an interactive dashboard with consistent styling for
-          portfolio presentation.
-        </p>
-        <ul>
-          <li>Bar chart: Best-value ISP plans (cost per Mbps)</li>
-          <li>Column chart: Download speed of best-value plans</li>
-          <li>Table: ISP package details for best-value plans</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Key Features of the Dashboard</h2>
-        <ul>
-          <li>Best-value comparison to highlight the most cost-efficient package per ISP</li>
-          <li>Speed vs cost insight showing that higher speeds do not always equal better value</li>
-          <li>ISP-level analysis for direct comparison between providers serving the same town</li>
-          <li>Clean visual design optimized for clarity and portfolio presentation</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Outcomes</h2>
-        <p class="reveal-item">
-          The analysis shows that objective price-performance comparison can reveal better alternatives than those chosen
-          through habit or brand loyalty. For local businesses, it provides a practical framework to reassess internet
-          expenses and value. For the portfolio, it demonstrates end-to-end analytics skills in data sourcing, Excel-based
-          calculations, and Power BI visualization within a real-world business context.
-        </p>
-      </article>
-    </section>
-
-    <section class="video-container">
-      <h2>ISP Package Sheet</h2>
-      <div class="video-wrapper">
-        <iframe
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVYKshC826jqjyeakO4hJN9BpsX6W_QqSupetX1SIuCPXYIF-VUwGWehzYgtGN-Q/pubhtml?widget=true&headers=false"
-          title="ISP Package Sheet"
-          allowfullscreen>
-        </iframe>
+    <section class="section" aria-labelledby="case-title">
+      <div class="section-heading">
+        <h2 id="case-title">Case Study</h2>
+        <p>Short version: price alone was not enough, so I compared price against speed.</p>
+      </div>
+      <div class="grid case-grid">
+        <article class="detail-card">
+          <h2>Problem</h2>
+          <p>Customers may choose internet plans based on habit, brand, or monthly price without knowing the real value.</p>
+        </article>
+        <article class="detail-card">
+          <h2>What I Did</h2>
+          <ul>
+            <li>Collected package details from public ISP sources.</li>
+            <li>Cleaned plan names, prices, speeds, and connection types.</li>
+            <li>Calculated cost per Mbps for fair comparison.</li>
+            <li>Built a dashboard to compare providers side by side.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h2>Tools Used</h2>
+          <div class="pill-row">
+            <span class="pill">Excel</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Cost Analysis</span>
+          </div>
+        </article>
+        <article class="detail-card outcome-card">
+          <h2>Key Outcome</h2>
+          <p>The analysis showed that higher speed or higher price does not always mean better value. Cost per Mbps made the comparison clearer.</p>
+        </article>
       </div>
     </section>
 
-    <section class="video-container">
-      <h2>Value-for-Money Dashboard</h2>
-      <div class="video-wrapper">
-        <iframe
-          src="https://app.powerbi.com/view?r=eyJrIjoiMDA2MjY3ZWUtZWUzMS00NzBjLTljNmQtNTA0MDAzYzliYjlmIiwidCI6ImRiMjk2YWE2LTVlM2YtNGNmOS04ZjRjLTc3MTBjMjNhNjNiYyJ9&pageName=ab75ed4c70c3fca14449"
-          title="Value-for-Money Dashboard"
-          allowfullscreen>
-        </iframe>
+    <section class="section" aria-labelledby="insights-title">
+      <div class="section-heading">
+        <h2 id="insights-title">Key Insights</h2>
+        <p>The dashboard turns public pricing data into a simple decision tool.</p>
+      </div>
+      <div class="grid cards-three">
+        <article class="card">
+          <h3>Best Value</h3>
+          <p>Cost per Mbps helped identify the strongest package from each provider.</p>
+        </article>
+        <article class="card">
+          <h3>Speed vs Price</h3>
+          <p>The comparison showed where higher speed was worth the extra cost.</p>
+        </article>
+        <article class="card">
+          <h3>Decision Support</h3>
+          <p>The result helps residents and small businesses review internet costs more clearly.</p>
+        </article>
       </div>
     </section>
 
+    <section id="dashboard" class="section" aria-labelledby="dashboard-title">
+      <div class="section-heading">
+        <h2 id="dashboard-title">Dashboard</h2>
+        <p>Interactive Power BI view for the ISP value comparison.</p>
+      </div>
+      <div class="media-frame">
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMDA2MjY3ZWUtZWUzMS00NzBjLTljNmQtNTA0MDAzYzliYjlmIiwidCI6ImRiMjk2YWE2LTVlM2YtNGNmOS04ZjRjLTc3MTBjMjNhNjNiYyJ9&amp;pageName=ab75ed4c70c3fca14449" title="ISP value-for-money dashboard" allowfullscreen></iframe>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+      <p>Built with HTML, CSS, and JavaScript.</p>
     </div>
   </footer>
-<script type="module" src="tubes-cursor.js"></script>
+
   <script src="script.js"></script>
 </body>
 </html>
- 
-
-
-
-
-
-
-
-
-

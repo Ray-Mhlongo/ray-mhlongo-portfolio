@@ -1,214 +1,125 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="theme-light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sales, loyalty, and business analytics system project by Ray Mhlongo for small business decision support." />
+  <meta name="description" content="Cathdel Creamy business sales analytics case study by Ray Mhlongo." />
   <title>Cathdel Creamy | Ray Mhlongo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script>
-    (() => {
-      const root = document.documentElement;
-      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
-      let savedTheme = null;
-
-      try {
-        savedTheme = localStorage.getItem("theme");
-      } catch {
-        savedTheme = null;
-      }
-
-      if (!savedTheme && match) {
-        try {
-          savedTheme = decodeURIComponent(match[1]);
-        } catch {
-          savedTheme = match[1];
-        }
-      }
-
-      if (savedTheme === "dark") {
-        root.classList.remove("theme-light");
-        return;
-      }
-
-      if (savedTheme === "light") {
-        root.classList.add("theme-light");
-        return;
-      }
-
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.remove("theme-light");
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   <header class="site-header">
-    <nav class="navbar container" aria-label="Primary">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-        <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-        <span class="brand-lines">
-          <span class="brand-text">Data</span>
-          <span class="brand-text">Insights</span>
-          <span class="brand-text">by</span>
-          <span class="brand-text">Ray</span>
-        </span>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
+        <span class="brand-mark">RM</span>
+        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
       </a>
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
-        <span class="sr-only">Open menu</span>
-        &#9776;
-      </button>
+      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false"><span class="sr-only">Open menu</span>Menu</button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
   </header>
 
   <main id="main-content" class="container page-main">
-    <section class="section fade-in project-heading">
-      <p class="project-status reveal-item">Completed Project</p>
-      <h1 class="reveal-item">Sales, Loyalty &amp; Business Analytics System</h1>
-      <p class="lead reveal-item">
-        This project is a mobile-first business management system designed to help small businesses track sales, manage customers, and generate practical business insights from everyday transactions.
-      </p>
-      <p class="reveal-item">
-        The system combines sales tracking, customer management, loyalty automation, and business intelligence dashboards in a single web application that runs on phone, tablet, and desktop.
-      </p>
-    </section>
-
-    <section class="video-container">
-      <h2>Product Ad Demo (Mobile Mockup)</h2>
-      <div class="device-frame" aria-label="Mobile device frame for video">
-        <div class="video-wrapper is-vertical">
-          <video controls preload="metadata" playsinline poster="images/Cathel.png" aria-label="Cathdel Creamy mockup video ad">
-            <source src="cathdel_creamy_mockup_ad_30s.mp4" type="video/mp4" />
-          </video>
+    <section class="project-hero">
+      <div>
+        <p class="eyebrow">Business Sales Analytics</p>
+        <h1>Cathdel Creamy</h1>
+        <p class="hero-copy">
+          I designed a small business analytics concept for tracking sales, customers, loyalty activity, and daily performance.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">View Demo</a>
+          <a class="btn btn-secondary" href="projects.html">Back to Projects</a>
         </div>
       </div>
-      <p>Data confidentiality note: all customer records shown in this ad are synthetic demo data.</p>
+      <img src="images/Cathel.png" alt="Cathdel Creamy project visual" />
     </section>
 
-    <section class="section project-layout fade-in">
-      <article class="detail-card">
-        <h2 class="reveal-item">Project Goal</h2>
-        <p class="reveal-item">
-          The objective was to demonstrate how data collection, automation, and analytics tools can be used to help small businesses make data-driven decisions in daily operations.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Sales Tracking</h2>
-        <p class="reveal-item">
-          Staff can quickly capture sales transactions through a simple mobile interface. Each transaction records product, quantity, payment method, and time of sale, enabling accurate revenue and transaction records.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Customer Management</h2>
-        <p class="reveal-item">
-          Customers are registered with key details such as name, grade/class, and contact number. Each customer receives a unique QR code for fast identification at purchase.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Loyalty Program Automation</h2>
-        <p class="reveal-item">
-          The system tracks purchase behavior and automatically applies a configurable loyalty program to reward repeat customers and support retention strategy.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Business Intelligence Dashboard</h2>
-        <p class="reveal-item">The dashboard visualizes core business metrics including:</p>
-        <ul>
-          <li>Revenue</li>
-          <li>Number of orders</li>
-          <li>Units sold</li>
-          <li>Customer activity</li>
-          <li>Product performance</li>
-          <li>Sales trends over time</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Data-Driven Insights</h2>
-        <p class="reveal-item">The system analyzes sales history to identify:</p>
-        <ul>
-          <li>Best-selling products</li>
-          <li>High-value customers</li>
-          <li>Sales trends</li>
-          <li>Inventory risks</li>
-          <li>Loyalty program performance</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">WhatsApp Customer Outreach</h2>
-        <p class="reveal-item">
-          Built-in targeting tools prepare behavior-based WhatsApp outreach for segments such as inactive customers and loyalty-ready customers, enabling practical data-driven marketing.
-        </p>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">End-of-Day Reporting</h2>
-        <p class="reveal-item">Daily reporting is generated automatically with:</p>
-        <ul>
-          <li>Total revenue</li>
-          <li>Orders processed</li>
-          <li>Products sold</li>
-          <li>Payment methods used</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Technologies and Skills Demonstrated</h2>
-        <ul>
-          <li>Data analytics</li>
-          <li>Business intelligence dashboards</li>
-          <li>Data visualization</li>
-          <li>Customer data management</li>
-          <li>Sales data tracking</li>
-          <li>QR code systems</li>
-          <li>Workflow automation</li>
-          <li>Mobile-first web application design</li>
-          <li>Data-driven decision support systems</li>
-        </ul>
-      </article>
-
-      <article class="detail-card">
-        <h2 class="reveal-item">Project Objective</h2>
-        <p class="reveal-item">
-          The purpose of this project was to show how analytics and automation can be applied to real business operations. By turning transaction data into clear dashboards and actionable insights, small businesses can understand performance faster and make stronger operational decisions.
-        </p>
-      </article>
+    <section class="section" aria-labelledby="case-title">
+      <div class="section-heading">
+        <h2 id="case-title">Case Study</h2>
+        <p>Short version: small daily sales can become useful business insights when captured clearly.</p>
+      </div>
+      <div class="grid case-grid">
+        <article class="detail-card">
+          <h2>Problem</h2>
+          <p>A small business needs a simple way to track sales, understand customers, and see which products are performing.</p>
+        </article>
+        <article class="detail-card">
+          <h2>What I Did</h2>
+          <ul>
+            <li>Designed a mobile-first sales capture flow.</li>
+            <li>Created customer tracking logic for repeat purchases.</li>
+            <li>Added loyalty and customer activity concepts.</li>
+            <li>Outlined dashboard metrics for sales and product performance.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h2>Tools Used</h2>
+          <div class="pill-row">
+            <span class="pill">Sales Data</span>
+            <span class="pill">Dashboard Design</span>
+            <span class="pill">Customer Analysis</span>
+            <span class="pill">Workflow Planning</span>
+          </div>
+        </article>
+        <article class="detail-card outcome-card">
+          <h2>Key Outcome</h2>
+          <p>The project shows how a small business can turn daily transactions into clear views of revenue, best-selling products, and customer activity.</p>
+        </article>
+      </div>
     </section>
 
+    <section class="section" aria-labelledby="features-title">
+      <div class="section-heading">
+        <h2 id="features-title">Key Features</h2>
+        <p>The system is designed around the questions a small business owner would ask every day.</p>
+      </div>
+      <div class="grid cards-three">
+        <article class="card">
+          <h3>Sales Tracking</h3>
+          <p>Capture product, quantity, payment method, and time of sale.</p>
+        </article>
+        <article class="card">
+          <h3>Customer Insights</h3>
+          <p>Track customer activity and identify repeat buyers.</p>
+        </article>
+        <article class="card">
+          <h3>Daily Reporting</h3>
+          <p>Summarize revenue, orders, products sold, and payment methods.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="section" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <h2 id="demo-title">Demo</h2>
+        <p>Short mobile mockup showing the business sales analytics concept. Demo data is synthetic.</p>
+      </div>
+      <div class="media-frame">
+        <video controls preload="metadata" playsinline poster="images/Cathel.png" aria-label="Cathdel Creamy mockup video">
+          <source src="cathdel_creamy_mockup_ad_30s.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p>Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+      <p>Built with HTML, CSS, and JavaScript.</p>
     </div>
   </footer>
 
-  <script type="module" src="tubes-cursor.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
-

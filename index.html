@@ -1,245 +1,138 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="theme-light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ray Mhlongo portfolio - aspiring data analyst focused on SQL, Power BI, and Excel." />
-  <title>Ray Mhlongo | Aspiring Data Analyst</title>
+  <meta name="description" content="Ray Mhlongo is a junior data analyst focused on SQL, Excel, Power BI, and business insights." />
+  <title>Ray Mhlongo | Junior Data Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script>
-    (() => {
-      const root = document.documentElement;
-      const match = document.cookie.match(/(?:^|; )theme=([^;]+)/);
-      let savedTheme = null;
-
-      try {
-        savedTheme = localStorage.getItem("theme");
-      } catch {
-        savedTheme = null;
-      }
-
-      if (!savedTheme && match) {
-        try {
-          savedTheme = decodeURIComponent(match[1]);
-        } catch {
-          savedTheme = match[1];
-        }
-      }
-
-      if (savedTheme === "dark") {
-        root.classList.remove("theme-light");
-        return;
-      }
-
-      if (savedTheme === "light") {
-        root.classList.add("theme-light");
-        return;
-      }
-
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.remove("theme-light");
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="app" aria-hidden="true">
-    <canvas id="canvas"></canvas>
-  </div>
-
-
-  
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
-   <nav class="navbar container" aria-label="Main navigation">
- <a class="brand brand-with-logo" href="index.html" aria-label="Data Insights by Ray">
-  <img class="brand-logo" src="images/LOGOO.jpeg" alt="Ray Mhlongo logo" />
-  <span class="brand-lines">
-    <span class="brand-text">Data</span>
-    <span class="brand-text">Insights</span>
-    <span class="brand-text">by</span>
-    <span class="brand-text">Ray</span>
-  </span>
-</a> 
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">
-        <span class="sr-only">Open menu</span>&#9776;
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ray Mhlongo home">
+        <span class="brand-mark">RM</span>
+        <span class="brand-copy">Ray Mhlongo <small>Junior Data Analyst</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-list" aria-expanded="false">
+        <span class="sr-only">Open menu</span>Menu
       </button>
       <ul id="nav-list" class="nav-list">
         <li><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="projects.html">Projects</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li><li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
     </nav>
-  
   </header>
 
   <main id="main-content">
-    <section class="hero container reveal">
-      <p class="kicker reveal-item">Aspiring Data Analyst</p>
-      <h1 class="reveal-item">Ray Mhlongo</h1>
-      <p class="tagline reveal-item">DATA. INSIGHT. IMPACT.</p>
-      <p class="hero-copy reveal-item">I turn complex, messy data into clear, decision-ready insights. Specializing in SQL data modeling and Power BI dashboards that support real-world business decisions.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="projects.html">Explore Projects</a>
-        <a class="btn btn-secondary" href="contact.html">Contact Me</a>
-      </div>
-
-      
- <!-- Add your image below -->
-  <div class="hero-image reveal-item">
-    <img src="images/brand_logo3.jpg" alt="Description of image" />
-  </div>
-      
-    </section>
-
-
-
-    <section class="section container reveal" aria-labelledby="skills-polish-title">
-      <div class="section-heading skills-heading">
-        <h2 id="skills-polish-title" class="reveal-item">Skills</h2>
-        <span class="heading-note reveal-item">Click an icon to open the dedicated skill page.</span>
-        <p class="reveal-item">Tools I use to turn data into insights</p>
-      </div>
-      <div class="skills-polish-grid" role="list" aria-label="Skills cards">
-        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 80ms;" href="sql.html" aria-label="Open SQL skill page">
-          <img class="skill-icon" src="images/SQL.png" alt="SQL icon" loading="lazy" />
-          <span class="skill-name">SQL</span>
-        </a>
-        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 170ms;" href="excel.html" aria-label="Open Excel skill page">
-          <img class="skill-icon" src="images/EXCEL.png" alt="Excel icon" loading="lazy" />
-          <span class="skill-name">Excel</span>
-        </a>
-        <a class="skill-pill-card skill-link reveal-item" role="listitem" style="--stagger-delay: 260ms;" href="power-bi.html" aria-label="Open Power BI skill page">
-          <img class="skill-icon" src="images/POWER_BI.png" alt="Power BI icon" loading="lazy" />
-          <span class="skill-name">Power BI</span>
-        </a>
-      </div>
-    </section>
-
-
-
-    <section class="section container reveal" aria-labelledby="core-analytical-skills-title">
-      <div class="section-heading">
-        <h2 id="core-analytical-skills-title" class="reveal-item">Core Analytical Skills</h2>
-        <p class="reveal-item">I work with data from raw preparation to final insight, using analytical tools to turn information into clear findings.</p>
-      </div>
-      <div class="grid cards-three analyst-skill-grid" role="list" aria-label="Core analytical skill cards">
-        <article class="card analyst-skill-card reveal-item" role="listitem">
-          <h3>Data Cleaning &amp; Preparation</h3>
-          <p>Transform messy datasets into structured, analysis-ready data using SQL and Excel.</p>
-        </article>
-        <article class="card analyst-skill-card reveal-item" role="listitem">
-          <h3>Data Analysis</h3>
-          <p>Identify patterns, trends, and relationships in data to answer practical business questions.</p>
-        </article>
-        <article class="card analyst-skill-card reveal-item" role="listitem">
-          <h3>Data Visualization</h3>
-          <p>Build dashboards and visual reports in Power BI that make insights easy to understand.</p>
-        </article>
-        <article class="card analyst-skill-card reveal-item" role="listitem">
-          <h3>Data Modeling</h3>
-          <p>Organize datasets and relationships to support accurate analysis and reporting.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container reveal" aria-labelledby="questions-solved-title">
-      <div class="section-heading">
-        <h2 id="questions-solved-title" class="reveal-item">Questions I Solve With Data</h2>
-        <p class="reveal-item">I use data to explore patterns, compare performance, and uncover useful insights.</p>
-      </div>
-      <div class="questions-grid" role="list" aria-label="Business questions solved with data">
-        <article class="question-tile reveal-item" role="listitem">
-          <p>Which products generate the most revenue?</p>
-        </article>
-        <article class="question-tile reveal-item" role="listitem">
-          <p>What are the busiest sales periods?</p>
-        </article>
-        <article class="question-tile reveal-item" role="listitem">
-          <p>How do prices vary across different providers?</p>
-        </article>
-        <article class="question-tile reveal-item" role="listitem">
-          <p>Which trends indicate growth or decline?</p>
-        </article>
-        <article class="question-tile reveal-item" role="listitem">
-          <p>What patterns can be found in customer or sales behavior?</p>
-        </article>
-        <article class="question-tile reveal-item" role="listitem">
-          <p>How can raw data be cleaned and structured for reporting?</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container reveal" aria-labelledby="tools-technologies-title">
-      <div class="section-heading">
-        <h2 id="tools-technologies-title" class="reveal-item">Tools &amp; Technologies</h2>
-        <p class="reveal-item">The main tools I use for data preparation, analysis, and dashboard development.</p>
-      </div>
-      <div class="grid cards-three tool-stack-grid" role="list" aria-label="Tools and technologies cards">
-        <article class="card tool-stack-card reveal-item" role="listitem">
-          <h3>SQL</h3>
-          <p>Querying, filtering, joins, aggregations, and structured data analysis.</p>
-        </article>
-        <article class="card tool-stack-card reveal-item" role="listitem">
-          <h3>Excel</h3>
-          <p>Data cleaning, formulas, pivot tables, and spreadsheet-based analysis.</p>
-        </article>
-        <article class="card tool-stack-card reveal-item" role="listitem">
-          <h3>Power BI</h3>
-          <p>Interactive dashboards, data visualization, and performance reporting.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container reveal" aria-labelledby="continuous-learning-title">
-      <div class="section-heading">
-        <h2 id="continuous-learning-title" class="reveal-item">Continuous Learning</h2>
-      </div>
-      <article class="card learning-card reveal-item" aria-label="Continuous learning highlights">
-        <p>I am continuously improving my skills through hands-on projects and practical learning in SQL, Excel, Power BI, and data analysis workflows.</p>
-        <ul class="learning-points" role="list" aria-label="Current learning focus areas">
-          <li>Advanced SQL querying</li>
-          <li>Data modeling techniques</li>
-          <li>Dashboard design best practices</li>
-          <li>Real-world business analytics scenarios</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="section container reveal" aria-labelledby="feedback-reviews-title">
-      <div class="cta-panel reveal-item">
-        <div class="cta-copy">
-          <h2 id="feedback-reviews-title" class="reveal-item">Feedback &amp; Reviews</h2>
-          <p class="reveal-item">Explore feedback on my work, projects, and portfolio presentation.</p>
+    <section class="hero container">
+      <div>
+        <p class="eyebrow">Junior Data Analyst</p>
+        <h1>Turning raw data into business insights.</h1>
+        <p class="hero-copy">
+          I clean, structure, and analyze data using SQL, Excel, and Power BI. My projects focus on simple business questions: pricing, sales, customers, and performance.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects.html">View Projects</a>
+          <a class="btn btn-secondary" href="contact.html">Contact Me</a>
         </div>
-        <a class="btn btn-primary" href="reviews.html">View Reviews</a>
+      </div>
+      <div class="portrait-card" aria-label="Portfolio visual">
+        <img src="images/brand_logo3.jpg" alt="Ray Mhlongo portfolio brand visual" />
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <h2 id="skills-title">Skills Snapshot</h2>
+        <p>The tools I use to turn messy data into clear answers.</p>
+      </div>
+      <div class="grid skill-list">
+        <article class="card skill-card">
+          <h3>SQL</h3>
+          <p>Clean data, join tables, group records, and answer business questions from structured datasets.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Excel</h3>
+          <p>Prepare spreadsheets, build calculations, create summaries, and check data quality.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Power BI</h3>
+          <p>Build dashboards that show trends, comparisons, and key performance indicators.</p>
+        </article>
+        <article class="card skill-card">
+          <h3>Data Analysis</h3>
+          <p>Find patterns, explain what changed, and connect insights to practical decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <h2 id="featured-title">Featured Projects</h2>
+        <p>Three focused projects that show my data cleaning, analysis, and dashboard thinking.</p>
+      </div>
+      <div class="grid cards-three">
+        <article class="project-card featured">
+          <div>
+            <p class="meta">Flagship - SQL + Power BI</p>
+            <h2>PC Price Analysis</h2>
+            <p>I cleaned and modeled PC hardware pricing data so products could be compared across shops, provinces, and categories.</p>
+            <div class="pill-row" aria-label="Tools used">
+              <span class="pill">SQL</span>
+              <span class="pill">Power BI</span>
+              <span class="pill">Data Modeling</span>
+            </div>
+            <a class="btn btn-secondary" href="pc-price-analysis.html">Open Case Study</a>
+          </div>
+          <img src="images/PC_HARDWARE.jpg" alt="PC hardware project visual" />
+        </article>
+
+        <article class="project-card">
+          <img src="images/ISSP.jpg" alt="Internet service provider project visual" />
+          <p class="meta">Flagship - Value Analysis</p>
+          <h3>ISP Price Comparison</h3>
+          <p>I compared local internet packages using cost per Mbps to identify better value options.</p>
+          <a class="btn btn-secondary" href="isp-price-comparison.html">Open Case Study</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Cathel.png" alt="Cathdel Creamy project visual" />
+          <p class="meta">Business Sales Analytics</p>
+          <h3>Cathdel Creamy</h3>
+          <p>I designed a sales tracking and customer insight system for a small business workflow.</p>
+          <a class="btn btn-secondary" href="cathdel-creamy.html">Open Case Study</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="questions-title">
+      <div class="section-heading">
+        <h2 id="questions-title">Questions I Answer With Data</h2>
+        <p>Recruiters should see the thinking behind the tools, not just the tools.</p>
+      </div>
+      <div class="grid questions">
+        <article class="card question"><p>Which products or plans offer the best value?</p></article>
+        <article class="card question"><p>Where are prices, sales, or customer patterns different?</p></article>
+        <article class="card question"><p>What should a business focus on next?</p></article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="reveal-item">&copy; <span id="year"></span> Ray Mhlongo</p>
-      <p class="reveal-item">Handcrafted with semantic HTML, modern CSS, and vanilla JavaScript.</p>
+      <p>&copy; <span id="year"></span> Ray Mhlongo</p>
+      <p>Built with HTML, CSS, and JavaScript.</p>
     </div>
   </footer>
-<script type="module" src="tubes-cursor.js"></script>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
