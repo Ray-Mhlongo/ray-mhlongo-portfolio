@@ -74,45 +74,222 @@
           <h2 class="skills-subtitle">Professional Skills</h2>
           <p class="skills-text">My work focuses on preparing data, checking quality, finding useful patterns, and presenting insights in a way recruiters and business users can scan quickly.</p>
 
-          <div class="skills-data">
+          <a class="skills-data skill-card" href="#sql-showcase">
             <div class="skills-names">
               <i class="bx bx-data skills-icon"></i>
               <span class="skills-name">SQL</span>
             </div>
             <span class="skills-percentage">88%</span>
             <div class="skills-bar skills-sql"></div>
-          </div>
+            <span class="skill-cta">Click to view projects and demonstrations</span>
+          </a>
 
-          <div class="skills-data">
+          <a class="skills-data skill-card" href="#excel-showcase">
             <div class="skills-names">
               <i class="bx bx-spreadsheet skills-icon"></i>
               <span class="skills-name">Excel</span>
             </div>
             <span class="skills-percentage">84%</span>
             <div class="skills-bar skills-excel"></div>
-          </div>
+            <span class="skill-cta">Click to view projects and demonstrations</span>
+          </a>
 
-          <div class="skills-data">
+          <a class="skills-data skill-card" href="#powerbi-showcase">
             <div class="skills-names">
               <i class="bx bx-bar-chart-alt-2 skills-icon"></i>
               <span class="skills-name">Power BI</span>
             </div>
             <span class="skills-percentage">78%</span>
             <div class="skills-bar skills-bi"></div>
-          </div>
+            <span class="skill-cta">Click to view projects and demonstrations</span>
+          </a>
 
-          <div class="skills-data">
+          <a class="skills-data skill-card" href="#python-showcase">
             <div class="skills-names">
-              <i class="bx bx-search-alt skills-icon"></i>
-              <span class="skills-name">Data Analysis</span>
+              <i class="bx bxl-python skills-icon"></i>
+              <span class="skills-name">Python</span>
             </div>
             <span class="skills-percentage">82%</span>
-            <div class="skills-bar skills-analysis"></div>
-          </div>
+            <div class="skills-bar skills-python"></div>
+            <span class="skill-cta">Click to view projects and demonstrations</span>
+          </a>
+
+          <a class="skills-data skill-card" href="#networking-showcase">
+            <div class="skills-names">
+              <i class="bx bx-network-chart skills-icon"></i>
+              <span class="skills-name">Networking</span>
+            </div>
+            <span class="skills-percentage">80%</span>
+            <div class="skills-bar skills-networking"></div>
+            <span class="skill-cta">Click to view projects and demonstrations</span>
+          </a>
         </div>
 
         <div class="skills-img">Dashboards<br>Reports<br>Decisions</div>
       </div>
+    </section>
+
+    <section class="section showcase-section" id="technical-showcase">
+      <h2 class="section-title">Technical Showcase</h2>
+      <div class="showcase-intro bd-grid">
+        <article class="case-card">
+          <h3>Project Dataset</h3>
+          <p>I used the provided Wireshark network exports as one practical project dataset. The main file contains 394,136 packet records with time, source, destination, protocol, length, and packet information.</p>
+        </article>
+        <article class="case-card">
+          <h3>Business Problem</h3>
+          <p>A technical team needs to understand network traffic quickly: which protocols dominate, which hosts are most active, and where troubleshooting should start.</p>
+        </article>
+      </div>
+
+      <div class="showcase-kpis bd-grid" aria-label="Network dataset KPIs">
+        <article class="showcase-kpi">
+          <span class="counter" data-count="394136">0</span>
+          <p>packet rows analyzed</p>
+        </article>
+        <article class="showcase-kpi">
+          <span class="counter" data-count="314873">0</span>
+          <p>TCP packets found</p>
+        </article>
+        <article class="showcase-kpi">
+          <span class="counter" data-count="71625">0</span>
+          <p>TLSv1.3 packets found</p>
+        </article>
+        <article class="showcase-kpi">
+          <span class="counter" data-count="49745">0</span>
+          <p>largest packet length</p>
+        </article>
+      </div>
+
+      <section class="skill-showcase bd-grid" id="sql-showcase">
+        <div>
+          <p class="project-meta">SQL analytics environment</p>
+          <h2 class="about-subtitle">Querying packet data like a database</h2>
+          <p class="about-text">I treated the capture as a structured table and used SQL thinking to clean blank records, group protocols, join host summaries, and rank the busiest devices.</p>
+        </div>
+        <div class="schema-card">
+          <div class="schema-node primary">packets</div>
+          <div class="schema-line"></div>
+          <div class="schema-node">hosts</div>
+          <div class="schema-node">protocol_summary</div>
+          <div class="schema-node">alerts</div>
+        </div>
+        <article class="query-card" data-query="SELECT protocol, COUNT(*) AS packets, ROUND(AVG(length), 2) AS avg_length FROM packets WHERE protocol IS NOT NULL GROUP BY protocol ORDER BY packets DESC;">
+          <h3>GROUP BY protocol volume</h3>
+          <pre><code></code></pre>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Protocol</th><th>Packets</th><th>Insight</th></tr></thead>
+              <tbody>
+                <tr><td>TCP</td><td>314,873</td><td>Main traffic type</td></tr>
+                <tr><td>TLSv1.3</td><td>71,625</td><td>Encrypted sessions</td></tr>
+                <tr><td>ICMP</td><td>2,690</td><td>Connectivity checks</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="query-card" data-query="WITH host_rank AS (SELECT source, COUNT(*) AS packets, ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS rn FROM packets GROUP BY source) SELECT source, packets, CASE WHEN rn <= 3 THEN 'High activity' ELSE 'Normal' END AS status FROM host_rank;">
+          <h3>CTE, CASE, and window ranking</h3>
+          <pre><code></code></pre>
+          <p class="about-text">The top source was 192.167.7.162 with 116,067 packets, making it the first host I would investigate for normal behavior or heavy usage.</p>
+        </article>
+      </section>
+
+      <section class="skill-showcase bd-grid" id="excel-showcase">
+        <div>
+          <p class="project-meta">Excel reporting workbook</p>
+          <h2 class="about-subtitle">Spreadsheet model for traffic review</h2>
+          <p class="about-text">I designed the Excel flow as a practical analyst workbook: clean fields, create helper columns, summarize with pivots, and highlight rows that need attention.</p>
+          <div class="formula-list">
+            <code>=XLOOKUP([@Source],HostTable[IP],HostTable[Owner],"Unknown")</code>
+            <code>=SUMIFS([Length],[Protocol],"TCP")</code>
+            <code>=IF([@Length]>1500,"Review","Normal")</code>
+            <code>=INDEX(Status[Label],MATCH([@Protocol],Status[Protocol],0))</code>
+          </div>
+        </div>
+        <div class="spreadsheet-card">
+          <div class="sheet-row sheet-head"><span>Protocol</span><span>Packets</span><span>Status</span></div>
+          <div class="sheet-row"><span>TCP</span><span>314,873</span><span class="good">Stable</span></div>
+          <div class="sheet-row"><span>TLSv1.3</span><span>71,625</span><span class="good">Expected</span></div>
+          <div class="sheet-row"><span>ICMP</span><span>2,690</span><span class="warn">Review</span></div>
+          <div class="sheet-row"><span>ARP</span><span>447</span><span class="good">Local</span></div>
+        </div>
+      </section>
+
+      <section class="skill-showcase bd-grid" id="powerbi-showcase">
+        <div>
+          <p class="project-meta">Power BI inspired dashboard</p>
+          <h2 class="about-subtitle">Executive network monitoring view</h2>
+          <p class="about-text">The dashboard turns the packet export into a simple story: traffic is mostly TCP, encrypted traffic is significant, and one internal host is the main destination.</p>
+        </div>
+        <div class="dashboard-panel">
+          <div class="slicer-row">
+            <button class="slicer active" data-filter="all">All</button>
+            <button class="slicer" data-filter="tcp">TCP</button>
+            <button class="slicer" data-filter="tls">TLS</button>
+            <button class="slicer" data-filter="dns">DNS</button>
+          </div>
+          <div class="bar-chart">
+            <span style="--w: 100%">TCP <b>314,873</b></span>
+            <span style="--w: 23%">TLSv1.3 <b>71,625</b></span>
+            <span style="--w: 1.5%">ICMP <b>2,690</b></span>
+            <span style="--w: 1.2%">DNS <b>1,999</b></span>
+          </div>
+          <div class="heatmap" aria-label="Traffic intensity heatmap">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="skill-showcase bd-grid" id="python-showcase">
+        <div>
+          <p class="project-meta">Python data analysis</p>
+          <h2 class="about-subtitle">Pandas workflow for CSV processing</h2>
+          <p class="about-text">I used Python thinking to load the CSV, rename fields, remove incomplete packets, group protocols, and export clean summaries for reporting.</p>
+        </div>
+        <div class="terminal-card">
+          <div class="terminal-top"><span></span><span></span><span></span></div>
+          <pre><code>import pandas as pd
+
+packets = pd.read_csv("Midterm_53_group.csv")
+clean = packets.dropna(subset=["Source", "Destination"])
+summary = clean.groupby("Protocol")["Length"].agg(["count", "mean"])
+print(summary.sort_values("count", ascending=False).head())</code></pre>
+          <p class="terminal-output">Output: TCP and TLSv1.3 dominate the capture, with ICMP useful for connectivity checks.</p>
+        </div>
+      </section>
+
+      <section class="skill-showcase bd-grid" id="networking-showcase">
+        <div>
+          <p class="project-meta">Networking and cybersecurity</p>
+          <h2 class="about-subtitle">Packet flow and device monitoring</h2>
+          <p class="about-text">The capture shows broadcast discovery, ARP lookups, ICMP replies, TCP sessions, DNS requests, and TLS traffic. I used it to demonstrate troubleshooting and monitoring skills.</p>
+          <ul class="network-list">
+            <li>Dataset overview: Wireshark-style packet logs from the provided CSV files.</li>
+            <li>Solution approach: clean, group, rank, visualize, and explain network behavior.</li>
+            <li>Technologies used: Wireshark, CSV, SQL logic, Excel formulas, Power BI design, and Python/Pandas.</li>
+            <li>Final outcome: a faster way to explain traffic volume, active hosts, and protocol risk areas.</li>
+          </ul>
+        </div>
+        <div class="topology-card">
+          <div class="device router">Router</div>
+          <div class="packet-flow"></div>
+          <div class="device switch">Switch</div>
+          <div class="device host">192.167.7.162</div>
+          <div class="device cloud">Internet</div>
+        </div>
+        <div class="table-scroll wide">
+          <table>
+            <thead><tr><th>Time</th><th>Source</th><th>Destination</th><th>Protocol</th><th>Info</th></tr></thead>
+            <tbody>
+              <tr><td>0.000000</td><td>192.167.8.166</td><td>192.167.255.255</td><td>NBNS</td><td>Name query NB WPAD</td></tr>
+              <tr><td>1.169060</td><td>VMware_8a:5c:e6</td><td>Broadcast</td><td>ARP</td><td>Who has 192.167.7.175?</td></tr>
+              <tr><td>42.531677</td><td>192.167.7.157</td><td>255.255.255.255</td><td>ICMP</td><td>Echo reply connectivity check</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </section>
 
     <section class="section">
