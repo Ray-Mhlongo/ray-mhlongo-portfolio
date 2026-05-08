@@ -263,6 +263,21 @@ img {
   line-height: 1.2;
 }
 
+.home-badge strong a {
+  display: block;
+  color: var(--first-color);
+  border-radius: 0.45rem;
+  padding: 0.18rem 0.55rem;
+  transition: 0.25s ease;
+}
+
+.home-badge strong a:hover,
+.home-badge strong a:focus {
+  background: var(--first-color);
+  color: #fff;
+  transform: translateX(3px);
+}
+
 .home-badge span {
   display: block;
   margin-top: 0.5rem;
@@ -651,6 +666,10 @@ img {
 
 .table-scroll {
   overflow-x: auto;
+}
+
+.table-scroll.wide {
+  grid-column: 1 / -1;
 }
 
 .table-scroll table {
@@ -1095,6 +1114,14 @@ img {
 
   .sheet-row {
     grid-template-columns: 0.9fr 0.8fr 0.8fr;
+  }
+
+  .home-badge {
+    width: min(100%, 240px);
+  }
+
+  .home-badge strong {
+    font-size: 1.35rem;
   }
 }
 

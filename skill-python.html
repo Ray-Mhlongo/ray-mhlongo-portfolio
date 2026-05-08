@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Python showcase by Ray Mhlongo using packet traffic data." />
+  <title>Python Showcase | Ray Mhlongo</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
+
+  <main id="main-content" class="l-main">
+    <section class="about section">
+      <h2 class="section-title">Python Showcase</h2>
+      <div class="about-container bd-grid">
+        <div class="project-visual">Pandas<br>CSV<br>Automation</div>
+        <div>
+          <h2 class="about-subtitle">Pandas workflow for CSV processing</h2>
+          <p class="about-text">I used Python to show how I would automate the cleanup and summary process for the provided packet capture CSV files.</p>
+          <a href="index.html" class="button">Back Home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase-section">
+      <h2 class="section-title">Project Structure</h2>
+      <div class="case-container bd-grid">
+        <article class="case-card"><h3>Business Problem</h3><p>Manual spreadsheet review becomes slow when the file has hundreds of thousands of packet rows.</p></article>
+        <article class="case-card"><h3>Dataset Overview</h3><p>The CSV includes source, destination, protocol, length, and packet information fields.</p></article>
+        <article class="case-card"><h3>Solution Approach</h3><p>I load the CSV, remove incomplete records, group protocol activity, and export clean summaries for reporting.</p></article>
+        <article class="case-card"><h3>Technologies Used</h3><p>Python, Pandas, CSV processing, automation logic, and chart-ready summary outputs.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Code Demo</h2>
+      <div class="skill-showcase bd-grid">
+        <div class="terminal-card">
+          <div class="terminal-top"><span></span><span></span><span></span></div>
+          <pre><code>import pandas as pd
+
+packets = pd.read_csv("Midterm_53_group.csv")
+clean = packets.dropna(subset=["Source", "Destination"])
+summary = clean.groupby("Protocol")["Length"].agg(["count", "mean"])
+print(summary.sort_values("count", ascending=False).head())</code></pre>
+          <p class="terminal-output">Output: TCP and TLSv1.3 dominate the capture, with ICMP useful for connectivity checks.</p>
+        </div>
+        <div class="dashboard-panel">
+          <div class="bar-chart">
+            <span style="--w: 100%">TCP <b>314,873</b></span>
+            <span style="--w: 23%">TLSv1.3 <b>71,625</b></span>
+            <span style="--w: 1.5%">ICMP <b>2,690</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Final Outcome</h2>
+      <div class="insight-container bd-grid">
+        <article class="insight-card"><h3>Key Insight</h3><p>Python makes the analysis repeatable, which is useful when new packet exports arrive.</p></article>
+        <article class="insight-card"><h3>Visualizations</h3><p>The grouped output can feed Matplotlib charts, Excel pivots, or Power BI dashboards.</p></article>
+        <article class="insight-card"><h3>Business Value</h3><p>Automation reduces manual cleanup and speeds up the reporting workflow.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p class="footer-title">Ray Mhlongo</p><p>&#169; <span id="year"></span> Ray Mhlongo</p></footer>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
+</body>
+</html>
