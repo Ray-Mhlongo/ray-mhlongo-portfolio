@@ -1,5 +1,5 @@
 window.RAY_AI_CONFIG = {
   provider: "groq",
-  apiKey: "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",
+  apiKey: "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",
   model: "llama-3.1-8b-instant"
 };

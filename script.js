@@ -514,7 +514,8 @@ function rayAiAttachPanel(panel) {
     } catch (error) {
       loader.remove();
       const fallback = rayAiLocalFallback(question);
-      rayAiAddMessage(messages, "assistant", rayAiFormatResponse(`${fallback}\n\nLive AI note: ${error.message}`));
+      console.warn("Ray AI live provider failed:", error);
+      rayAiAddMessage(messages, "assistant", rayAiFormatResponse(fallback));
       history.push(
         { role: "user", parts: [{ text: question }] },
         { role: "model", parts: [{ text: fallback }] }
