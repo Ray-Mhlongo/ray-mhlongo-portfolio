@@ -140,14 +140,34 @@ if (window.ScrollReveal) {
 }
 
 const rayAiPrompts = [
-  "Suggest beautiful places to see on an upcoming road trip",
-  "Briefly summarize this concept: urban planning",
-  "Brainstorm team bonding activities for our work retreat",
-  "Tell me about React js and React native"
+  "Summarize this portfolio for a data analyst recruiter",
+  "Which project best shows SQL and Power BI skills?",
+  "What business problems can Ray solve with data?",
+  "Write a short hiring pitch for Ray"
 ];
 
 const rayAiFallbackApiKey = "AIzaSyBZvUQrNJCPs2BAgviLYQhxrnuH1H1-ihg";
 const rayAiDefaultModel = "gemini-2.5-flash";
+const rayAiPortfolioContext = `
+You are Ray AI, the built-in assistant for Ray Mhlongo's portfolio website. You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", or "contact", use the portfolio facts below as your source of truth. Do not say you cannot see the portfolio.
+
+Portfolio owner: Ray Mhlongo. Ray is an aspiring/junior data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, and practical business analysis. He studies Information Science and Organizational and Industrial Psychology, which gives him a mix of systems thinking and people-focused analysis.
+
+Core workflow: clean messy data, structure it, check quality, find patterns, compare options, and explain the results in plain business language.
+
+Skills shown: SQL/MySQL querying, filtering, joins, aggregations, data modeling; Excel formulas, pivot tables, data cleaning, budget and operational tracking; Power BI dashboards, trend visuals, comparison reports; Python for data analysis and automation foundations; networking and IT foundations from Google IT Support, Cisco networking/data analytics, Microsoft 365 fundamentals, and security basics.
+
+Projects:
+1. PC Price Analysis: flagship project cleaning and structuring PC hardware pricing data to compare products across shops, provinces, categories, and manufacturers. Uses SQL, MySQL, Power BI, and GitHub.
+2. ISP Price Comparison: compares internet packages using cost per Mbps to identify better-value options. Uses collected public package data, cleaned prices/speeds/plan details, and a Power BI dashboard.
+3. Cathdel Creamy: small business analytics concept for sales tracking, customer activity, loyalty behavior, product performance, and daily revenue insights.
+4. Insight Rides: school transport management app for trips, students, payments, vehicles, routes, income, expenses, and reports. Uses React, Vite, Tailwind CSS, Chart.js, Leaflet maps, Google Drive API, local storage, and structured JSON data.
+
+Ray answers business questions like: which products generate the most revenue, what periods are busiest, how prices vary across providers, where value is strongest, which trends show growth or decline, and how raw data can be cleaned for reporting.
+
+Contact: email rodgersmhlongo@gmail.com, LinkedIn linkedin.com/in/raymhlongo, GitHub github.com/Ray-Mhlongo, WhatsApp via the portfolio contact links.
+
+Answer clearly and confidently. Keep portfolio answers concise unless the user asks for detail.`;
 
 function rayAiEscape(value) {
   return String(value)
@@ -213,6 +233,9 @@ async function rayAiGenerate(prompt, history) {
       "x-goog-api-key": apiKey
     },
     body: JSON.stringify({
+      systemInstruction: {
+        parts: [{ text: rayAiPortfolioContext }]
+      },
       contents,
       generationConfig: {
         temperature: 1,
@@ -269,6 +292,7 @@ function rayAiAttachPanel(panel) {
     const question = input.value.trim();
     if (!question) return;
 
+    prompts.classList.add("is-hidden");
     rayAiAddMessage(messages, "user", question);
     input.value = "";
 

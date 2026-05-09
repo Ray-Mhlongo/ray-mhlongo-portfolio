@@ -1154,6 +1154,10 @@ img {
   background: #fff;
 }
 
+.ray-ai-prompts.is-hidden {
+  display: none;
+}
+
 .ray-ai-chip {
   min-height: 5.75rem;
   border: 0;
