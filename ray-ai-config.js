@@ -1,4 +1,5 @@
 window.RAY_AI_CONFIG = {
-  apiKey: "AIzaSyBZvUQrNJCPs2BAgviLYQhxrnuH1H1-ihg",
-  model: "gemini-2.5-flash"
+  provider: "groq",
+  apiKey: "",
+  model: "llama-3.1-8b-instant"
 };

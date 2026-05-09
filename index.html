@@ -6,7 +6,7 @@
   <meta name="description" content="Ray Mhlongo junior data analyst portfolio focused on SQL, Excel, Power BI, and business insights." />
   <title>Ray Mhlongo | Aspiring Data Analyst</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -181,9 +181,9 @@
         <div class="ray-ai-copy">
           <p class="project-meta">Portfolio intelligence assistant</p>
           <h3>Talk to Ray AI inside the portfolio.</h3>
-          <p>Ray AI uses Gemini to answer prompts directly on this site, with a fast chat box built into the portfolio.</p>
+          <p>Ray AI uses Groq to answer prompts directly on this site, with a fast chat box built into the portfolio.</p>
           <div class="ray-ai-stats" aria-label="Ray AI coverage">
-            <span><strong>Gemini</strong> model</span>
+            <span><strong>Groq</strong> model</span>
             <span><strong>Live</strong> chat</span>
             <span><strong>Key</strong> ready</span>
           </div>
@@ -193,7 +193,7 @@
           <div class="ray-ai-panel-header">
             <div>
               <p>Ray AI</p>
-              <span>Gemini assistant</span>
+              <span>Groq assistant</span>
             </div>
             <span class="ray-ai-avatar" aria-hidden="true">R</span>
           </div>
@@ -201,13 +201,21 @@
             <p><span>Hello, Dev</span></p>
             <p>How can I help you today?</p>
           </div>
+          <div class="ray-ai-actions" data-ray-ai-actions>
+            <button type="button" data-ray-ai-clear disabled><i class="bx bx-trash"></i><span>Clear</span></button>
+            <button type="button" data-ray-ai-copy disabled><i class="bx bx-copy"></i><span>Copy</span></button>
+            <button type="button" data-ray-ai-share disabled><i class="bx bx-share-alt"></i><span>Share</span></button>
+          </div>
           <div class="ray-ai-messages" data-ray-ai-messages aria-live="polite"></div>
           <div class="ray-ai-prompts" data-ray-ai-prompts></div>
           <form class="ray-ai-form" data-ray-ai-form>
             <label class="sr-only" for="ray-ai-inline-input">Ask Ray AI</label>
             <input id="ray-ai-inline-input" data-ray-ai-input type="text" placeholder="Enter a prompt here" autocomplete="off" />
+            <span class="ray-ai-count" data-ray-ai-count>0/500</span>
+            <button class="ray-ai-voice" type="button" data-ray-ai-voice aria-label="Voice prompt"><i class="bx bx-microphone"></i></button>
             <button type="submit" aria-label="Ask Ray AI"><i class="bx bx-send"></i></button>
           </form>
+          <p class="ray-ai-status" data-ray-ai-status aria-live="polite">Tap the prompt field to type.</p>
         </div>
       </div>
     </section>
@@ -224,7 +232,7 @@
   </footer>
 
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="ray-ai-config.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="ray-ai-config.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
