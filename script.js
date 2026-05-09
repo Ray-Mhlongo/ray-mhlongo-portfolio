@@ -146,6 +146,7 @@ const rayAiPrompts = [
   "Tell me about React js and React native"
 ];
 
+const rayAiFallbackApiKey = "AIzaSyBZvUQrNJCPs2BAgviLYQhxrnuH1H1-ihg";
 const rayAiDefaultModel = "gemini-2.5-flash";
 
 function rayAiEscape(value) {
@@ -185,7 +186,7 @@ function rayAiAddLoader(container) {
 
 function rayAiConfig() {
   const config = window.RAY_AI_CONFIG || {};
-  const apiKey = String(config.apiKey || "").trim();
+  const apiKey = String(config.apiKey || rayAiFallbackApiKey).trim();
   const model = String(config.model || rayAiDefaultModel).trim();
   return { apiKey, model };
 }
@@ -194,7 +195,7 @@ async function rayAiGenerate(prompt, history) {
   const { apiKey, model } = rayAiConfig();
 
   if (!apiKey || apiKey.includes("PASTE_YOUR")) {
-    throw new Error("Add your Gemini API key in ray-ai-config.js, then refresh this page.");
+    throw new Error("Ray AI could not find a Gemini API key. Refresh the page and try again.");
   }
 
   const contents = [
