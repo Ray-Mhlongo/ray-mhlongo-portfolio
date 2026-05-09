@@ -971,9 +971,7 @@ img {
 }
 
 .raydar-section {
-  background:
-    radial-gradient(circle at 12% 14%, rgba(64, 112, 244, 0.1), transparent 28%),
-    linear-gradient(180deg, #f7f9ff 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .raydar-showcase {
@@ -1000,7 +998,7 @@ img {
 
 .raydar-stats span {
   border: 1px solid #dbe5ff;
-  border-radius: 0.7rem;
+  border-radius: 8px;
   background: #fff;
   padding: 0.85rem;
   color: #425466;
@@ -1017,10 +1015,10 @@ img {
 }
 
 .raydar-panel {
-  border: 1px solid rgba(64, 112, 244, 0.16);
-  border-radius: 0.95rem;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
   background: #fff;
-  box-shadow: 0 22px 60px rgba(14, 36, 49, 0.18);
+  box-shadow: 0 18px 50px rgba(14, 36, 49, 0.14);
   overflow: hidden;
 }
 
@@ -1029,49 +1027,70 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background:
-    linear-gradient(135deg, rgba(64, 112, 244, 0.98), rgba(14, 36, 49, 0.98));
-  color: #fff;
-  padding: 1rem 1.15rem;
+  background: #fff;
+  color: #585858;
+  padding: 1rem 1.25rem 0.35rem;
 }
 
 .raydar-panel-header p {
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 500;
   line-height: 1.2;
 }
 
 .raydar-panel-header span {
-  color: #dce6ff;
+  color: #7d7f84;
   font-size: 0.8rem;
 }
 
-.raydar-panel-header i {
-  font-size: 1.85rem;
+.raydar-avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4b90ff, #ff5546);
+  color: #fff;
+  font-weight: 800;
+}
+
+.raydar-greeting {
+  padding: 0.5rem 1.25rem 1rem;
+  color: #c4c7c5;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.raydar-greeting span {
+  background: linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .raydar-messages {
   display: grid;
   align-content: start;
   gap: 0.8rem;
-  height: 320px;
+  height: 245px;
   overflow-y: auto;
-  padding: 1rem;
-  background: #f8fbff;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
 }
 
 .raydar-message {
   max-width: 88%;
-  border-radius: 0.8rem;
-  padding: 0.85rem 0.95rem;
-  color: #425466;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(14, 36, 49, 0.08);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: #585858;
+  background: #f0f4f9;
 }
 
 .raydar-message.user {
   justify-self: end;
-  background: var(--first-color);
-  color: #fff;
+  background: #e8f0fe;
+  color: #1f1f1f;
 }
 
 .raydar-message.assistant {
@@ -1089,60 +1108,80 @@ img {
 }
 
 .raydar-message a {
-  color: var(--first-color);
+  color: #4b90ff;
   font-weight: 800;
 }
 
 .raydar-prompts {
-  display: flex;
-  gap: 0.55rem;
-  overflow-x: auto;
-  padding: 0.85rem 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0.8rem 1.25rem 1rem;
   background: #fff;
 }
 
 .raydar-chip {
-  flex: 0 0 auto;
-  border: 1px solid #dbe5ff;
-  border-radius: 999px;
-  background: #f7f9ff;
-  color: var(--second-color);
-  padding: 0.55rem 0.8rem;
+  min-height: 5.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: #f0f4f9;
+  color: #585858;
+  padding: 0.9rem;
   font: inherit;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-align: left;
   cursor: pointer;
   transition: 0.25s ease;
 }
 
 .raydar-chip:hover,
 .raydar-chip:focus {
-  border-color: var(--first-color);
-  background: var(--first-color);
-  color: #fff;
+  background: #dfe4ea;
 }
 
 .raydar-form {
   display: grid;
-  grid-template-columns: 1fr 2.9rem;
-  gap: 0.7rem;
-  padding: 1rem;
-  background: #fff;
+  grid-template-columns: 1fr 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 1.25rem 1.15rem;
+  padding: 0.45rem 0.55rem 0.45rem 1rem;
+  border-radius: 999px;
+  background: #f0f4f9;
+  box-shadow: #ffffff 0 -20px 50px;
+}
+
+.raydar-form::before {
+  content: "\ec4f";
+  font-family: boxicons;
+  color: #5f6368;
+  font-size: 1.25rem;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  margin-right: 0.15rem;
+  pointer-events: none;
+}
+
+.raydar-form:focus-within {
+  box-shadow: 0 0 0 3px rgba(75, 144, 255, 0.16);
 }
 
 .raydar-form input {
+  grid-column: 1;
+  grid-row: 1;
   min-width: 0;
-  border: 1px solid #dbe5ff;
-  border-radius: 0.75rem;
-  padding: 0.85rem 0.95rem;
-  color: var(--second-color);
+  border: 0;
+  background: transparent;
+  padding: 0.72rem 2rem 0.72rem 0;
+  color: #1f1f1f;
   font: inherit;
   outline: none;
 }
 
 .raydar-form input:focus {
-  border-color: var(--first-color);
-  box-shadow: 0 0 0 4px rgba(64, 112, 244, 0.12);
+  box-shadow: none;
 }
 
 .raydar-form button,
@@ -1155,10 +1194,17 @@ img {
 }
 
 .raydar-form button {
-  border-radius: 0.75rem;
-  background: var(--first-color);
-  color: #fff;
-  font-size: 1.2rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
+  font-size: 1.25rem;
+}
+
+.raydar-form button:hover,
+.raydar-form button:focus {
+  background: #e8eaed;
 }
 
 .raydar-launcher {
@@ -1170,16 +1216,16 @@ img {
   gap: 0.55rem;
   min-height: 3.2rem;
   border-radius: 999px;
-  background: var(--second-color);
-  color: #fff;
+  background: #f0f4f9;
+  color: #3c4043;
   padding: 0 1rem;
-  box-shadow: 0 18px 45px rgba(14, 36, 49, 0.32);
+  box-shadow: 0 18px 45px rgba(14, 36, 49, 0.2);
   font: inherit;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .raydar-launcher i {
-  color: #8fb0ff;
+  color: #4b90ff;
   font-size: 1.35rem;
 }
 
@@ -1188,7 +1234,7 @@ img {
   right: 1.15rem;
   bottom: 5rem;
   z-index: 181;
-  width: min(390px, calc(100vw - 2rem));
+  width: min(430px, calc(100vw - 2rem));
   transform: translateY(18px);
   opacity: 0;
   pointer-events: none;
@@ -1201,17 +1247,30 @@ img {
   pointer-events: auto;
 }
 
+.raydar-dock .raydar-greeting {
+  font-size: clamp(1.8rem, 8vw, 2.5rem);
+}
+
 .raydar-dock .raydar-messages {
-  height: 340px;
+  height: 280px;
+}
+
+.raydar-dock .raydar-prompts {
+  grid-template-columns: 1fr 1fr;
 }
 
 .raydar-close {
   width: 2.25rem;
   height: 2.25rem;
-  border-radius: 0.65rem;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
   font-size: 1.15rem;
+}
+
+.raydar-close:hover,
+.raydar-close:focus {
+  background: #e8eaed;
 }
 
 .footer {
@@ -1435,7 +1494,7 @@ img {
   }
 
   .raydar-dock .raydar-panel {
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 8px 8px 0 0;
   }
 
   .raydar-dock .raydar-messages {

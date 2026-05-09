@@ -369,7 +369,7 @@ function raydarAttachPanel(panel) {
   if (!messages || !prompts || !form || !input) return;
 
   if (!messages.children.length) {
-    raydarAddMessage(messages, "assistant", "<p>Hello, I am Raydar AI. Ask me about Ray's projects, skills, dashboards, or contact details and I will answer from this portfolio.</p>");
+    raydarAddMessage(messages, "assistant", "<p>Hello, I am Ray AI. Ask me about Ray's projects, skills, dashboards, or contact details and I will answer from this portfolio.</p>");
   }
 
   prompts.innerHTML = "";
@@ -405,17 +405,21 @@ function raydarCreateDock() {
     <div class="raydar-panel">
       <div class="raydar-panel-header">
         <div>
-          <p>Raydar AI</p>
+          <p>Ray AI</p>
           <span>Ask this portfolio anything</span>
         </div>
-        <button class="raydar-close" type="button" aria-label="Close Raydar AI"><i class="bx bx-x"></i></button>
+        <button class="raydar-close" type="button" aria-label="Close Ray AI"><i class="bx bx-x"></i></button>
+      </div>
+      <div class="raydar-greeting">
+        <p><span>Hello, Dev</span></p>
+        <p>How can I help you today?</p>
       </div>
       <div class="raydar-messages" data-raydar-messages aria-live="polite"></div>
       <div class="raydar-prompts" data-raydar-prompts></div>
       <form class="raydar-form" data-raydar-form>
-        <label class="sr-only" for="raydar-dock-input">Ask Raydar AI</label>
+        <label class="sr-only" for="raydar-dock-input">Ask Ray AI</label>
         <input id="raydar-dock-input" data-raydar-input type="text" placeholder="Ask about Ray's portfolio" autocomplete="off" />
-        <button type="submit" aria-label="Ask Raydar AI"><i class="bx bx-send"></i></button>
+        <button type="submit" aria-label="Ask Ray AI"><i class="bx bx-send"></i></button>
       </form>
     </div>
   `;
@@ -424,7 +428,7 @@ function raydarCreateDock() {
   launcher.className = "raydar-launcher";
   launcher.type = "button";
   launcher.setAttribute("aria-expanded", "false");
-  launcher.innerHTML = '<i class="bx bx-search-alt-2" aria-hidden="true"></i><span>Raydar AI</span>';
+  launcher.innerHTML = '<i class="bx bx-message-rounded-dots" aria-hidden="true"></i><span>Ray AI</span>';
 
   const close = dock.querySelector(".raydar-close");
   launcher.addEventListener("click", () => {
