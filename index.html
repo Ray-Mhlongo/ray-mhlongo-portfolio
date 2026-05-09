@@ -175,37 +175,37 @@
       </div>
     </section>
 
-    <section class="raydar-section section" id="ray-ai" aria-labelledby="raydar-title">
-      <h2 class="section-title" id="raydar-title">Ray AI</h2>
-      <div class="raydar-showcase bd-grid">
-        <div class="raydar-copy">
+    <section class="ray-ai-section section" id="ray-ai" aria-labelledby="ray-ai-title">
+      <h2 class="section-title" id="ray-ai-title">Ray AI</h2>
+      <div class="ray-ai-showcase bd-grid">
+        <div class="ray-ai-copy">
           <p class="project-meta">Portfolio intelligence assistant</p>
-          <h3>Ask my portfolio like you would interview me.</h3>
-          <p>Ray AI scans the skills, projects, tools, case studies, and contact details already inside this portfolio, then turns them into concise recruiter-ready answers.</p>
-          <div class="raydar-stats" aria-label="Ray AI coverage">
-            <span><strong>4</strong> case studies</span>
-            <span><strong>5</strong> skill areas</span>
-            <span><strong>0</strong> exposed API keys</span>
+          <h3>Talk to Ray AI inside the portfolio.</h3>
+          <p>Ray AI uses Gemini to answer prompts directly on this site. Add your Gemini API key in the config file, refresh the page, and the chat box is ready.</p>
+          <div class="ray-ai-stats" aria-label="Ray AI coverage">
+            <span><strong>Gemini</strong> model</span>
+            <span><strong>Live</strong> chat</span>
+            <span><strong>Key</strong> ready</span>
           </div>
         </div>
 
-        <div class="raydar-panel" data-raydar-inline>
-          <div class="raydar-panel-header">
+        <div class="ray-ai-panel" data-ray-ai-inline>
+          <div class="ray-ai-panel-header">
             <div>
               <p>Ray AI</p>
-              <span>Data analyst portfolio guide</span>
+              <span>Gemini assistant</span>
             </div>
-            <span class="raydar-avatar" aria-hidden="true">R</span>
+            <span class="ray-ai-avatar" aria-hidden="true">R</span>
           </div>
-          <div class="raydar-greeting">
+          <div class="ray-ai-greeting">
             <p><span>Hello, Dev</span></p>
             <p>How can I help you today?</p>
           </div>
-          <div class="raydar-messages" data-raydar-messages aria-live="polite"></div>
-          <div class="raydar-prompts" data-raydar-prompts></div>
-          <form class="raydar-form" data-raydar-form>
-            <label class="sr-only" for="raydar-inline-input">Ask Ray AI</label>
-            <input id="raydar-inline-input" data-raydar-input type="text" placeholder="Ask about Ray's SQL, Power BI, or projects" autocomplete="off" />
+          <div class="ray-ai-messages" data-ray-ai-messages aria-live="polite"></div>
+          <div class="ray-ai-prompts" data-ray-ai-prompts></div>
+          <form class="ray-ai-form" data-ray-ai-form>
+            <label class="sr-only" for="ray-ai-inline-input">Ask Ray AI</label>
+            <input id="ray-ai-inline-input" data-ray-ai-input type="text" placeholder="Enter a prompt here" autocomplete="off" />
             <button type="submit" aria-label="Ask Ray AI"><i class="bx bx-send"></i></button>
           </form>
         </div>
@@ -224,6 +224,7 @@
   </footer>
 
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="ray-ai-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

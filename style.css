@@ -970,33 +970,33 @@ img {
   font-weight: 700;
 }
 
-.raydar-section {
+.ray-ai-section {
   background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
-.raydar-showcase {
+.ray-ai-showcase {
   align-items: center;
 }
 
-.raydar-copy h3 {
+.ray-ai-copy h3 {
   margin-bottom: var(--mb2);
   color: var(--second-color);
   font-size: clamp(1.55rem, 4vw, 2.35rem);
   line-height: 1.2;
 }
 
-.raydar-copy p:not(.project-meta) {
+.ray-ai-copy p:not(.project-meta) {
   color: #425466;
 }
 
-.raydar-stats {
+.ray-ai-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
   margin-top: var(--mb4);
 }
 
-.raydar-stats span {
+.ray-ai-stats span {
   border: 1px solid #dbe5ff;
   border-radius: 8px;
   background: #fff;
@@ -1007,22 +1007,23 @@ img {
   box-shadow: 0 10px 26px rgba(14, 36, 49, 0.08);
 }
 
-.raydar-stats strong {
+.ray-ai-stats strong {
   display: block;
   color: var(--first-color);
   font-size: 1.55rem;
   line-height: 1;
 }
 
-.raydar-panel {
+.ray-ai-panel {
   border: 1px solid #e8eaed;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 18px 50px rgba(14, 36, 49, 0.14);
   overflow: hidden;
+  min-width: 0;
 }
 
-.raydar-panel-header {
+.ray-ai-panel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1030,20 +1031,27 @@ img {
   background: #fff;
   color: #585858;
   padding: 1rem 1.25rem 0.35rem;
+  min-width: 0;
 }
 
-.raydar-panel-header p {
+.ray-ai-panel-header > div {
+  min-width: 0;
+}
+
+.ray-ai-panel-header p {
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
-.raydar-panel-header span {
+.ray-ai-panel-header span {
   color: #7d7f84;
   font-size: 0.8rem;
+  overflow-wrap: anywhere;
 }
 
-.raydar-avatar {
+.ray-ai-avatar {
   display: inline-grid;
   place-items: center;
   width: 2.5rem;
@@ -1054,22 +1062,23 @@ img {
   font-weight: 800;
 }
 
-.raydar-greeting {
+.ray-ai-greeting {
   padding: 0.5rem 1.25rem 1rem;
   color: #c4c7c5;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 500;
   line-height: 1.12;
+  overflow-wrap: anywhere;
 }
 
-.raydar-greeting span {
+.ray-ai-greeting span {
   background: linear-gradient(16deg, #4b90ff, #ff5546);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.raydar-messages {
+.ray-ai-messages {
   display: grid;
   align-content: start;
   gap: 0.8rem;
@@ -1079,40 +1088,65 @@ img {
   background: #fff;
 }
 
-.raydar-message {
+.ray-ai-message {
   max-width: 88%;
   border-radius: 8px;
   padding: 0.85rem 1rem;
   color: #585858;
   background: #f0f4f9;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-.raydar-message.user {
+.ray-ai-message.user {
   justify-self: end;
   background: #e8f0fe;
   color: #1f1f1f;
 }
 
-.raydar-message.assistant {
+.ray-ai-message.assistant {
   justify-self: start;
 }
 
-.raydar-message p + p,
-.raydar-message ul {
+.ray-ai-message p + p,
+.ray-ai-message ul {
   margin-top: 0.55rem;
 }
 
-.raydar-message ul {
+.ray-ai-message ul {
   list-style: disc;
   padding-left: 1.05rem;
 }
 
-.raydar-message a {
+.ray-ai-message a {
   color: #4b90ff;
   font-weight: 800;
 }
 
-.raydar-prompts {
+.ray-ai-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ray-ai-loading span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #9aa0a6;
+  animation: rayAiTyping 1s ease-in-out infinite;
+}
+
+.ray-ai-loading span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.ray-ai-loading span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.ray-ai-prompts {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
@@ -1120,7 +1154,7 @@ img {
   background: #fff;
 }
 
-.raydar-chip {
+.ray-ai-chip {
   min-height: 5.75rem;
   border: 0;
   border-radius: 8px;
@@ -1133,14 +1167,16 @@ img {
   text-align: left;
   cursor: pointer;
   transition: 0.25s ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-.raydar-chip:hover,
-.raydar-chip:focus {
+.ray-ai-chip:hover,
+.ray-ai-chip:focus {
   background: #dfe4ea;
 }
 
-.raydar-form {
+.ray-ai-form {
   display: grid;
   grid-template-columns: 1fr 2.6rem;
   align-items: center;
@@ -1152,7 +1188,7 @@ img {
   box-shadow: #ffffff 0 -20px 50px;
 }
 
-.raydar-form::before {
+.ray-ai-form::before {
   content: "\ec4f";
   font-family: boxicons;
   color: #5f6368;
@@ -1164,11 +1200,11 @@ img {
   pointer-events: none;
 }
 
-.raydar-form:focus-within {
+.ray-ai-form:focus-within {
   box-shadow: 0 0 0 3px rgba(75, 144, 255, 0.16);
 }
 
-.raydar-form input {
+.ray-ai-form input {
   grid-column: 1;
   grid-row: 1;
   min-width: 0;
@@ -1178,22 +1214,24 @@ img {
   color: #1f1f1f;
   font: inherit;
   outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.raydar-form input:focus {
+.ray-ai-form input:focus {
   box-shadow: none;
 }
 
-.raydar-form button,
-.raydar-launcher,
-.raydar-close {
+.ray-ai-form button,
+.ray-ai-launcher,
+.ray-ai-close {
   display: inline-grid;
   place-items: center;
   border: 0;
   cursor: pointer;
 }
 
-.raydar-form button {
+.ray-ai-form button {
   width: 2.35rem;
   height: 2.35rem;
   border-radius: 50%;
@@ -1202,12 +1240,12 @@ img {
   font-size: 1.25rem;
 }
 
-.raydar-form button:hover,
-.raydar-form button:focus {
+.ray-ai-form button:hover,
+.ray-ai-form button:focus {
   background: #e8eaed;
 }
 
-.raydar-launcher {
+.ray-ai-launcher {
   position: fixed;
   right: 1.15rem;
   bottom: 1.15rem;
@@ -1224,12 +1262,12 @@ img {
   font-weight: 700;
 }
 
-.raydar-launcher i {
+.ray-ai-launcher i {
   color: #4b90ff;
   font-size: 1.35rem;
 }
 
-.raydar-dock {
+.ray-ai-dock {
   position: fixed;
   right: 1.15rem;
   bottom: 5rem;
@@ -1241,25 +1279,25 @@ img {
   transition: 0.25s ease;
 }
 
-.raydar-dock.open {
+.ray-ai-dock.open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-.raydar-dock .raydar-greeting {
+.ray-ai-dock .ray-ai-greeting {
   font-size: clamp(1.8rem, 8vw, 2.5rem);
 }
 
-.raydar-dock .raydar-messages {
+.ray-ai-dock .ray-ai-messages {
   height: 280px;
 }
 
-.raydar-dock .raydar-prompts {
+.ray-ai-dock .ray-ai-prompts {
   grid-template-columns: 1fr 1fr;
 }
 
-.raydar-close {
+.ray-ai-close {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
@@ -1268,8 +1306,8 @@ img {
   font-size: 1.15rem;
 }
 
-.raydar-close:hover,
-.raydar-close:focus {
+.ray-ai-close:hover,
+.ray-ai-close:focus {
   background: #e8eaed;
 }
 
@@ -1385,7 +1423,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .raydar-showcase {
+  .ray-ai-showcase {
     grid-template-columns: 0.9fr 1.1fr;
   }
 
@@ -1478,30 +1516,43 @@ img {
     white-space: normal;
   }
 
-  .raydar-stats {
+  .ray-ai-stats {
     grid-template-columns: 1fr;
   }
 
-  .raydar-dock {
+  .ray-ai-prompts,
+  .ray-ai-dock .ray-ai-prompts {
+    grid-template-columns: 1fr;
+  }
+
+  .ray-ai-chip {
+    min-height: 4.75rem;
+  }
+
+  .ray-ai-form {
+    border-radius: 18px;
+  }
+
+  .ray-ai-dock {
     inset: auto 0 0 0;
     width: 100%;
     bottom: 0;
     transform: translateY(100%);
   }
 
-  .raydar-dock.open {
+  .ray-ai-dock.open {
     transform: translateY(0);
   }
 
-  .raydar-dock .raydar-panel {
+  .ray-ai-dock .ray-ai-panel {
     border-radius: 8px 8px 0 0;
   }
 
-  .raydar-dock .raydar-messages {
+  .ray-ai-dock .ray-ai-messages {
     height: min(58vh, 390px);
   }
 
-  .raydar-launcher {
+  .ray-ai-launcher {
     right: 0.9rem;
     bottom: 0.9rem;
   }
@@ -1544,3 +1595,16 @@ img {
     transform: rotate(360deg);
   }
 }
+
+@keyframes rayAiTyping {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+

@@ -1,0 +1,4 @@
+window.RAY_AI_CONFIG = {
+  apiKey: "PASTE_YOUR_GEMINI_API_KEY_HERE",
+  model: "gemini-2.5-flash"
+};
