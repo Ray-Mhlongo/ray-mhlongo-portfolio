@@ -3,65 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Excel showcase by Ray Mhlongo using packet traffic data." />
-  <title>Excel Showcase | Ray Mhlongo</title>
+  <meta name="description" content="Excel skill showcase by Ray Mhlongo." />
+  <title>Excel Skill | Ray Mhlongo</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="index.html#raydar-ai" class="nav-link">Raydar AI</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
+  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="index.html#ray-ai" class="nav-link">Ray AI</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
 
   <main id="main-content" class="l-main">
-    <section class="about section">
-      <h2 class="section-title">Excel Showcase</h2>
-      <div class="about-container bd-grid">
-        <div class="project-visual">Formulas<br>Pivots<br>Reports</div>
+    <section class="section skill-page">
+      <div class="skill-hero bd-grid">
         <div>
-          <h2 class="about-subtitle">Spreadsheet model for traffic review</h2>
-          <p class="about-text">I used the packet CSV as an Excel reporting project. The workbook idea is simple: clean fields, create helper columns, summarize traffic with pivots, and highlight rows that deserve attention.</p>
+          <p class="project-meta">Skill showcase</p>
+          <h1>Excel</h1>
+          <p class="skill-overview">I used Excel to explore and analyse cleaned datasets through dashboards and structured calculations. It helped me turn raw data into clear summaries that show patterns in customers, subscriptions, tickets and outages. This section demonstrates how spreadsheet tools can be used for business reporting and decision making.</p>
           <a href="index.html" class="button">Back Home</a>
         </div>
+        <div class="project-visual">Formulas<br>Pivots<br>Reports</div>
       </div>
     </section>
 
-    <section class="section showcase-section">
-      <h2 class="section-title">Project Structure</h2>
-      <div class="case-container bd-grid">
-        <article class="case-card"><h3>Business Problem</h3><p>Raw network exports are hard to read in spreadsheet form without cleanup, formulas, and a clear dashboard view.</p></article>
-        <article class="case-card"><h3>Dataset Overview</h3><p>The workbook uses packet fields such as Source, Destination, Protocol, Length, and Info.</p></article>
-        <article class="case-card"><h3>Solution Approach</h3><p>I designed helper formulas, pivot summaries, conditional formatting, and Power Query style cleanup steps.</p></article>
-        <article class="case-card"><h3>Technologies Used</h3><p>Excel tables, XLOOKUP, INDEX MATCH, SUMIFS, IF statements, pivot tables, charts, and conditional formatting.</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Demonstration</h2>
-      <div class="skill-showcase bd-grid">
-        <div>
-          <div class="formula-list">
-            <code>=XLOOKUP([@Source],HostTable[IP],HostTable[Owner],"Unknown")</code>
-            <code>=SUMIFS([Length],[Protocol],"TCP")</code>
-            <code>=IF([@Length]>1500,"Review","Normal")</code>
-            <code>=INDEX(Status[Label],MATCH([@Protocol],Status[Protocol],0))</code>
-          </div>
+    <section class="section skill-video-section" aria-labelledby="video-title">
+      <h2 class="section-title" id="video-title">Click to view skill</h2>
+      <div class="skill-video-shell bd-grid">
+        <div class="skill-video-actions">
+          <button class="skill-video-trigger active" type="button" data-video-target="excel-formulas">Excel formulas and calculations demonstration</button>
+          <button class="skill-video-trigger" type="button" data-video-target="excel-dashboard">Excel dashboard and reporting demonstration</button>
         </div>
-        <div class="spreadsheet-card">
-          <div class="sheet-row sheet-head"><span>Protocol</span><span>Packets</span><span>Status</span></div>
-          <div class="sheet-row"><span>TCP</span><span>314,873</span><span class="good">Stable</span></div>
-          <div class="sheet-row"><span>TLSv1.3</span><span>71,625</span><span class="good">Expected</span></div>
-          <div class="sheet-row"><span>ICMP</span><span>2,690</span><span class="warn">Review</span></div>
-          <div class="sheet-row"><span>ARP</span><span>447</span><span class="good">Local</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Final Outcome</h2>
-      <div class="insight-container bd-grid">
-        <article class="insight-card"><h3>Key Insight</h3><p>Pivot-style summaries make the dominant protocols easy to compare without reading thousands of rows.</p></article>
-        <article class="insight-card"><h3>Visualizations</h3><p>The dashboard layout supports KPI cards, protocol charts, conditional formatting, and quick review statuses.</p></article>
-        <article class="insight-card"><h3>Business Value</h3><p>The workbook gives a non-technical reviewer a cleaner way to understand packet activity.</p></article>
+        <article class="skill-video-panel active" id="excel-formulas">
+          <h3>Excel formulas and calculations demonstration</h3>
+          <video controls playsinline preload="metadata">
+            <source src="videos/excel-formulas.mp4" type="video/mp4" />
+          </video>
+        </article>
+        <article class="skill-video-panel" id="excel-dashboard">
+          <h3>Excel dashboard and reporting demonstration</h3>
+          <video controls playsinline preload="metadata">
+            <source src="videos/excel-dashboard-reporting.mp4" type="video/mp4" />
+          </video>
+        </article>
       </div>
     </section>
   </main>

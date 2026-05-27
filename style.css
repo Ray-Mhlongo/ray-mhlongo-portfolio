@@ -471,6 +471,10 @@ img {
   width: 78%;
 }
 
+.skills-power-query {
+  width: 80%;
+}
+
 .skills-analysis {
   width: 82%;
 }
@@ -579,6 +583,103 @@ img {
   margin: auto;
   aspect-ratio: 9 / 16;
   background: var(--second-color);
+}
+
+.skill-page {
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.skill-hero {
+  align-items: center;
+}
+
+.skill-hero h1 {
+  margin-bottom: var(--mb2);
+  color: var(--second-color);
+  font-size: clamp(2.2rem, 8vw, 4.6rem);
+  line-height: 1.05;
+}
+
+.skill-overview {
+  max-width: 720px;
+  margin-bottom: var(--mb4);
+  color: #425466;
+}
+
+.skill-video-section {
+  background: #fff;
+}
+
+.skill-video-shell {
+  align-items: start;
+}
+
+.skill-video-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.skill-video-trigger {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid #dbe5ff;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--second-color);
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.skill-video-trigger:hover,
+.skill-video-trigger:focus,
+.skill-video-trigger.active {
+  border-color: var(--first-color);
+  background: var(--first-color);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(64, 112, 244, 0.22);
+}
+
+.skill-video-panel {
+  display: none;
+  min-width: 0;
+  border: 1px solid rgba(64, 112, 244, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.skill-video-panel.active {
+  display: block;
+  animation: skillVideoIn 0.28s ease forwards;
+}
+
+.skill-video-panel h3 {
+  margin-bottom: var(--mb2);
+  color: var(--second-color);
+}
+
+.skill-video-panel video {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: #0e2431;
+  object-fit: contain;
+}
+
+.skill-video-note {
+  border-radius: 8px;
+  background: #f7f9ff;
+  color: #425466;
+  padding: 1rem;
 }
 
 .showcase-section {
@@ -1527,6 +1628,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .skill-video-shell {
+    grid-template-columns: 0.34fr 0.66fr;
+  }
+
   .contact-container {
     justify-items: center;
   }
@@ -1693,6 +1798,13 @@ img {
   50% {
     opacity: 1;
     transform: translateY(-3px);
+  }
+}
+
+@keyframes skillVideoIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

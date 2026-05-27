@@ -3,100 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SQL showcase by Ray Mhlongo using packet traffic data." />
-  <title>SQL Showcase | Ray Mhlongo</title>
+  <meta name="description" content="SQL skill showcase by Ray Mhlongo." />
+  <title>SQL Skill | Ray Mhlongo</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <header class="l-header">
-    <nav class="nav bd-grid">
-      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
-      <div class="nav-menu" id="nav-menu">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="index.html#raydar-ai" class="nav-link">Raydar AI</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
-    </nav>
-  </header>
+  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="index.html#ray-ai" class="nav-link">Ray AI</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
 
   <main id="main-content" class="l-main">
-    <section class="about section">
-      <h2 class="section-title">SQL Showcase</h2>
-      <div class="about-container bd-grid">
-        <div class="project-visual">Tables<br>Queries<br>Insights</div>
+    <section class="section skill-page">
+      <div class="skill-hero bd-grid">
         <div>
-          <h2 class="about-subtitle">Querying packet data like a database</h2>
-          <p class="about-text">I used the provided Wireshark CSV export as a SQL analytics project. The goal was to clean packet rows, group protocol activity, rank busy hosts, and explain the result in a way a technical team can scan quickly.</p>
+          <p class="project-meta">Skill showcase</p>
+          <h1>SQL</h1>
+          <p class="skill-overview">I used SQL to structure and query relational data across multiple tables. This helped me understand how different datasets connect and how to extract meaningful insights using joins, grouping, and filtering. It represents the foundation of how real world data systems are organized and queried for analysis.</p>
           <a href="index.html" class="button">Back Home</a>
         </div>
+        <div class="project-visual">Tables<br>Queries<br>Insights</div>
       </div>
     </section>
 
-    <section class="section showcase-section">
-      <h2 class="section-title">Project Structure</h2>
-      <div class="case-container bd-grid">
-        <article class="case-card"><h3>Business Problem</h3><p>A support team needs to know which protocols and hosts dominate a network capture before troubleshooting deeper.</p></article>
-        <article class="case-card"><h3>Dataset Overview</h3><p>The main dataset contains 394,136 packet records with time, source, destination, protocol, packet length, and packet information.</p></article>
-        <article class="case-card"><h3>Solution Approach</h3><p>I modeled the CSV as relational tables: packets, hosts, protocol summary, and alerts.</p></article>
-        <article class="case-card"><h3>Technologies Used</h3><p>SQL logic, CTEs, CASE statements, GROUP BY, JOIN thinking, window functions, and CSV data cleaning.</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Demonstration</h2>
-      <div class="skill-showcase bd-grid">
-        <div class="schema-card">
-          <div class="schema-node primary">packets</div>
-          <div class="schema-line"></div>
-          <div class="schema-node">hosts</div>
-          <div class="schema-node">protocol_summary</div>
-          <div class="schema-node">alerts</div>
+    <section class="section skill-video-section" aria-labelledby="video-title">
+      <h2 class="section-title" id="video-title">Click to view skill</h2>
+      <div class="skill-video-shell bd-grid">
+        <div class="skill-video-actions">
+          <button class="skill-video-trigger active" type="button" data-video-target="sql-demo">SQL querying demonstration</button>
         </div>
-        <article class="query-card" data-query="SELECT protocol, COUNT(*) AS packets, ROUND(AVG(length), 2) AS avg_length FROM packets WHERE protocol IS NOT NULL GROUP BY protocol ORDER BY packets DESC;">
-          <h3>GROUP BY protocol volume</h3>
-          <pre><code></code></pre>
-          <div class="table-scroll">
-            <table>
-              <thead><tr><th>Protocol</th><th>Packets</th><th>Insight</th></tr></thead>
-              <tbody>
-                <tr><td>TCP</td><td>314,873</td><td>Main traffic type</td></tr>
-                <tr><td>TLSv1.3</td><td>71,625</td><td>Encrypted sessions</td></tr>
-                <tr><td>ICMP</td><td>2,690</td><td>Connectivity checks</td></tr>
-              </tbody>
-            </table>
-          </div>
+        <article class="skill-video-panel active" id="sql-demo">
+          <h3>PostgreSQL final demonstration</h3>
+          <video controls playsinline preload="metadata">
+            <source src="videos/sql-postgre-final.mp4" type="video/mp4" />
+          </video>
         </article>
-        <article class="query-card" data-query="WITH host_rank AS (SELECT source, COUNT(*) AS packets, ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS rn FROM packets GROUP BY source) SELECT source, packets, CASE WHEN rn <= 3 THEN 'High activity' ELSE 'Normal' END AS status FROM host_rank;">
-          <h3>CTE, CASE, and window ranking</h3>
-          <pre><code></code></pre>
-          <p class="about-text">The top source was 192.167.7.162 with 116,067 packets, making it the first host I would investigate for normal behavior or heavy usage.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Final Outcome</h2>
-      <div class="insight-container bd-grid">
-        <article class="insight-card"><h3>Key Insight</h3><p>TCP and TLSv1.3 dominate the capture, so the first review should focus on session volume and encrypted traffic patterns.</p></article>
-        <article class="insight-card"><h3>Data Cleaning</h3><p>Blank protocol and host values are filtered before aggregation so summary results do not mislead the reader.</p></article>
-        <article class="insight-card"><h3>Business Value</h3><p>The SQL layer turns packet rows into clear investigation priorities.</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p class="footer-title">Ray Mhlongo</p>
-    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
-  </footer>
-
+  <footer class="footer"><p class="footer-title">Ray Mhlongo</p><p>&#169; <span id="year"></span> Ray Mhlongo</p></footer>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>

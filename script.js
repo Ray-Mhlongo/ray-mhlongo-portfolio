@@ -104,6 +104,23 @@ document.querySelectorAll(".slicer").forEach((button) => {
   });
 });
 
+document.querySelectorAll(".skill-video-trigger").forEach((button) => {
+  button.addEventListener("click", () => {
+    const shell = button.closest(".skill-video-shell");
+    const target = document.getElementById(button.dataset.videoTarget || "");
+    if (!shell || !target) return;
+
+    shell.querySelectorAll(".skill-video-trigger").forEach((item) => item.classList.remove("active"));
+    shell.querySelectorAll(".skill-video-panel").forEach((panel) => {
+      panel.classList.remove("active");
+      panel.querySelector("video")?.pause();
+    });
+
+    button.classList.add("active");
+    target.classList.add("active");
+  });
+});
+
 if (window.ScrollReveal) {
   const sr = ScrollReveal({
     origin: "top",
@@ -133,6 +150,9 @@ if (window.ScrollReveal) {
   sr.reveal(".schema-card, .spreadsheet-card, .dashboard-panel, .terminal-card, .topology-card", { interval: 160 });
   sr.reveal(".project-visual", { delay: 200 });
   sr.reveal(".media-frame", { delay: 200 });
+  sr.reveal(".skill-hero", { delay: 120 });
+  sr.reveal(".skill-video-actions", { delay: 150 });
+  sr.reveal(".skill-video-panel", { delay: 220 });
   sr.reveal(".contact-card", { interval: 160 });
   sr.reveal(".contact-input", { interval: 130 });
   sr.reveal(".ray-ai-copy", { delay: 120 });

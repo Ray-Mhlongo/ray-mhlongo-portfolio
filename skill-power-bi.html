@@ -3,71 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Power BI showcase by Ray Mhlongo using packet traffic data." />
-  <title>Power BI Showcase | Ray Mhlongo</title>
+  <meta name="description" content="Power BI skill showcase by Ray Mhlongo." />
+  <title>Power BI Skill | Ray Mhlongo</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="index.html#raydar-ai" class="nav-link">Raydar AI</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
+  <header class="l-header"><nav class="nav bd-grid"><div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div><div class="nav-menu" id="nav-menu"><ul class="nav-list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li><li class="nav-item"><a href="index.html#ray-ai" class="nav-link">Ray AI</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul></div><div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div></nav></header>
 
   <main id="main-content" class="l-main">
-    <section class="about section">
-      <h2 class="section-title">Power BI Showcase</h2>
-      <div class="about-container bd-grid">
-        <div class="project-visual">KPIs<br>Slicers<br>Trends</div>
+    <section class="section skill-page">
+      <div class="skill-hero bd-grid">
         <div>
-          <h2 class="about-subtitle">Executive network monitoring view</h2>
-          <p class="about-text">I turned the packet export into a Power BI inspired dashboard concept. The view focuses on protocol mix, traffic volume, host activity, and clear business insight storytelling.</p>
+          <p class="project-meta">Skill showcase</p>
+          <h1>Power BI</h1>
+          <p class="skill-overview">I used Power BI to build visual dashboards that communicate insights clearly. It helps convert structured data into interactive visuals that highlight trends, performance and key metrics. This section shows how data can be presented in a way that supports quick business decisions.</p>
           <a href="index.html" class="button">Back Home</a>
         </div>
+        <div class="project-visual">KPIs<br>Slicers<br>Trends</div>
       </div>
     </section>
 
-    <section class="section showcase-section">
-      <h2 class="section-title">Project Structure</h2>
-      <div class="case-container bd-grid">
-        <article class="case-card"><h3>Business Problem</h3><p>Leadership needs a simple view of network activity without opening Wireshark or reading raw CSV rows.</p></article>
-        <article class="case-card"><h3>Dataset Overview</h3><p>The dashboard summarizes 394,136 packet rows from the provided capture file.</p></article>
-        <article class="case-card"><h3>Solution Approach</h3><p>I created KPI cards, slicers, bar charts, heatmap-style intensity blocks, and an executive summary.</p></article>
-        <article class="case-card"><h3>Technologies Used</h3><p>Power BI design thinking, data modeling, slicers, KPI cards, drill-down concepts, and dashboard storytelling.</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Dashboard Demo</h2>
-      <div class="showcase-kpis bd-grid">
-        <article class="showcase-kpi"><span class="counter" data-count="394136">0</span><p>packet rows analyzed</p></article>
-        <article class="showcase-kpi"><span class="counter" data-count="314873">0</span><p>TCP packets found</p></article>
-        <article class="showcase-kpi"><span class="counter" data-count="71625">0</span><p>TLSv1.3 packets found</p></article>
-        <article class="showcase-kpi"><span class="counter" data-count="49745">0</span><p>largest packet length</p></article>
-      </div>
-      <div class="bd-grid">
-        <div class="dashboard-panel">
-          <div class="slicer-row">
-            <button class="slicer active" data-filter="all">All</button>
-            <button class="slicer" data-filter="tcp">TCP</button>
-            <button class="slicer" data-filter="tls">TLS</button>
-            <button class="slicer" data-filter="dns">DNS</button>
-          </div>
-          <div class="bar-chart">
-            <span style="--w: 100%">TCP <b>314,873</b></span>
-            <span style="--w: 23%">TLSv1.3 <b>71,625</b></span>
-            <span style="--w: 1.5%">ICMP <b>2,690</b></span>
-            <span style="--w: 1.2%">DNS <b>1,999</b></span>
-          </div>
-          <div class="heatmap" aria-label="Traffic intensity heatmap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <section class="section skill-video-section" aria-labelledby="video-title">
+      <h2 class="section-title" id="video-title">Click to view skill</h2>
+      <div class="skill-video-shell bd-grid">
+        <div class="skill-video-actions">
+          <button class="skill-video-trigger active" type="button" data-video-target="power-bi-demo">Power BI dashboard demonstration</button>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Final Outcome</h2>
-      <div class="insight-container bd-grid">
-        <article class="insight-card"><h3>Key Insight</h3><p>Traffic is mostly TCP, with a meaningful encrypted TLSv1.3 layer that deserves normal baseline monitoring.</p></article>
-        <article class="insight-card"><h3>Visualizations</h3><p>KPI cards, bar charts, slicers, and heatmaps make the packet story easy to scan.</p></article>
-        <article class="insight-card"><h3>Business Value</h3><p>The dashboard turns technical capture data into a management-ready summary.</p></article>
+        <article class="skill-video-panel active" id="power-bi-demo">
+          <h3>Power BI dashboard demonstration</h3>
+          <p class="skill-video-note">Power BI video file not attached yet.</p>
+        </article>
       </div>
     </section>
   </main>
