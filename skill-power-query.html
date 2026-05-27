@@ -16,12 +16,28 @@
     <section class="section skill-page">
       <div class="skill-hero bd-grid">
         <div>
-          <p class="project-meta">Skill showcase</p>
+          <p class="project-meta">Transformation and data-quality stage</p>
           <h1>Power Query</h1>
-          <p class="skill-overview">I used Power Query to prepare and transform datasets before analysis. It allowed me to shape raw data into structured tables ready for reporting. This step focuses on organizing data, creating consistency across datasets and making sure everything is analysis ready without manual editing.</p>
+          <div class="skill-overview">
+            <p>I used Power Query as the data transformation stage of this project. It allowed me to take raw CSV exports from the SQL database and prepare them for analysis in Excel. This included structuring data ensuring consistency and making sure all tables were ready for reporting.</p>
+            <p>I also used Power Query to apply transformations that standardise column types and ensure data quality across all datasets. This made it easier to work with the data in Excel without manual cleaning. It represents an important step in making the dataset reliable for analysis.</p>
+            <p>Power Query acts as the bridge between raw database output and analytical reporting. It ensures that all data used in Excel is structured consistent and ready for insight generation.</p>
+          </div>
           <a href="index.html" class="button">Back Home</a>
         </div>
         <div class="project-visual">Clean<br>Transform<br>Load</div>
+      </div>
+    </section>
+
+    <section class="section pipeline-section">
+      <h2 class="section-title">Project Pipeline</h2>
+      <div class="pipeline-strip bd-grid" aria-label="Connected data analytics project pipeline">
+        <a class="pipeline-step" href="skill-sql.html">SQL</a>
+        <a class="pipeline-step" href="skill-postgres.html">PostgreSQL</a>
+        <a class="pipeline-step active" href="skill-power-query.html">Power Query</a>
+        <a class="pipeline-step" href="skill-excel.html">Excel</a>
+        <a class="pipeline-step" href="skill-python.html">Python</a>
+        <a class="pipeline-step" href="skill-networking.html">Networking</a>
       </div>
     </section>
 
@@ -29,11 +45,28 @@
       <h2 class="section-title" id="video-title">Click to view skill</h2>
       <div class="skill-video-shell bd-grid">
         <div class="skill-video-actions">
-          <button class="skill-video-trigger active" type="button" data-video-target="power-query-demo">Power Query transformation demonstration</button>
+          <button class="skill-video-trigger" type="button" data-video-target="pq-screenshots">Power Query data-type standardisation screenshots</button>
         </div>
-        <article class="skill-video-panel active" id="power-query-demo">
-          <h3>Power Query transformation demonstration</h3>
-          <p class="skill-video-note">Power Query video file not attached yet.</p>
+        <article class="skill-video-panel" id="pq-screenshots">
+          <h3>Power Query - Data Type Standardisation</h3>
+          <div class="power-query-shot-grid">
+            <figure>
+              <figcaption>dim_packages - data type standardisation</figcaption>
+              <img src="images/power-query/dim-packages-data-type-standardisation.png" alt="Power Query data type standardisation for dim_packages table" />
+            </figure>
+            <figure>
+              <figcaption>dim_customers - data type standardisation</figcaption>
+              <img src="images/power-query/dim-customers-data-type-standardisation.png" alt="Power Query data type standardisation for dim_customers table" />
+            </figure>
+            <figure>
+              <figcaption>fact_subscriptions - data type standardisation</figcaption>
+              <img src="images/power-query/fact-subscriptions-data-type-standardisation.png" alt="Power Query data type standardisation for fact_subscriptions table" />
+            </figure>
+            <figure>
+              <figcaption>fact_tickets - data type standardisation</figcaption>
+              <img src="images/power-query/fact-tickets-data-type-standardisation.png" alt="Power Query data type standardisation for fact_tickets table" />
+            </figure>
+          </div>
         </article>
       </div>
     </section>

@@ -16,12 +16,28 @@
     <section class="section skill-page">
       <div class="skill-hero bd-grid">
         <div>
-          <p class="project-meta">Skill showcase</p>
+          <p class="project-meta">End-to-end project pipeline</p>
           <h1>SQL</h1>
-          <p class="skill-overview">I used SQL to structure and query relational data across multiple tables. This helped me understand how different datasets connect and how to extract meaningful insights using joins, grouping, and filtering. It represents the foundation of how real world data systems are organized and queried for analysis.</p>
+          <div class="skill-overview">
+            <p>I used SQL as the foundation of this project to design and build a structured relational database. It helped me organise data into multiple related tables including customers, subscriptions, packages, tickets and outages. This structure allowed me to understand how real world systems store and connect data across different entities.</p>
+            <p>I also used SQL to query the data through joins filtering and grouping. This helped me extract meaningful insights directly from the database such as customer distribution subscription behaviour and support activity. These queries formed the backbone of all analysis done in later tools.</p>
+            <p>This stage represents the starting point of the entire project pipeline. It shows how raw structured data can be turned into a usable analytical system that supports reporting and decision making across multiple tools.</p>
+          </div>
           <a href="index.html" class="button">Back Home</a>
         </div>
-        <div class="project-visual">Tables<br>Queries<br>Insights</div>
+        <div class="project-visual">Tables<br>Joins<br>Insights</div>
+      </div>
+    </section>
+
+    <section class="section pipeline-section">
+      <h2 class="section-title">Project Pipeline</h2>
+      <div class="pipeline-strip bd-grid" aria-label="Connected data analytics project pipeline">
+        <a class="pipeline-step active" href="skill-sql.html">SQL</a>
+        <a class="pipeline-step" href="skill-postgres.html">PostgreSQL</a>
+        <a class="pipeline-step" href="skill-power-query.html">Power Query</a>
+        <a class="pipeline-step" href="skill-excel.html">Excel</a>
+        <a class="pipeline-step" href="skill-python.html">Python</a>
+        <a class="pipeline-step" href="skill-networking.html">Networking</a>
       </div>
     </section>
 
@@ -29,12 +45,12 @@
       <h2 class="section-title" id="video-title">Click to view skill</h2>
       <div class="skill-video-shell bd-grid">
         <div class="skill-video-actions">
-          <button class="skill-video-trigger active" type="button" data-video-target="sql-demo">SQL querying demonstration</button>
+          <button class="skill-video-trigger" type="button" data-video-target="sql-demo">SQL database and query demonstration</button>
         </div>
-        <article class="skill-video-panel active" id="sql-demo">
-          <h3>PostgreSQL final demonstration</h3>
+        <article class="skill-video-panel" id="sql-demo">
+          <h3>SQL database and query demonstration</h3>
           <video controls playsinline preload="metadata">
-            <source src="videos/sql-postgre-final.mp4" type="video/mp4" />
+            <source src="videos/sql-foundation.mp4" type="video/mp4" />
           </video>
         </article>
       </div>

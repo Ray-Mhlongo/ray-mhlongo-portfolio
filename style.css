@@ -463,6 +463,10 @@ img {
   width: 88%;
 }
 
+.skills-postgres {
+  width: 86%;
+}
+
 .skills-excel {
   width: 84%;
 }
@@ -606,6 +610,57 @@ img {
   color: #425466;
 }
 
+.skill-overview p + p {
+  margin-top: var(--mb2);
+}
+
+.pipeline-section {
+  padding-top: 2rem;
+  background: #fff;
+}
+
+.pipeline-strip {
+  gap: 0.75rem;
+}
+
+.pipeline-step {
+  display: grid;
+  place-items: center;
+  min-height: 3.2rem;
+  border: 1px solid #dbe5ff;
+  border-radius: 8px;
+  background: #f8fbff;
+  color: var(--second-color);
+  padding: 0.65rem 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.pipeline-step::after {
+  content: "stage";
+  display: block;
+  color: #5f6f89;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pipeline-step:hover,
+.pipeline-step:focus,
+.pipeline-step.active {
+  border-color: var(--first-color);
+  background: var(--first-color);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(64, 112, 244, 0.2);
+}
+
+.pipeline-step:hover::after,
+.pipeline-step:focus::after,
+.pipeline-step.active::after {
+  color: #eef3ff;
+}
+
 .skill-video-section {
   background: #fff;
 }
@@ -680,6 +735,34 @@ img {
   background: #f7f9ff;
   color: #425466;
   padding: 1rem;
+}
+
+.power-query-shot-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.power-query-shot-grid figure {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dbe5ff;
+  border-radius: 8px;
+  background: #101827;
+}
+
+.power-query-shot-grid figcaption {
+  background: #f8fbff;
+  color: var(--second-color);
+  padding: 0.8rem 1rem;
+  font-weight: 800;
+}
+
+.power-query-shot-grid img {
+  width: 100%;
+  height: clamp(220px, 34vw, 420px);
+  object-fit: contain;
+  background: #101827;
 }
 
 .showcase-section {
@@ -1630,6 +1713,14 @@ img {
 
   .skill-video-shell {
     grid-template-columns: 0.34fr 0.66fr;
+  }
+
+  .pipeline-strip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .power-query-shot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-container {
