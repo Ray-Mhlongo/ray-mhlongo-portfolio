@@ -170,8 +170,8 @@ const rayAiSupportsClipboard = () => Boolean(navigator.clipboard?.writeText);
 const rayAiSupportsShare = () => Boolean(navigator.share);
 const rayAiSupportsSpeech = () => Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
 
-const rayAiDefaultProvider = "groq";
-const rayAiDefaultModel = "llama-3.1-8b-instant";
+const rayAiDefaultProvider = "gemini";
+const rayAiDefaultModel = "gemini-1.5-flash";
 const rayAiPortfolioContext = `
 You are Ray AI, the built-in assistant for Ray Mhlongo's portfolio website. You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", or "contact", use the portfolio facts below as your source of truth. Do not say you cannot see the portfolio.
 
