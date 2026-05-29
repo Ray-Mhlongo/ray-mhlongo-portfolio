@@ -177,7 +177,7 @@ const rayAiSupportsShare = () => Boolean(navigator.share);
 const rayAiSupportsSpeech = () => Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
 
 const rayAiDefaultProvider = "openrouter";
-const rayAiDefaultModel = "google/gemini-2.5-flash";
+const rayAiDefaultModel = "deepseek/deepseek-chat-v3:free";
 const rayAiPortfolioContext = `
 You are Ray AI, the built-in assistant for Ray Mhlongo's portfolio website. You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", or "contact", use the portfolio facts below as your source of truth. Do not say you cannot see the portfolio.
 
@@ -384,7 +384,7 @@ async function rayAiGenerateWithOpenRouter(prompt, history, apiKey, model) {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
       "HTTP-Referer": window.location.origin,
-      "X-Title": "Ray AI Portfolio Assistant"
+      "X-OpenRouter-Title": "Ray AI Portfolio Assistant"
     },
     body: JSON.stringify({
       model,
