@@ -1,7 +1,7 @@
 window.RAY_AI_CONFIG = window.RAY_AI_CONFIG || {
   provider: "openrouter",
-  apiKey: "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",
-  model: "deepseek/deepseek-v4-flash:free"
+  apiKey: "proxy",
+  model: "deepseek/deepseek-chat-v3:free"
 };
 
 const showMenu = (toggleId, navId) => {
@@ -178,6 +178,7 @@ const rayAiSupportsSpeech = () => Boolean(window.SpeechRecognition || window.web
 
 const rayAiDefaultProvider = "openrouter";
 const rayAiDefaultModel = "deepseek/deepseek-chat-v3:free";
+
 const rayAiPortfolioContext = `
 You are Ray AI, the built-in assistant for Ray Mhlongo's portfolio website. You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", or "contact", use the portfolio facts below as your source of truth. Do not say you cannot see the portfolio.
 
@@ -317,12 +318,14 @@ async function rayAiGenerateWithGroq(prompt, history, apiKey, model) {
   });
 
   const data = await response.json().catch(() => ({}));
+
   if (!response.ok) {
     const message = data?.error?.message || "Groq could not answer right now. Check the API key, model name, and quota.";
     throw new Error(message);
   }
 
   const answer = data?.choices?.[0]?.message?.content?.trim();
+
   if (!answer) {
     throw new Error("Groq returned an empty response. Try a different prompt.");
   }
@@ -360,6 +363,7 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
   });
 
   const data = await response.json().catch(() => ({}));
+
   if (!response.ok) {
     const message = data?.error?.message || "Gemini could not answer right now. Check the API key, model name, and browser console.";
     throw new Error(message);
@@ -378,34 +382,28 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
 }
 
 async function rayAiGenerateWithOpenRouter(prompt, history, apiKey, model) {
-  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+  const response = await fetch("https://ray-ai-proxy.rodgersmhlongo.workers.dev", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": window.location.origin,
-      "X-OpenRouter-Title": "Ray AI Portfolio Assistant"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       model,
-      messages: rayAiGroqMessages(prompt, history),
-      temperature: 0.8,
-      top_p: 0.95,
-      max_tokens: 900
+      messages: rayAiGroqMessages(prompt, history)
     })
   });
 
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data?.error?.message || "OpenRouter could not answer right now. Check the API key, model name, and quota.";
+    const message = data?.error?.message || "Ray AI proxy could not answer right now. Check the Worker logs, OpenRouter key, and model name.";
     throw new Error(message);
   }
 
   const answer = data?.choices?.[0]?.message?.content?.trim();
 
   if (!answer) {
-    throw new Error("OpenRouter returned an empty response. Try a different prompt.");
+    throw new Error("Ray AI proxy returned an empty response.");
   }
 
   return answer;
@@ -530,6 +528,7 @@ function rayAiAttachPanel(panel) {
   });
 
   prompts.innerHTML = "";
+
   rayAiPrompts.forEach((prompt) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -544,6 +543,7 @@ function rayAiAttachPanel(panel) {
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     const question = input.value.trim();
     if (!question) return;
 
@@ -559,31 +559,41 @@ function rayAiAttachPanel(panel) {
     try {
       const answer = await rayAiGenerate(question, history);
       loader.remove();
+
       const answerMessage = rayAiAddMessage(messages, "assistant", rayAiFormatResponse(answer));
+
       const copyAnswer = document.createElement("button");
       copyAnswer.type = "button";
       copyAnswer.className = "ray-ai-message-action";
       copyAnswer.textContent = "Copy";
+
       copyAnswer.addEventListener("click", async () => {
         const copied = await rayAiCopyText(answer).catch(() => false);
         copyAnswer.textContent = copied ? "Copied" : "Copy";
         rayAiSetStatus(panel, copied ? "Answer copied." : "Copy is not available in this browser.");
       });
+
       answerMessage.appendChild(copyAnswer);
+
       history.push(
         { role: "user", parts: [{ text: question }] },
         { role: "model", parts: [{ text: answer }] }
       );
+
       rayAiSetStatus(panel, "Ready.");
     } catch (error) {
       loader.remove();
+
       const fallback = rayAiLocalFallback(question);
       console.warn("Ray AI live provider failed:", error);
+
       rayAiAddMessage(messages, "assistant", rayAiFormatResponse(fallback));
+
       history.push(
         { role: "user", parts: [{ text: question }] },
         { role: "model", parts: [{ text: fallback }] }
       );
+
       rayAiSetStatus(panel, "Answered from portfolio fallback.");
     } finally {
       form.classList.remove("is-loading");
@@ -600,7 +610,7 @@ function rayAiCreateDock() {
       <div class="ray-ai-panel-header">
         <div>
           <p>Ray AI</p>
-          <span>OpenRouter assistant</span>
+          <span>Cloudflare proxy assistant</span>
         </div>
         <button class="ray-ai-close" type="button" aria-label="Close Ray AI"><i class="bx bx-x"></i></button>
       </div>
@@ -633,11 +643,13 @@ function rayAiCreateDock() {
   launcher.innerHTML = '<i class="bx bx-message-rounded-dots" aria-hidden="true"></i><span>Ray AI</span>';
 
   const close = dock.querySelector(".ray-ai-close");
+
   launcher.addEventListener("click", () => {
     const open = dock.classList.toggle("open");
     launcher.setAttribute("aria-expanded", String(open));
     if (open) rayAiSetStatus(dock, "Tap the prompt field to type.");
   });
+
   close.addEventListener("click", () => {
     dock.classList.remove("open");
     launcher.setAttribute("aria-expanded", "false");
