@@ -1,3 +1,9 @@
+window.RAY_AI_CONFIG = window.RAY_AI_CONFIG || {
+  provider: "openrouter",
+  apiKey: "sk-or-v1-64d17d18940112f908bae41aa6c36e0143abecfaa502a39af6ba43be8706f198E",
+  model: "deepseek/deepseek-chat-v3:free"
+};
+
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   const nav = document.getElementById(navId);
@@ -170,8 +176,8 @@ const rayAiSupportsClipboard = () => Boolean(navigator.clipboard?.writeText);
 const rayAiSupportsShare = () => Boolean(navigator.share);
 const rayAiSupportsSpeech = () => Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
 
-const rayAiDefaultProvider = "groq";
-const rayAiDefaultModel = "llama-3.3-70b";
+const rayAiDefaultProvider = "openrouter";
+const rayAiDefaultModel = "google/gemini-2.5-flash";
 const rayAiPortfolioContext = `
 You are Ray AI, the built-in assistant for Ray Mhlongo's portfolio website. You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", or "contact", use the portfolio facts below as your source of truth. Do not say you cannot see the portfolio.
 
@@ -371,6 +377,40 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
   return answer;
 }
 
+async function rayAiGenerateWithOpenRouter(prompt, history, apiKey, model) {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "HTTP-Referer": window.location.origin,
+      "X-Title": "Ray AI Portfolio Assistant"
+    },
+    body: JSON.stringify({
+      model,
+      messages: rayAiGroqMessages(prompt, history),
+      temperature: 0.8,
+      top_p: 0.95,
+      max_tokens: 900
+    })
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const message = data?.error?.message || "OpenRouter could not answer right now. Check the API key, model name, and quota.";
+    throw new Error(message);
+  }
+
+  const answer = data?.choices?.[0]?.message?.content?.trim();
+
+  if (!answer) {
+    throw new Error("OpenRouter returned an empty response. Try a different prompt.");
+  }
+
+  return answer;
+}
+
 async function rayAiGenerate(prompt, history) {
   const { apiKey, model, provider } = rayAiConfig();
 
@@ -384,6 +424,10 @@ async function rayAiGenerate(prompt, history) {
 
   if (provider === "gemini" || provider === "google") {
     return rayAiGenerateWithGemini(prompt, history, apiKey, model);
+  }
+
+  if (provider === "openrouter") {
+    return rayAiGenerateWithOpenRouter(prompt, history, apiKey, model);
   }
 
   throw new Error(`Ray AI does not support the "${provider}" provider yet.`);
@@ -556,7 +600,7 @@ function rayAiCreateDock() {
       <div class="ray-ai-panel-header">
         <div>
           <p>Ray AI</p>
-          <span>Groq assistant</span>
+          <span>OpenRouter assistant</span>
         </div>
         <button class="ray-ai-close" type="button" aria-label="Close Ray AI"><i class="bx bx-x"></i></button>
       </div>
