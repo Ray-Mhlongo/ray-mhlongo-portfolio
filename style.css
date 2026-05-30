@@ -656,13 +656,15 @@ img {
 
 .screenshot-frame img {
   width: 100%;
-  height: clamp(240px, 52vw, 620px);
+  height: auto;
   object-fit: contain;
   background: #fff;
 }
 
 .hero-frame img {
-  height: clamp(260px, 45vw, 560px);
+  height: clamp(180px, 24vw, 300px);
+  object-fit: cover;
+  object-position: top left;
 }
 
 .screenshot-frame figcaption {
@@ -723,10 +725,6 @@ img {
   background: #edf3ff;
   color: var(--first-color);
   font-size: 1.45rem;
-}
-
-.gallery-grid .screenshot-frame img {
-  height: clamp(230px, 34vw, 430px);
 }
 
 .skill-chip-grid {
