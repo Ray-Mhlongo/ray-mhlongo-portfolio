@@ -166,10 +166,21 @@ if (window.ScrollReveal) {
 }
 
 const rayAiPrompts = [
-  "Summarize this portfolio for a data analyst recruiter",
-  "Which project best shows SQL and Power BI skills?",
-  "What business problems can Ray solve with data?",
-  "Write a short hiring pitch for Ray"
+  "Why should I hire you?",
+  "What project should I view first?",
+  "Compare my skills to this job description",
+  "Interview me for a Data Analyst role"
+];
+
+const rayAiHelperMessages = [
+  "Ask me about my SQL projects",
+  "Ask me about my certifications",
+  "Ask me about my dashboard work",
+  "Ask me about networking and IT support",
+  "Ask me about data analytics",
+  "Ask me why I built a project",
+  "Ask me what I am currently studying",
+  "Ask me how I solve business problems with data"
 ];
 
 const rayAiSupportsClipboard = () => Boolean(navigator.clipboard?.writeText);
@@ -179,164 +190,13 @@ const rayAiSupportsSpeech = () => Boolean(window.SpeechRecognition || window.web
 const rayAiDefaultProvider = "openrouter";
 const rayAiDefaultModel = "deepseek/deepseek-chat-v3:free";
 
-const rayAiPortfolioContext = `
-You are Ray AI, the portfolio assistant for Ray Mhlongo.
+const rayAiPortfolioContext = () => {
+  if (typeof window.buildPortfolioContext === "function") {
+    return window.buildPortfolioContext();
+  }
 
-You are NOT Ray Mhlongo.
-You are NOT a generic AI assistant.
-You represent Ray Mhlongo's portfolio, projects, skills, certifications, and professional experience.
-
-When someone asks who you are, answer:
-
-"I am Ray AI, the portfolio assistant for Ray Mhlongo. I help visitors understand Ray's projects, skills, experience, certifications, and business capabilities."
-
-Never claim to be Ray Mhlongo.
-Never say "I am Ray Mhlongo."
-Never present yourself as a standalone AI assistant.
-Never break character.
-
-When discussing Ray, speak positively but professionally.
-Do not exaggerate experience or qualifications.
-Only use information contained in this prompt.
-
-You can answer general questions, but when a user asks about "this portfolio", "the site", "Ray", "your projects", "skills", "experience", "services", "education", or "contact", use the portfolio facts below as your source of truth.
-
-Portfolio Owner:
-
-Ray Mhlongo is a data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, reporting, business intelligence, and practical business analysis.
-
-He studies Information Science and Organizational and Industrial Psychology at the University of South Africa. He is also an accomplished guitarist, combining analytical thinking with creativity, discipline, and strong communication skills.
-
-Core Workflow:
-
-Clean messy data, structure it, validate quality, identify patterns, compare alternatives, build reports, create dashboards, and explain findings in plain business language.
-
-Key Strengths:
-
-• SQL
-• Excel
-• Power BI
-• Data Cleaning
-• Dashboard Development
-• Business Analysis
-• Data Visualization
-• Problem Solving
-• Business Reporting
-• Communication of Insights
-
-Technical Skills:
-
-SQL and MySQL:
-Querying, filtering, joins, aggregations, data modeling, data transformation, reporting, and database analysis.
-
-Excel:
-Advanced formulas, pivot tables, dashboards, data cleaning, reporting, operational tracking, budgeting, and business analysis.
-
-Power BI:
-Interactive dashboards, KPI reporting, trend analysis, business intelligence, performance tracking, and visual storytelling.
-
-Python:
-Data analysis foundations, automation foundations, data manipulation, and analytical problem solving.
-
-Technology Foundations:
-Google IT Support, Cisco Networking and Data Analytics, Microsoft 365 Fundamentals, networking fundamentals, security basics, and systems thinking.
-
-Portfolio Projects and Case Studies:
-
-1. PC Price Analysis
-
-A flagship project focused on cleaning, structuring, and analyzing PC hardware pricing data.
-
-Purpose:
-Help identify pricing trends, compare products, evaluate value, and support data driven purchasing decisions.
-
-Technologies:
-SQL, MySQL, Power BI, Excel, GitHub.
-
-2. ISP Price Comparison
-
-A business intelligence project comparing internet service provider packages using pricing and speed metrics.
-
-Purpose:
-Help consumers and businesses identify the best value internet options.
-
-Technologies:
-Power BI, Excel, data cleaning, business analysis.
-
-3. Cathdel Creamy
-
-A small business analytics concept focused on sales tracking, customer activity, loyalty behavior, product performance, and revenue insights.
-
-Purpose:
-Help business owners understand performance and make informed decisions using data.
-
-4. Insight Rides
-
-A school transport management application focused on operational management, reporting, payments, routes, students, vehicles, and business oversight.
-
-Purpose:
-Improve visibility, efficiency, reporting, and decision making within transport operations.
-
-Technologies:
-React, Vite, Tailwind CSS, Chart.js, Leaflet Maps, Google Drive API, Local Storage, and JSON.
-
-Project Evolution Policy:
-
-Ray continuously improves, expands, and updates his projects over time.
-
-Projects may receive new features, dashboards, reports, analyses, visualizations, technologies, datasets, automations, integrations, business use cases, and design improvements.
-
-When discussing Ray's projects, focus on their purpose, business value, technologies used, analytical approach, and outcomes rather than assuming specific implementation details unless explicitly provided in this prompt.
-
-If asked about a project, explain what the project aims to achieve and the type of business problems it solves.
-
-Do not assume a project is static. Projects should be treated as living portfolio pieces that evolve as Ray gains experience and develops new skills.
-
-If project details are unclear, describe the project at a high level based on the information available rather than inventing features or technical specifications.
-
-Business Problems Ray Can Help Solve:
-
-• Identifying top performing products and services
-• Revenue and profitability analysis
-• Customer behavior analysis
-• Pricing comparisons and competitive analysis
-• Sales performance tracking
-• Dashboard development
-• Data cleaning and preparation
-• Business reporting and KPI tracking
-• Trend analysis
-• Operational reporting
-• Performance monitoring
-• Turning raw data into actionable business insights
-
-What Makes Ray Stand Out:
-
-Ray combines technical data skills with business understanding and people focused analysis.
-
-He can communicate technical findings in plain language, helping stakeholders make informed decisions.
-
-He is passionate about turning raw data into actionable business insights and continuously expanding his skills in analytics, automation, business intelligence, and technology.
-
-Contact Information:
-
-Email: [rodgersmhlongo@gmail.com](mailto:rodgersmhlongo@gmail.com)
-LinkedIn: linkedin.com/in/raymhlongo
-GitHub: github.com/Ray-Mhlongo
-Phone: 071 765 4142
-
-Answer clearly, professionally, and confidently.
-
-Keep answers concise unless more detail is requested.
-
-If someone asks whether they should hire Ray, explain his strengths honestly based on the information above and encourage them to review his projects and portfolio evidence.
-
-If someone asks what Ray can do for a business, explain how his skills in SQL, Excel, Power BI, reporting, dashboard development, data cleaning, business analysis, and problem solving can help organizations make better decisions.
-
-Always position Ray as a developing data professional who combines technical capability, business understanding, continuous learning, and practical problem solving.
-`;
-
-
-
+  return "You are the digital version of Ray speaking through the portfolio website. Use first person, stay professional, and answer from portfolio evidence.";
+};
 function rayAiEscape(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -356,24 +216,45 @@ function rayAiFormatResponse(value) {
 
 function rayAiLocalFallback(prompt) {
   const question = prompt.toLowerCase();
+  const projects = window.projectsData || [];
+  const skills = window.skillsData || [];
+  const certifications = window.certificationsData || [];
+  const contact = window.contactData || {};
+  const topProject = projects[0];
+
+  if (question.includes("job description") || question.includes("match percentage") || question.includes("compare my skills")) {
+    const skillMatches = skills
+      .filter((skill) => question.includes(skill.name.toLowerCase()))
+      .map((skill) => skill.name);
+    const match = Math.min(92, 58 + skillMatches.length * 6);
+    return `Based on my portfolio, I would estimate a match of about ${match} percent. My strongest aligned skills are ${skillMatches.length ? skillMatches.join(", ") : "SQL, Excel, dashboards, business analysis, and data cleaning"}. The best project evidence is ${topProject?.title || "PC Parts Market Intelligence"} because it shows database design, analysis, reporting, and business insight. Possible gaps depend on the role requirements, so I would compare the job description against my certifications, project tools, and dashboard evidence before tailoring a CV.`;
+  }
+
+  if (question.includes("interview me")) {
+    return "Let us start with one question. Tell me about a data project you built, the business problem it solved, the tools you used, and the insight you found.";
+  }
+
+  if (question.includes("what project should") || question.includes("view first") || question.includes("recommend")) {
+    return `I recommend viewing ${topProject?.title || "PC Parts Market Intelligence"} first. It gives the strongest evidence of my SQL, Excel, dashboard design, pricing analysis, inventory analysis, and business storytelling skills.`;
+  }
 
   if (question.includes("business problem") || question.includes("solve with data")) {
-    return "Ray can use data to solve business problems like comparing product prices and provider packages, finding best-value options, tracking sales and revenue, spotting busy periods, cleaning messy records, measuring product performance, and turning raw data into dashboard insights that support better decisions.";
+    return "I use data to solve business problems like comparing product prices and service packages, finding strong value options, tracking sales and revenue, spotting busy periods, cleaning messy records, measuring product performance, and turning raw data into dashboard insights that support better decisions.";
   }
 
   if (question.includes("portfolio") || question.includes("recruiter") || question.includes("summarize")) {
-    return "Ray Mhlongo is a junior data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, and practical business analysis. His portfolio shows pricing analysis, ISP package comparison, small-business sales analytics, and an operations app concept for school transport.";
+    return "I am a junior data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, and practical business analysis. My portfolio shows market intelligence, ISP package comparison, small business sales analytics, and an operations project for school transport.";
   }
 
   if (question.includes("project") || question.includes("sql") || question.includes("power bi")) {
-    return "The PC Price Analysis project is the strongest fit for SQL and Power BI because it focuses on cleaning hardware pricing data, structuring it for comparison, querying it in MySQL, and presenting insights through dashboard-style reporting.";
+    return "My strongest SQL project is PC Parts Market Intelligence because I designed a relational database, analysed pricing and sales data, used joins and ranking, and built Excel dashboards for market insight.";
   }
 
   if (question.includes("contact") || question.includes("hire") || question.includes("email")) {
-    return "You can contact Ray through the portfolio contact page, email him at rodgersmhlongo@gmail.com, or visit his LinkedIn and GitHub profiles from the site links.";
+    return `You can contact me through the portfolio contact page, email me at ${contact.email || "rodgersmhlongo@gmail.com"}, or visit my LinkedIn and GitHub profiles from the site links.`;
   }
 
-  return "Ray AI is temporarily using built-in portfolio knowledge because the live AI provider is unavailable. Ray focuses on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, pricing analysis, sales insights, and practical business decision support.";
+  return `I focus on ${skills.slice(0, 5).map((skill) => skill.name).join(", ")}, data cleaning, dashboards, pricing analysis, sales insights, and practical business decision support. My certifications include ${certifications.slice(0, 3).map((cert) => cert.name).join(", ")}. Ask me about my projects, certifications, skills, or career journey.`;
 }
 
 function rayAiAddMessage(container, role, html) {
@@ -381,8 +262,17 @@ function rayAiAddMessage(container, role, html) {
   message.className = `ray-ai-message ${role}`;
   message.innerHTML = role === "user" ? `<p>${rayAiEscape(html)}</p>` : `<p>${html}</p>`;
   container.appendChild(message);
-  container.scrollTop = container.scrollHeight;
+  rayAiScrollToLatest(container);
   return message;
+}
+
+function rayAiScrollToLatest(container) {
+  requestAnimationFrame(() => {
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior: "smooth"
+    });
+  });
 }
 
 function rayAiSetStatus(panel, text) {
@@ -413,7 +303,7 @@ function rayAiAddLoader(container) {
   message.className = "ray-ai-message assistant ray-ai-loading";
   message.innerHTML = "<span></span><span></span><span></span>";
   container.appendChild(message);
-  container.scrollTop = container.scrollHeight;
+  rayAiScrollToLatest(container);
   return message;
 }
 
@@ -427,7 +317,7 @@ function rayAiConfig() {
 
 function rayAiGroqMessages(prompt, history) {
   const messages = [
-    { role: "system", content: rayAiPortfolioContext },
+    { role: "system", content: rayAiPortfolioContext() },
     ...history.slice(-8).map((item) => ({
       role: item.role === "model" ? "assistant" : "user",
       content: item.parts?.map((part) => part.text || "").join("").trim()
@@ -457,14 +347,14 @@ async function rayAiGenerateWithGroq(prompt, history, apiKey, model) {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data?.error?.message || "Groq could not answer right now. Check the API key, model name, and quota.";
+    const message = data?.error?.message || "The chat connection could not answer right now.";
     throw new Error(message);
   }
 
   const answer = data?.choices?.[0]?.message?.content?.trim();
 
   if (!answer) {
-    throw new Error("Groq returned an empty response. Try a different prompt.");
+    throw new Error("The chat returned an empty response. Try a different prompt.");
   }
 
   return answer;
@@ -487,7 +377,7 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
     },
     body: JSON.stringify({
       systemInstruction: {
-        parts: [{ text: rayAiPortfolioContext }]
+        parts: [{ text: rayAiPortfolioContext() }]
       },
       contents,
       generationConfig: {
@@ -502,7 +392,7 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data?.error?.message || "Gemini could not answer right now. Check the API key, model name, and browser console.";
+    const message = data?.error?.message || "The chat connection could not answer right now.";
     throw new Error(message);
   }
 
@@ -512,7 +402,7 @@ async function rayAiGenerateWithGemini(prompt, history, apiKey, model) {
     .trim();
 
   if (!answer) {
-    throw new Error("Gemini returned an empty response. Try a different prompt.");
+    throw new Error("The chat returned an empty response. Try a different prompt.");
   }
 
   return answer;
@@ -533,14 +423,14 @@ async function rayAiGenerateWithOpenRouter(prompt, history, apiKey, model) {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data?.error?.message || "Ray AI proxy could not answer right now. Check the Worker logs, OpenRouter key, and model name.";
+    const message = data?.error?.message || "The chat connection could not answer right now.";
     throw new Error(message);
   }
 
   const answer = data?.choices?.[0]?.message?.content?.trim();
 
   if (!answer) {
-    throw new Error("Ray AI proxy returned an empty response.");
+    throw new Error("The chat returned an empty response.");
   }
 
   return answer;
@@ -550,7 +440,7 @@ async function rayAiGenerate(prompt, history) {
   const { apiKey, model, provider } = rayAiConfig();
 
   if (!apiKey || apiKey.includes("PASTE_YOUR")) {
-    throw new Error("Ray AI could not find an API key. Refresh the page and try again.");
+    throw new Error("The chat connection is not ready. Refresh the page and try again.");
   }
 
   if (provider === "groq") {
@@ -565,7 +455,7 @@ async function rayAiGenerate(prompt, history) {
     return rayAiGenerateWithOpenRouter(prompt, history, apiKey, model);
   }
 
-  throw new Error(`Ray AI does not support the "${provider}" provider yet.`);
+  throw new Error("The chat connection is not configured for this request.");
 }
 
 function rayAiAttachPanel(panel) {
@@ -583,8 +473,18 @@ function rayAiAttachPanel(panel) {
   const shareButton = panel.querySelector("[data-ray-ai-share]");
   const voiceButton = panel.querySelector("[data-ray-ai-voice]");
   const count = panel.querySelector("[data-ray-ai-count]");
+  const helper = panel.querySelector("[data-ray-ai-helper]");
   const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   let recognition;
+  let helperIndex = 0;
+
+  if (helper) {
+    helper.textContent = rayAiHelperMessages[0];
+    setInterval(() => {
+      helperIndex = (helperIndex + 1) % rayAiHelperMessages.length;
+      helper.textContent = rayAiHelperMessages[helperIndex];
+    }, 3600);
+  }
 
   const updatePremiumControls = () => {
     const hasHistory = history.length > 0;
@@ -684,6 +584,7 @@ function rayAiAttachPanel(panel) {
     const question = input.value.trim();
     if (!question) return;
 
+    input.blur();
     prompts.classList.add("is-hidden");
     rayAiAddMessage(messages, "user", question);
     input.value = "";
@@ -691,7 +592,7 @@ function rayAiAttachPanel(panel) {
 
     const loader = rayAiAddLoader(messages);
     form.classList.add("is-loading");
-    rayAiSetStatus(panel, "Ray AI is thinking...");
+    rayAiSetStatus(panel, "Thinking...");
 
     try {
       const answer = await rayAiGenerate(question, history);
@@ -722,7 +623,7 @@ function rayAiAttachPanel(panel) {
       loader.remove();
 
       const fallback = rayAiLocalFallback(question);
-      console.warn("Ray AI live provider failed:", error);
+      console.warn("Ray AI connection failed:", error);
 
       rayAiAddMessage(messages, "assistant", rayAiFormatResponse(fallback));
 
@@ -731,10 +632,11 @@ function rayAiAttachPanel(panel) {
         { role: "model", parts: [{ text: fallback }] }
       );
 
-      rayAiSetStatus(panel, "Answered from portfolio fallback.");
+      rayAiSetStatus(panel, "Answered from portfolio knowledge.");
     } finally {
       form.classList.remove("is-loading");
       updatePremiumControls();
+      rayAiScrollToLatest(messages);
     }
   });
 }
@@ -747,13 +649,14 @@ function rayAiCreateDock() {
       <div class="ray-ai-panel-header">
         <div>
           <p>Ray AI</p>
-          <span>Cloudflare proxy assistant</span>
+          <span>Ask me anything about my projects, skills, certifications, experience, or career journey.</span>
         </div>
         <button class="ray-ai-close" type="button" aria-label="Close Ray AI"><i class="bx bx-x"></i></button>
       </div>
       <div class="ray-ai-greeting">
-        <p><span>Hello, Dev</span></p>
+        <p><span>Hello, Guest</span></p>
         <p>How can I help you today?</p>
+        <small data-ray-ai-helper>Ask me about my SQL projects</small>
       </div>
       <div class="ray-ai-actions" data-ray-ai-actions>
         <button type="button" data-ray-ai-clear disabled><i class="bx bx-trash"></i><span>Clear</span></button>

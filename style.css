@@ -1408,6 +1408,15 @@ img {
   color: transparent;
 }
 
+.ray-ai-greeting small {
+  display: block;
+  margin-top: 0.75rem;
+  color: #5f6368;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .ray-ai-actions {
   display: none;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1466,6 +1475,7 @@ img {
   min-width: 0;
   overflow-wrap: anywhere;
   word-break: break-word;
+  box-shadow: 0 8px 24px rgba(14, 36, 49, 0.07);
 }
 
 .ray-ai-message.user {
@@ -1476,6 +1486,7 @@ img {
 
 .ray-ai-message.assistant {
   justify-self: start;
+  border: 1px solid #e8eaed;
 }
 
 .ray-ai-message p + p,
