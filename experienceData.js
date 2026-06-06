@@ -2,7 +2,7 @@ window.experienceData = [
   {
     title: "Portfolio data analyst projects",
     type: "Project experience",
-    summary: "I build portfolio projects that analyse business, technology, healthcare, education, labour market, and public sector problems through data.",
+    summary: "I build portfolio projects that analyze business, technology, healthcare, education, labor market, and public sector problems through data.",
     evidence: ["PC Parts Market Intelligence", "Degree Does Not Equal Ability", "Beyond Hospitals"]
   },
   {

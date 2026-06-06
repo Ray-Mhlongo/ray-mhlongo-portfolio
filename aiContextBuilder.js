@@ -75,7 +75,7 @@ EXPERIENCE
 ${list(experience, (item) => `- ${item.title}: ${item.summary} Evidence: ${(item.evidence || []).join(", ")}`)}
 
 EDUCATION
-${list(education, (item) => `- ${item.institution}: ${item.programme}. ${item.summary}`)}
+${list(education, (item) => `- ${item.institution}: ${item.program || ""}. ${item.summary}`)}
 
 SERVICES
 ${services.map((service) => `- ${service}`).join("\n")}

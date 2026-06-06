@@ -251,11 +251,11 @@ function rayAiLocalFallback(prompt) {
   }
 
   if (question.includes("portfolio") || question.includes("recruiter") || question.includes("summarize")) {
-    return "I am a data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, business intelligence, IT infrastructure, automation, and product development. My portfolio is organised into analytics projects, including PC Parts Market Intelligence, Degree Does Not Equal Ability, and Beyond Hospitals, plus products including Cathdel Creamy, Insight Rides, and Ray AI.";
+    return "I am a data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, business intelligence, IT infrastructure, automation, and product development. My portfolio is organized into analytics projects, including PC Parts Market Intelligence, Degree Does Not Equal Ability, and Beyond Hospitals, plus products including Cathdel Creamy, Insight Rides, and Ray AI.";
   }
 
   if (question.includes("project") || question.includes("sql") || question.includes("power bi")) {
-    return "My strongest SQL project is PC Parts Market Intelligence because I designed a relational database, analysed pricing and sales data, used joins and ranking, and built Excel dashboards for market insight.";
+    return "My strongest SQL project is PC Parts Market Intelligence because I designed a relational database, analyzed pricing and sales data, used joins and ranking, and built Excel dashboards for market insight.";
   }
 
   if (question.includes("contact") || question.includes("hire") || question.includes("email")) {

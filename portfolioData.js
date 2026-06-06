@@ -6,7 +6,7 @@ window.portfolioData = {
     "I am a data analyst focused on SQL, Excel, Power BI, Python foundations, Power Query, data cleaning, dashboards, reporting, business intelligence, automation, IT infrastructure, networking, and product development.",
     "I study Information Science and Organizational and Industrial Psychology at the University of South Africa.",
     "My workflow is to clean data, structure it, validate quality, identify patterns, compare alternatives, build reports, create dashboards, and explain findings in plain business language.",
-    "My portfolio is organised into analytics projects and products. Projects show research, analysis, dashboards, evidence, and recommendations. Products show practical software and AI solutions."
+    "My portfolio is organized into analytics projects and products. Projects show research, analysis, dashboards, evidence, and recommendations. Products show practical software and AI solutions."
   ],
   whyHireMe: [
     "Most Data Analysts focus solely on analytics tools. I bring a broader technical perspective that combines Data Analytics, IT Infrastructure, Networking, Business Intelligence, Automation, and Product Development.",
@@ -23,5 +23,5 @@ window.portfolioData = {
     "Product and automation mindset"
   ],
   careerGoal: "My career goal is to grow as a data analyst and business intelligence professional who helps teams make better decisions through clean data, strong reporting, practical systems, and clear storytelling.",
-  navigation: ["Home", "About", "Projects", "Products", "Why Hire Me", "Ray AI", "Contact"]
+  navigation: ["Home", "About", "Projects", "Products", "Ray AI", "Why Hire Me", "Contact"]
 };

@@ -6,13 +6,13 @@ window.projectsData = [
     summary: "A market research and analytics project focused on the South African computer hardware industry.",
     businessProblem: "PC part prices vary across retailers, provinces, brands, categories, and stock levels, making fair pricing and market performance difficult to compare.",
     solution: "I designed a relational SQL Server database, generated realistic retail records, wrote analytical SQL queries, and built Excel dashboards for pricing, sales, inventory, and retailer insight.",
-    tools: ["SQL Server Management Studio", "T SQL", "Excel", "Pivot Style Analysis", "Dashboard Design", "Data Modelling", "Business Intelligence", "Data Visualisation"],
+    tools: ["SQL Server Management Studio", "T SQL", "Excel", "Pivot Style Analysis", "Dashboard Design", "Data Modeling", "Business Intelligence", "Data Visualization"],
     skills: ["Relational database design", "SQL joins and aggregations", "Window functions", "Pricing analysis", "Inventory analysis", "Customer analysis", "Business storytelling"],
     insights: [
       "GPU and monitor categories generated the strongest revenue.",
       "Pricing varied noticeably between retailers and provinces.",
       "Inventory risk appeared in low stock and out of stock listings.",
-      "Customer segment analysis helped reveal different purchasing behaviours."
+      "Customer segment analysis helped reveal different purchasing behaviors."
     ],
     businessValue: "The project helps decision makers compare pricing, monitor stock risk, benchmark retailers, and understand customer purchasing patterns.",
     screenshots: ["Hero Image.png", "Dashboard.png", "Sales Analysis.png", "Pricing Analysis.png", "Inventory Analysis.png", "Products.png", "Retailer Listings.png", "Orders.png", "Product & Pricing Model.png", "Sales & Customer Model.png", "SQL_QUERRY.png"]
@@ -20,11 +20,11 @@ window.projectsData = [
   {
     title: "Degree Does Not Equal Ability: Investigating South Africa's IT Skills Gap",
     link: "it-skills-gap.html",
-    category: "Labour market analytics",
+    category: "Labor market analytics",
     summary: "A research analytics case study investigating whether formal qualifications alone are sufficient indicators of workplace readiness in South Africa's technology sector.",
     businessProblem: "South African graduates often hold formal qualifications, yet employers continue reporting shortages in digital and technology roles.",
-    solution: "I integrated public education, employment, labour market, and digital skills data to compare graduate output, vacancy pressure, entry level barriers, and skills mismatch evidence.",
-    tools: ["Excel", "Data Analysis", "Labour Market Analytics", "Research Analysis", "Data Storytelling", "Business Intelligence"],
+    solution: "I integrated public education, employment, labor market, and digital skills data to compare graduate output, vacancy pressure, entry level barriers, and skills mismatch evidence.",
+    tools: ["Excel", "Data Analysis", "Labor Market Analytics", "Research Analysis", "Data Storytelling", "Business Intelligence"],
     skills: ["Evidence matrix design", "KPI development", "Research synthesis", "Executive dashboarding", "Insight writing"],
     insights: [
       "Formal education output exists at scale.",
