@@ -111,6 +111,14 @@ document.querySelectorAll(".slicer").forEach((button) => {
 });
 
 document.querySelectorAll(".skill-video-trigger").forEach((button) => {
+  const shell = button.closest(".skill-video-shell");
+  if (shell && !shell.querySelector(".skill-video-panel.active")) {
+    const firstButton = shell.querySelector(".skill-video-trigger");
+    const firstTarget = document.getElementById(firstButton?.dataset.videoTarget || "");
+    firstButton?.classList.add("active");
+    firstTarget?.classList.add("active");
+  }
+
   button.addEventListener("click", () => {
     const shell = button.closest(".skill-video-shell");
     const target = document.getElementById(button.dataset.videoTarget || "");
@@ -243,7 +251,7 @@ function rayAiLocalFallback(prompt) {
   }
 
   if (question.includes("portfolio") || question.includes("recruiter") || question.includes("summarize")) {
-    return "I am a junior data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, and practical business analysis. My portfolio shows market intelligence, ISP package comparison, small business sales analytics, and an operations project for school transport.";
+    return "I am a data analyst focused on SQL, Excel, Power BI, Python foundations, data cleaning, dashboards, business intelligence, IT infrastructure, automation, and product development. My portfolio is organised into analytics projects, including PC Parts Market Intelligence, Degree Does Not Equal Ability, and Beyond Hospitals, plus products including Cathdel Creamy, Insight Rides, and Ray AI.";
   }
 
   if (question.includes("project") || question.includes("sql") || question.includes("power bi")) {

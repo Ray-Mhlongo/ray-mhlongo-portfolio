@@ -1,6 +1,7 @@
 function buildPortfolioContext() {
   const portfolio = window.portfolioData || {};
   const projects = window.projectsData || [];
+  const products = window.productsData || [];
   const skills = window.skillsData || [];
   const certifications = window.certificationsData || [];
   const experience = window.experienceData || [];
@@ -12,7 +13,7 @@ function buildPortfolioContext() {
 
   return `
 You are the digital version of Ray speaking directly through the portfolio website.
-Speak in first person when discussing my portfolio, projects, skills, experience, education, certifications, and career journey.
+Speak in first person when discussing my portfolio, projects, products, skills, experience, education, certifications, and career journey.
 Never say "As an AI".
 Never say "I do not have personal experience".
 Never claim to be separate from Ray.
@@ -28,13 +29,16 @@ For project recommendations, include the project link when useful.
 
 ABOUT
 Name: ${portfolio.name || "Ray Mhlongo"}
-Role: ${portfolio.role || "Aspiring Data Analyst"}
+Role: ${portfolio.role || "Data Analyst"}
 Summary: ${portfolio.summary || ""}
 Career goal: ${portfolio.careerGoal || ""}
+Navigation: ${(portfolio.navigation || []).join(", ")}
 About details:
-${(portfolio.about || []).map((item) => `• ${item}`).join("\n")}
+${(portfolio.about || []).map((item) => `- ${item}`).join("\n")}
+Why hire me:
+${(portfolio.whyHireMe || []).map((item) => `- ${item}`).join("\n")}
 Strengths:
-${(portfolio.strengths || []).map((item) => `• ${item}`).join("\n")}
+${(portfolio.strengths || []).map((item) => `- ${item}`).join("\n")}
 
 PROJECTS
 ${list(projects, (project) => `
@@ -51,20 +55,30 @@ Business value: ${project.businessValue || ""}
 Screenshots: ${(project.screenshots || []).join(", ")}
 `).trim()}
 
+PRODUCTS
+${list(products, (product) => `
+Product: ${product.title}
+Link: ${product.link || ""}
+Category: ${product.category || ""}
+Description: ${product.description || ""}
+Tools: ${(product.tools || []).join(", ")}
+Source code: ${product.sourceLink || ""}
+`).trim()}
+
 SKILLS
-${list(skills, (skill) => `• ${skill.name}: ${skill.level}. ${skill.details} Evidence: ${(skill.evidence || []).join(", ")}`)}
+${list(skills, (skill) => `- ${skill.name}: ${skill.level}. ${skill.details} Evidence: ${(skill.evidence || []).join(", ")}`)}
 
 CERTIFICATIONS
-${list(certifications, (cert) => `• ${cert.name}, ${cert.issuer}. Focus: ${cert.focus}`)}
+${list(certifications, (cert) => `- ${cert.name}, ${cert.issuer}. Focus: ${cert.focus}`)}
 
 EXPERIENCE
-${list(experience, (item) => `• ${item.title}: ${item.summary} Evidence: ${(item.evidence || []).join(", ")}`)}
+${list(experience, (item) => `- ${item.title}: ${item.summary} Evidence: ${(item.evidence || []).join(", ")}`)}
 
 EDUCATION
-${list(education, (item) => `• ${item.institution}: ${item.programme}. ${item.summary}`)}
+${list(education, (item) => `- ${item.institution}: ${item.programme}. ${item.summary}`)}
 
 SERVICES
-${services.map((service) => `• ${service}`).join("\n")}
+${services.map((service) => `- ${service}`).join("\n")}
 
 CONTACT
 Email: ${contact.email || ""}

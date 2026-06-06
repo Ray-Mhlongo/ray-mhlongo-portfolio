@@ -648,17 +648,17 @@ img {
 .screenshot-frame {
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(64, 112, 244, 0.12);
+  border: 0;
   border-radius: 8px;
-  background: #fff;
-  box-shadow: var(--shadow);
+  background: transparent;
+  box-shadow: 0 18px 44px rgba(14, 36, 49, 0.18);
 }
 
 .screenshot-frame img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  background: #fff;
+  background: transparent;
 }
 
 .hero-frame img {
@@ -668,9 +668,8 @@ img {
 }
 
 .screenshot-frame figcaption {
-  border-top: 1px solid #e5ebf7;
-  background: #f7f9ff;
-  color: #425466;
+  background: rgba(14, 36, 49, 0.86);
+  color: #e8f0fe;
   padding: 1rem;
   font-weight: 700;
 }
@@ -706,7 +705,51 @@ img {
 }
 
 .dark-section .screenshot-frame {
-  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+}
+
+.why-hire-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+}
+
+.why-hire-panel {
+  max-width: 920px;
+  gap: 1rem;
+}
+
+.why-hire-panel p {
+  color: #425466;
+  font-weight: 500;
+}
+
+.products-section {
+  background: linear-gradient(180deg, #f7f9ff 0%, #ffffff 100%);
+}
+
+.product-card {
+  border: 1px solid rgba(64, 112, 244, 0.12);
+}
+
+.project-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.project-card-actions .button {
+  margin-top: 0;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #0e2431;
+}
+
+.secondary-button i {
+  font-size: 1.25rem;
 }
 
 .process-grid,
@@ -1792,11 +1835,13 @@ img {
 
   .nav-list {
     display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 2rem);
     padding-top: 0;
   }
 
   .nav-item {
-    margin-left: var(--mb6);
+    margin-left: 0;
     margin-bottom: 0;
   }
 
@@ -1940,6 +1985,10 @@ img {
   .project-card .button {
     width: 100%;
     text-align: center;
+  }
+
+  .project-card-actions {
+    display: grid;
   }
 
   .showcase-kpis {

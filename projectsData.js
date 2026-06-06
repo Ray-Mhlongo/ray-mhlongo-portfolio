@@ -3,10 +3,10 @@ window.projectsData = [
     title: "PC Parts Market Intelligence",
     link: "pc-price-analysis.html",
     category: "SQL Server and Excel business intelligence",
-    summary: "I built this project to analyse PC hardware pricing, sales, inventory, retailer performance, and customer behaviour.",
-    businessProblem: "PC part prices vary across retailers, provinces, brands, categories, and stock levels, which makes it hard to understand fair pricing and market performance.",
+    summary: "A market research and analytics project focused on the South African computer hardware industry.",
+    businessProblem: "PC part prices vary across retailers, provinces, brands, categories, and stock levels, making fair pricing and market performance difficult to compare.",
     solution: "I designed a relational SQL Server database, generated realistic retail records, wrote analytical SQL queries, and built Excel dashboards for pricing, sales, inventory, and retailer insight.",
-    tools: ["SQL Server Management Studio", "T SQL", "Excel", "Pivot style analysis", "Dashboard design", "Data modelling"],
+    tools: ["SQL Server Management Studio", "T SQL", "Excel", "Pivot Style Analysis", "Dashboard Design", "Data Modelling", "Business Intelligence", "Data Visualisation"],
     skills: ["Relational database design", "SQL joins and aggregations", "Window functions", "Pricing analysis", "Inventory analysis", "Customer analysis", "Business storytelling"],
     insights: [
       "GPU and monitor categories generated the strongest revenue.",
@@ -18,36 +18,39 @@ window.projectsData = [
     screenshots: ["Hero Image.png", "Dashboard.png", "Sales Analysis.png", "Pricing Analysis.png", "Inventory Analysis.png", "Products.png", "Retailer Listings.png", "Orders.png", "Product & Pricing Model.png", "Sales & Customer Model.png", "SQL_QUERRY.png"]
   },
   {
-    title: "ISP Price Comparison",
-    link: "isp-price-comparison.html",
-    category: "Business intelligence",
-    summary: "I compared internet packages using price and speed metrics to show why the lowest monthly price is not always the strongest value.",
-    businessProblem: "Customers need a fair way to compare internet service packages across price, speed, and value.",
-    solution: "I cleaned package data, calculated value indicators, and presented the findings for easier comparison.",
-    tools: ["Excel", "Power BI", "Data cleaning", "Business analysis"],
-    skills: ["Value comparison", "Pricing analysis", "Dashboard thinking", "Business reporting"],
-    businessValue: "The project helps consumers and businesses identify stronger internet package value."
+    title: "Degree Does Not Equal Ability: Investigating South Africa's IT Skills Gap",
+    link: "it-skills-gap.html",
+    category: "Labour market analytics",
+    summary: "A research analytics case study investigating whether formal qualifications alone are sufficient indicators of workplace readiness in South Africa's technology sector.",
+    businessProblem: "South African graduates often hold formal qualifications, yet employers continue reporting shortages in digital and technology roles.",
+    solution: "I integrated public education, employment, labour market, and digital skills data to compare graduate output, vacancy pressure, entry level barriers, and skills mismatch evidence.",
+    tools: ["Excel", "Data Analysis", "Labour Market Analytics", "Research Analysis", "Data Storytelling", "Business Intelligence"],
+    skills: ["Evidence matrix design", "KPI development", "Research synthesis", "Executive dashboarding", "Insight writing"],
+    insights: [
+      "Formal education output exists at scale.",
+      "Digital sector demand remains unresolved despite graduate output.",
+      "Entry level pathways are not working clearly enough.",
+      "Degrees remain valuable, but practical evidence of ability matters."
+    ],
+    businessValue: "The project reframes the hiring conversation from degree versus skill to degree plus evidence of ability.",
+    screenshots: ["executive-dashboard.png", "evidence-matrix.png", "case-study-narrative.png"]
   },
   {
-    title: "Cathdel Creamy",
-    link: "cathdel-creamy.html",
-    category: "Business sales analytics",
-    summary: "I turned small business sales activity into insight about product performance, repeat customers, and loyalty opportunities.",
-    businessProblem: "Small businesses need visibility into sales patterns, product performance, and repeat customer behaviour.",
-    solution: "I structured sales activity into a reporting concept that supports customer and product analysis.",
-    tools: ["Excel", "Business analysis", "Dashboard design"],
-    skills: ["Sales analysis", "Customer analysis", "Product performance reporting"],
-    businessValue: "The project helps a small business understand what sells, who returns, and where growth opportunities exist."
-  },
-  {
-    title: "Insight Rides",
-    link: "insight-rides.html",
-    category: "Operations analytics",
-    summary: "I organized transport records so trips, payments, routes, and costs can explain cash flow, route pressure, and profit visibility.",
-    businessProblem: "Transport operations need better visibility across routes, students, payments, vehicles, and reporting.",
-    solution: "I built an operations focused project concept for tracking and reporting key transport activity.",
-    tools: ["React", "Vite", "Tailwind CSS", "Chart.js", "Leaflet Maps", "Local Storage", "JSON"],
-    skills: ["Operational reporting", "Data organization", "Interface planning", "Performance monitoring"],
-    businessValue: "The project helps transport operators improve visibility, efficiency, and decision making."
+    title: "Beyond Hospitals: The Social Drivers of Health in South Africa",
+    link: "beyond-hospitals.html",
+    category: "Public sector analytics",
+    summary: "A public health analytics case study investigating how social and economic conditions influence health outcomes across South Africa.",
+    businessProblem: "Health outcomes differ across provinces, and those differences cannot be explained by hospitals alone.",
+    solution: "I integrated health outcomes, disease burden, education, employment, income, infrastructure, housing, and service access data into a province level analytical framework.",
+    tools: ["Excel", "Public Sector Analytics", "Data Integration", "Research Analysis", "Dashboard Design", "Data Storytelling", "Business Intelligence"],
+    skills: ["Data integration", "Public health analysis", "Provincial comparison", "Executive reporting", "Evidence based recommendation writing"],
+    insights: [
+      "Western Cape ranks highest in the composite social health index.",
+      "Limpopo and Eastern Cape show elevated infrastructure and poverty related pressure.",
+      "Education and service access align with stronger social health scores.",
+      "Findings show association rather than proof of causation."
+    ],
+    businessValue: "The project supports evidence based public sector planning by linking health outcomes with social drivers such as education, poverty, employment, and infrastructure.",
+    screenshots: ["executive-dashboard.png", "provincial-health-comparison.png", "case-study-recommendations.png", "data-quality.png"]
   }
 ];
