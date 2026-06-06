@@ -3,8 +3,10 @@
 :root {
   --header-height: 3rem;
   --font-semi: 600;
-  --first-color: #4070f4;
-  --second-color: #0e2431;
+  --first-color: #f2c94c;
+  --second-color: #0a0a0a;
+  --muted-color: #555;
+  --line-color: #e7e7e7;
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
@@ -16,8 +18,8 @@
   --mb5: 2.5rem;
   --mb6: 3rem;
   --z-fixed: 100;
-  --shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-  --soft-bg: #f7f9ff;
+  --shadow: 0 16px 40px rgba(10, 10, 10, 0.08);
+  --soft-bg: #f7f7f2;
 }
 
 @media screen and (min-width: 768px) {
@@ -247,7 +249,7 @@ img {
   background:
     radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.95) 0 10%, transparent 11%),
     radial-gradient(circle at 67% 62%, rgba(255, 255, 255, 0.85) 0 7%, transparent 8%),
-    linear-gradient(135deg, #4070f4, #6d8cff);
+    linear-gradient(135deg, #f2c94c, #fff4b8);
   box-shadow: 0 20px 50px rgba(64, 112, 244, 0.32);
   display: grid;
   place-items: center;
@@ -656,26 +658,24 @@ img {
 }
 
 .dark-section {
-  background:
-    radial-gradient(circle at 12% 16%, rgba(64, 112, 244, 0.16), transparent 28%),
-    linear-gradient(135deg, #0e2431, #101827);
-  color: #fff;
+  background: #f7f7f2;
+  color: #0a0a0a;
 }
 
 .dark-section .section-title {
-  color: #fff;
+  color: #0a0a0a;
 }
 
 .dark-section .section-title::after {
-  background: #19c7bf;
+  background: #f2c94c;
 }
 
 .dark-section .case-narrative p {
-  color: #dce6ff;
+  color: #444;
 }
 
 .dark-section .screenshot-frame {
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.12);
 }
 
 .case-study-page .section {
@@ -1114,7 +1114,7 @@ img {
 .schema-line {
   height: 100%;
   min-height: 130px;
-  background: linear-gradient(var(--first-color), #00b894);
+  background: linear-gradient(var(--first-color), #0a0a0a);
   justify-self: center;
   animation: lineFlow 1.8s ease-in-out infinite;
 }
@@ -1255,7 +1255,7 @@ img {
   width: var(--w);
   min-width: 42%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #4070f4, #00b894);
+  background: linear-gradient(90deg, #0a0a0a, #f2c94c);
   padding: 0.7rem 0.9rem;
   font-weight: 700;
   animation: chartLoad 1.2s ease both;
@@ -2178,6 +2178,345 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Ray Mhlongo clean brand redesign */
+body {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+.l-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #ececec;
+  box-shadow: none;
+}
+
+.nav-logo {
+  color: #0a0a0a;
+  letter-spacing: 0;
+}
+
+.nav-link {
+  color: #0a0a0a;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  background-color: #f2c94c;
+}
+
+.section {
+  padding-top: 5.25rem;
+  padding-bottom: 5.25rem;
+}
+
+.section-title {
+  color: #0a0a0a;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 3.5rem;
+}
+
+.section-title::after {
+  width: 52px;
+  height: 0.28rem;
+  top: calc(100% + 0.8rem);
+  background: #f2c94c;
+}
+
+.brand-hero {
+  min-height: 92vh;
+  display: grid;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  padding: 7rem 0 5rem;
+}
+
+.brand-hero-inner {
+  justify-items: center;
+  text-align: center;
+  gap: 1.3rem;
+}
+
+.hero-kicker {
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.home-title {
+  max-width: 980px;
+  margin-bottom: 0;
+  color: #0a0a0a;
+  font-size: clamp(4rem, 12vw, 8.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.home-title-color,
+.home-role {
+  color: #0a0a0a;
+}
+
+.home-text {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: #444;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.button {
+  border-radius: 0;
+  background: #0a0a0a;
+  color: #fff;
+  box-shadow: none;
+}
+
+.button:hover,
+.button:focus {
+  background: #f2c94c;
+  color: #0a0a0a;
+  box-shadow: none;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: #f2c94c;
+  color: #0a0a0a;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.home-social {
+  position: static;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.home-social-icon,
+.footer-icon {
+  color: #0a0a0a;
+}
+
+.home-social-icon:hover,
+.footer-icon:hover {
+  color: #c99a00;
+}
+
+.center-copy {
+  max-width: 850px;
+  gap: 1.1rem;
+  text-align: center;
+}
+
+.center-copy p,
+.why-hire-panel p,
+.about-text,
+.skills-text,
+.project-card p,
+.contact-card p,
+.story-container p,
+.story-list,
+.gallery-story-item figcaption {
+  color: #444;
+}
+
+.project-grid,
+.insight-container,
+.work-container {
+  gap: 2rem;
+}
+
+.project-card,
+.insight-card,
+.contact-card,
+.case-card,
+.product-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.project-card {
+  border-top: 4px solid #f2c94c;
+  padding-top: 1.25rem;
+}
+
+.project-meta {
+  color: #777;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.project-card h3,
+.insight-card h3,
+.contact-card h3 {
+  color: #0a0a0a;
+  font-size: 1.35rem;
+}
+
+.products-section,
+.ray-ai-section,
+.why-hire-section,
+.story-section:nth-of-type(even),
+.showcase-section,
+.skill-page,
+.pipeline-section,
+.skill-video-section {
+  background: #f7f7f2;
+}
+
+.ray-ai-section,
+.why-hire-section {
+  border-top: 1px solid #ececec;
+}
+
+.ray-ai-copy h3 {
+  color: #0a0a0a;
+}
+
+.ray-ai-stats span,
+.ray-ai-panel,
+.ray-ai-message,
+.ray-ai-message.assistant,
+.ray-ai-form,
+.ray-ai-chip,
+.ray-ai-actions button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ray-ai-stats span,
+.ray-ai-panel {
+  border: 1px solid #e6e1d0;
+}
+
+.ray-ai-avatar,
+.ray-ai-greeting span {
+  background: #f2c94c;
+  color: #0a0a0a;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.ray-ai-form button:hover,
+.ray-ai-form button:focus,
+.ray-ai-chip:hover,
+.ray-ai-chip:focus {
+  background: #f2c94c;
+  color: #0a0a0a;
+}
+
+.ray-ai-launcher {
+  border-radius: 0;
+  background: #0a0a0a;
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(10, 10, 10, 0.18);
+}
+
+.ray-ai-launcher i {
+  color: #f2c94c;
+}
+
+.project-hero {
+  background: #fff;
+  color: #0a0a0a;
+  border-bottom: 1px solid #ececec;
+}
+
+.case-study-page .project-hero-container {
+  grid-template-columns: 1fr;
+  max-width: 960px;
+  text-align: center;
+}
+
+.case-study-page .project-hero-copy {
+  justify-self: center;
+}
+
+.project-hero-copy h1 {
+  color: #0a0a0a;
+}
+
+.project-lead,
+.project-summary {
+  color: #444;
+}
+
+.story-section {
+  background: #fff;
+}
+
+.story-container h2 {
+  color: #0a0a0a;
+}
+
+.inline-tech {
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.gallery-story-item {
+  gap: 1.9rem;
+}
+
+.gallery-story-item figcaption strong {
+  color: #0a0a0a;
+  font-size: 1.3rem;
+}
+
+.gallery-story-item img,
+.gallery-story-item .media-frame {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.12);
+}
+
+.footer {
+  background: #0a0a0a;
+}
+
+.footer-icon {
+  color: #fff;
+}
+
+@media screen and (min-width: 769px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    background: #0a0a0a;
+  }
+
+  .nav-link {
+    color: #fff;
+  }
+
+  .home-title {
+    font-size: clamp(3.2rem, 18vw, 5.4rem);
   }
 }
 
