@@ -15,7 +15,7 @@ window.productsData = [
   },
   {
     title: "Ray AI",
-    link: "index.html#ray-ai",
+    link: "ray-ai.html",
     category: "AI portfolio assistant",
     description: "Ray AI is a custom built artificial intelligence assistant developed as part of my portfolio ecosystem. It provides project guidance, portfolio information, technology insights, and interactive support while demonstrating AI integration, prompt engineering, API integration, and modern web application development.",
     tools: ["AI integration", "Prompt engineering", "API integration", "Modern web application development"],

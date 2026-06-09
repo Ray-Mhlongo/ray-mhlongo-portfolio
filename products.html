@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact Ray Mhlongo for data analyst opportunities." />
-  <title>Contact | Ray Mhlongo</title>
+  <meta name="description" content="Ray Mhlongo product portfolio." />
+  <title>Products | Ray Mhlongo</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=11" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -19,10 +19,10 @@
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
           <li class="nav-item"><a href="ray-ai.html" class="nav-link">Ray AI</a></li>
           <li class="nav-item"><a href="why-hire-me.html" class="nav-link">Why Hire Me</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
       <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
@@ -30,35 +30,32 @@
   </header>
 
   <main id="main-content" class="l-main">
-    <section class="contact section">
-      <h2 class="section-title">Contact</h2>
+    <section class="work section products-section">
+      <h2 class="section-title">Products</h2>
+      <div class="project-grid bd-grid">
+        <article class="project-card product-card">
+          <p class="project-meta">Business management platform</p>
+          <h3>Cathdel Creamy</h3>
+          <p class="project-card-text">Custom platform for a school based ice cream business, managing customers, sales, attendance, promotions, reporting, invoicing, QR functionality, and workflows.</p>
+          <a href="cathdel-creamy.html" class="button">Open Product</a>
+        </article>
 
-      <div class="contact-links bd-grid">
-        <article class="contact-card">
-          <h3>Email</h3>
-          <a href="mailto:rodgersmhlongo@gmail.com"><i class="bx bx-envelope"></i> rodgersmhlongo@gmail.com</a>
+        <article class="project-card product-card">
+          <p class="project-meta">Transportation analytics platform</p>
+          <h3>Insight Rides</h3>
+          <p class="project-card-text">Operational visibility, location intelligence, reporting, and business insights through interactive dashboards and data driven decision making tools.</p>
+          <a href="insight-rides.html" class="button">Open Product</a>
         </article>
-        <article class="contact-card">
-          <h3>LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/raymhlongo" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i> linkedin.com/in/raymhlongo</a>
-        </article>
-        <article class="contact-card">
-          <h3>GitHub</h3>
-          <a href="https://github.com/Ray-Mhlongo" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i> github.com/Ray Mhlongo</a>
-        </article>
-        <article class="contact-card">
-          <h3>WhatsApp</h3>
-          <a href="https://wa.me/27768488657" target="_blank" rel="noopener noreferrer"><i class="bx bxl-whatsapp"></i> Message on WhatsApp</a>
-        </article>
-      </div>
 
-      <div class="contact-container bd-grid">
-        <form id="contact-form" class="contact-form">
-          <input id="name" name="from_name" type="text" placeholder="Name" class="contact-input" autocomplete="name" required />
-          <input id="email" name="from_email" type="email" placeholder="Email" class="contact-input" autocomplete="email" required />
-          <textarea id="message" name="message" rows="8" placeholder="Message" class="contact-input" required></textarea>
-          <button class="contact-button button" type="submit">Send</button>
-        </form>
+        <article class="project-card product-card">
+          <p class="project-meta">AI portfolio assistant</p>
+          <h3>Ray AI</h3>
+          <p class="project-card-text">Custom built artificial intelligence assistant for project guidance, portfolio information, technology insights, and interactive support.</p>
+          <div class="project-card-actions">
+            <a href="ray-ai.html" class="button">Open Ray AI</a>
+            <a href="https://github.com/Ray-Mhlongo/ray-mhlongo-portfolio" class="button secondary-button" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i> View Source Code on GitHub</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -73,18 +70,6 @@
     <p>&#169; <span id="year"></span> Ray Mhlongo</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    if (window.emailjs) {
-      emailjs.init("kPArux2pCAK50eRHu");
-      const form = document.getElementById("contact-form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        emailjs.sendForm("service_w985lsf", "template_p9upgp8", this)
-          .then(() => alert("Message sent."), (error) => alert("Failed to send: " + error.text));
-      });
-    }
-  </script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="portfolioData.js?v=1"></script>
   <script src="projectsData.js?v=1"></script>
