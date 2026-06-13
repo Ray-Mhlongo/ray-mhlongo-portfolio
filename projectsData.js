@@ -1,5 +1,23 @@
 window.projectsData = [
   {
+    title: "Church Member Verification System",
+    link: "church-member-verification-system.html",
+    category: "Business analysis and process improvement",
+    summary: "A structured member verification workflow using Google Forms, Google Sheets, Google Apps Script, dashboards, risk management, and operating model design.",
+    businessProblem: "Church leadership needed a reliable way to maintain accurate member records, monitor engagement, reduce communication risk, and prioritize follow-up activities.",
+    solution: "I designed a verification process, stakeholder reporting layer, risk framework, target operating model, and Apps Script automation that standardizes data capture, dashboard refreshes, and follow-up prioritization.",
+    tools: ["Google Apps Script", "Google Sheets", "Google Forms", "Business Analysis", "Dashboarding", "Process Improvement"],
+    skills: ["Requirements analysis", "Stakeholder analysis", "Process improvement", "Risk management", "Operating model design", "Data quality management", "Executive reporting", "Workflow automation"],
+    insights: [
+      "500 member records were analyzed across membership status, attendance, contact quality, and ministry placement.",
+      "Follow-up prioritization helps leadership focus on high priority records first.",
+      "WhatsApp was the dominant contact preference, supporting a mobile-first communication strategy.",
+      "Risk and operating model controls make the process more sustainable than a one-off spreadsheet."
+    ],
+    businessValue: "The project improves data quality, reduces manual administration, supports member engagement, gives leadership clearer reporting, and standardizes a repeatable verification process.",
+    screenshots: ["google-sheet-dashboard.png", "google-apps-script.png", "settings-google-sheet.png", "executive-interpretation.png", "members-requiring-follow-up.png", "risk-register.png", "second-kpi.png", "target-operating-model.png"]
+  },
+  {
     title: "PC Parts Market Intelligence",
     link: "pc-price-analysis.html",
     category: "SQL Server and Excel business intelligence",
