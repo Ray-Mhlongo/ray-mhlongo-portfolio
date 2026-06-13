@@ -15,7 +15,8 @@ window.projectsData = [
       "Risk and operating model controls make the process more sustainable than a one-off spreadsheet."
     ],
     businessValue: "The project improves data quality, reduces manual administration, supports member engagement, gives leadership clearer reporting, and standardizes a repeatable verification process.",
-    screenshots: ["google-sheet-dashboard.png", "google-apps-script.png", "settings-google-sheet.png", "executive-interpretation.png", "members-requiring-follow-up.png", "risk-register.png", "second-kpi.png", "target-operating-model.png"]
+    screenshots: ["google-sheet-dashboard.png", "google-apps-script.png", "settings-google-sheet.png", "executive-interpretation.png", "members-requiring-follow-up.png", "risk-register.png", "second-kpi.png", "target-operating-model.png"],
+    sourceLink: "https://github.com/Ray-Mhlongo/church-member-verification-system"
   },
   {
     title: "PC Parts Market Intelligence",

@@ -12,7 +12,8 @@ window.productsData = [
     link: "cathdel-creamy.html",
     category: "Business management platform",
     description: "Cathdel Creamy is a custom business management platform developed for a school based ice cream business. The system manages customers, sales, attendance, promotions, reporting, invoicing, QR functionality, and operational workflows through a modern application interface.",
-    tools: ["Business applications", "Sales workflows", "Reporting", "Operational management"]
+    tools: ["Business applications", "Sales workflows", "Reporting", "Operational management"],
+    sourceLink: "https://github.com/Ray-Mhlongo/Cathdel-Creamy"
   },
   {
     title: "Insight Rides",
