@@ -1,5 +1,13 @@
 window.productsData = [
   {
+    title: "LearnView Nexus",
+    link: "learnview-nexus.html",
+    category: "Education operations platform",
+    description: "LearnView Nexus is a comprehensive education operations platform for tutoring businesses. It centralizes student administration, scheduling, attendance tracking, assessments, invoicing, payments, reporting, communication, operational analytics, and Google Apps Script automation into one Progressive Web Application.",
+    tools: ["JavaScript", "Google Apps Script", "Google Sheets", "Progressive Web App", "HTML", "CSS", "Capacitor Android", "Business Analytics", "Dashboard Development"],
+    sourceLink: "https://github.com/Ray-Mhlongo/LearnView-Nexus/tree/main/Learn_View_Nexus-main"
+  },
+  {
     title: "Cathdel Creamy",
     link: "cathdel-creamy.html",
     category: "Business management platform",
