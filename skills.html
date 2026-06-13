@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ray Mhlongo skills portfolio with interactive video and screenshot demonstrations." />
+  <title>Skills | Ray Mhlongo</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=12" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="index.html" class="nav-logo">Ray Mhlongo</a></div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="skills.html" class="nav-link active">Skills</a></li>
+          <li class="nav-item"><a href="ray-ai.html" class="nav-link">Ray AI</a></li>
+          <li class="nav-item"><a href="why-hire-me.html" class="nav-link">Why Hire Me</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="l-main case-study-page">
+    <section class="project-hero section">
+      <div class="project-hero-container bd-grid">
+        <div class="project-hero-copy">
+          <p class="project-meta">Interactive skills evidence</p>
+          <h1>Skills</h1>
+          <p class="project-lead">Explore Ray's technical, analytical, business, automation, product, and systems skills by category.</p>
+          <p class="project-summary">This page restores the original skill demonstration system from Git history and organizes the evidence into a dedicated recruiter-friendly experience. Select a category, choose a skill, and view the related tools, projects, and recovered video or screenshot demonstration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-lab section" aria-labelledby="skills-lab-title">
+      <h2 class="section-title" id="skills-lab-title">Skill Explorer</h2>
+      <div class="skills-lab-container bd-grid">
+        <div class="skills-category-tabs" aria-label="Skill categories">
+          <button class="skills-category-tab active" type="button" data-skill-category="data-analytics">Data Analytics</button>
+          <button class="skills-category-tab" type="button" data-skill-category="business-analysis">Business Analysis</button>
+          <button class="skills-category-tab" type="button" data-skill-category="automation">Automation</button>
+          <button class="skills-category-tab" type="button" data-skill-category="databases">Databases</button>
+          <button class="skills-category-tab" type="button" data-skill-category="reporting">Reporting and Dashboards</button>
+          <button class="skills-category-tab" type="button" data-skill-category="development">Web and App Development</button>
+          <button class="skills-category-tab" type="button" data-skill-category="systems">IT and Systems</button>
+        </div>
+
+        <div class="skills-browser">
+          <aside class="skills-picker" aria-label="Skills in selected category">
+            <div class="skills-list active" data-skill-list="data-analytics">
+              <button class="skills-data skill-card active" type="button" data-skill-target="excel">
+                <span class="skills-names"><i class="bx bx-spreadsheet skills-icon"></i><span class="skills-name">Excel</span></span>
+                <span class="skill-cta">Formulas, pivots, dashboards, and analysis</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="python">
+                <span class="skills-names"><i class="bx bxl-python skills-icon"></i><span class="skills-name">Python</span></span>
+                <span class="skill-cta">Pandas analysis and validation</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="power-query">
+                <span class="skills-names"><i class="bx bx-filter-alt skills-icon"></i><span class="skills-name">Power Query</span></span>
+                <span class="skill-cta">Data transformation and quality checks</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="business-analysis">
+              <button class="skills-data skill-card" type="button" data-skill-target="business-analysis">
+                <span class="skills-names"><i class="bx bx-briefcase-alt-2 skills-icon"></i><span class="skills-name">Business Analysis</span></span>
+                <span class="skill-cta">Requirements, stakeholders, process design</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="process-improvement">
+                <span class="skills-names"><i class="bx bx-git-branch skills-icon"></i><span class="skills-name">Process Improvement</span></span>
+                <span class="skill-cta">Operating models and controls</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="automation">
+              <button class="skills-data skill-card" type="button" data-skill-target="apps-script">
+                <span class="skills-names"><i class="bx bx-code-curly skills-icon"></i><span class="skills-name">Google Apps Script</span></span>
+                <span class="skill-cta">Workflow and reporting automation</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="workflow-automation">
+                <span class="skills-names"><i class="bx bx-cog skills-icon"></i><span class="skills-name">Workflow Automation</span></span>
+                <span class="skill-cta">Repeatable operational processes</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="databases">
+              <button class="skills-data skill-card" type="button" data-skill-target="sql">
+                <span class="skills-names"><i class="bx bx-data skills-icon"></i><span class="skills-name">SQL</span></span>
+                <span class="skill-cta">Database design, joins, grouping, filtering</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="postgres">
+                <span class="skills-names"><i class="bx bx-server skills-icon"></i><span class="skills-name">PostgreSQL</span></span>
+                <span class="skill-cta">Relational implementation and querying</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="reporting">
+              <button class="skills-data skill-card" type="button" data-skill-target="dashboard-design">
+                <span class="skills-names"><i class="bx bx-bar-chart-alt-2 skills-icon"></i><span class="skills-name">Dashboard Design</span></span>
+                <span class="skill-cta">KPI layouts and executive reporting</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="executive-reporting">
+                <span class="skills-names"><i class="bx bx-line-chart skills-icon"></i><span class="skills-name">Executive Reporting</span></span>
+                <span class="skill-cta">Insight interpretation and recommendations</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="development">
+              <button class="skills-data skill-card" type="button" data-skill-target="product-development">
+                <span class="skills-names"><i class="bx bx-mobile-alt skills-icon"></i><span class="skills-name">Product Development</span></span>
+                <span class="skill-cta">PWA and operational product design</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="javascript">
+                <span class="skills-names"><i class="bx bxl-javascript skills-icon"></i><span class="skills-name">JavaScript</span></span>
+                <span class="skill-cta">Interactive frontend behavior</span>
+              </button>
+            </div>
+
+            <div class="skills-list" data-skill-list="systems">
+              <button class="skills-data skill-card" type="button" data-skill-target="networking">
+                <span class="skills-names"><i class="bx bx-network-chart skills-icon"></i><span class="skills-name">Networking</span></span>
+                <span class="skill-cta">Packet flow, hosts, protocols, systems thinking</span>
+              </button>
+              <button class="skills-data skill-card" type="button" data-skill-target="it-systems">
+                <span class="skills-names"><i class="bx bx-desktop skills-icon"></i><span class="skills-name">IT and Systems</span></span>
+                <span class="skill-cta">Infrastructure context and operational analysis</span>
+              </button>
+            </div>
+          </aside>
+
+          <section class="skills-detail" aria-live="polite">
+            <article class="skill-detail-panel active" id="skill-detail-excel" data-skill-detail="excel">
+              <p class="project-meta">Data Analytics</p>
+              <h2>Excel</h2>
+              <p>Excel is used for structured calculations, pivot-style analysis, dashboards, and business reporting across cleaned project data.</p>
+              <p><strong>Tools used:</strong> Excel formulas, pivot tables, dashboards, structured tables, KPI summaries.</p>
+              <p><strong>Related projects:</strong> PC Parts Market Intelligence, Degree Does Not Equal Ability, Beyond Hospitals, Church Member Verification System.</p>
+              <div class="skill-demo-media">
+                <video controls playsinline preload="metadata"><source src="videos/excel-formulas.mp4" type="video/mp4" /></video>
+                <video controls playsinline preload="metadata"><source src="videos/excel-dashboard-reporting.mp4" type="video/mp4" /></video>
+              </div>
+              <a class="button secondary-button" href="skill-excel.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" id="skill-detail-python" data-skill-detail="python">
+              <p class="project-meta">Data Analytics</p>
+              <h2>Python</h2>
+              <p>Python with Pandas supports deeper analysis, merging, grouping, aggregation, validation, and repeatable analytical workflows.</p>
+              <p><strong>Tools used:</strong> Python, Pandas, CSV processing, grouped metrics, automation foundations.</p>
+              <p><strong>Related projects:</strong> Python skill page, data pipeline validation, portfolio analysis workflows.</p>
+              <div class="skill-demo-media">
+                <video controls playsinline preload="metadata"><source src="videos/python-pandas.mp4" type="video/mp4" /></video>
+              </div>
+              <a class="button secondary-button" href="skill-python.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" id="skill-detail-power-query" data-skill-detail="power-query">
+              <p class="project-meta">Data Analytics</p>
+              <h2>Power Query</h2>
+              <p>Power Query prepares raw CSV exports for reporting by standardizing types, shaping fields, and improving consistency before analysis.</p>
+              <p><strong>Tools used:</strong> Power Query Editor, column type standardization, data profiling, Excel integration.</p>
+              <p><strong>Related projects:</strong> SQL-to-Excel analytics pipeline, Power Query skill page.</p>
+              <div class="power-query-shot-grid skill-demo-media">
+                <figure><figcaption>dim packages</figcaption><img src="images/power-query/dim-packages-data-type-standardisation.png" alt="Power Query data type standardization for dim packages" /></figure>
+                <figure><figcaption>dim customers</figcaption><img src="images/power-query/dim-customers-data-type-standardisation.png" alt="Power Query data type standardization for dim customers" /></figure>
+                <figure><figcaption>fact subscriptions</figcaption><img src="images/power-query/fact-subscriptions-data-type-standardisation.png" alt="Power Query data type standardization for fact subscriptions" /></figure>
+                <figure><figcaption>fact tickets</figcaption><img src="images/power-query/fact-tickets-data-type-standardisation.png" alt="Power Query data type standardization for fact tickets" /></figure>
+              </div>
+              <a class="button secondary-button" href="skill-power-query.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="business-analysis">
+              <p class="project-meta">Business Analysis</p>
+              <h2>Business Analysis</h2>
+              <p>Business Analysis turns operational problems into requirements, stakeholder views, process controls, and decision-ready reporting.</p>
+              <p><strong>Tools used:</strong> Requirements analysis, stakeholder analysis, process mapping, risk analysis, recommendation writing.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, LearnView Nexus, PC Parts Market Intelligence.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Executive interpretation</strong><span>Observation, implication, action, owner, and priority framework.</span></figcaption><img src="images/church-member-verification-system/executive-interpretation.png" alt="Executive interpretation framework" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="process-improvement">
+              <p class="project-meta">Business Analysis</p>
+              <h2>Process Improvement</h2>
+              <p>Process Improvement standardizes current-state gaps into target-state workflows, controls, owners, and operating cadence.</p>
+              <p><strong>Tools used:</strong> Operating model design, gap analysis, process controls, governance cadence.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, LearnView Nexus.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Target operating model</strong><span>Current state, target state, process controls, and cadence.</span></figcaption><img src="images/church-member-verification-system/target-operating-model.png" alt="Target operating model" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="apps-script">
+              <p class="project-meta">Automation</p>
+              <h2>Google Apps Script</h2>
+              <p>Google Apps Script automates operational workflows, reporting setup, data generation, dashboard refreshes, and Google Sheets integration.</p>
+              <p><strong>Tools used:</strong> Google Apps Script, Google Sheets, Google Forms, automated setup functions.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, LearnView Nexus.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Apps Script automation</strong><span>Backend workflow setup and reporting automation.</span></figcaption><img src="images/church-member-verification-system/google-apps-script.png" alt="Google Apps Script automation" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="workflow-automation">
+              <p class="project-meta">Automation</p>
+              <h2>Workflow Automation</h2>
+              <p>Workflow Automation reduces manual administration by linking forms, sheets, dashboards, follow-up lists, and reporting outputs.</p>
+              <p><strong>Tools used:</strong> Google Forms, Google Sheets, Apps Script, process rules, validation logic.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, LearnView Nexus.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Settings and integration</strong><span>Configuration layer for form and workflow operation.</span></figcaption><img src="images/church-member-verification-system/settings-google-sheet.png" alt="Settings sheet integration" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="sql">
+              <p class="project-meta">Databases</p>
+              <h2>SQL</h2>
+              <p>SQL structures relational data and extracts insight through joins, filtering, grouping, and database-backed analysis.</p>
+              <p><strong>Tools used:</strong> SQL, relational tables, joins, grouping, filtering, query design.</p>
+              <p><strong>Related projects:</strong> SQL skill page, PC Parts Market Intelligence, SQL-to-Excel analytics pipeline.</p>
+              <div class="skill-demo-media">
+                <video controls playsinline preload="metadata"><source src="videos/sql-foundation.mp4" type="video/mp4" /></video>
+              </div>
+              <a class="button secondary-button" href="skill-sql.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="postgres">
+              <p class="project-meta">Databases</p>
+              <h2>PostgreSQL</h2>
+              <p>PostgreSQL is used as the practical database environment for implementing tables and querying the project pipeline.</p>
+              <p><strong>Tools used:</strong> PostgreSQL, relational implementation, database queries, table design.</p>
+              <p><strong>Related projects:</strong> PostgreSQL skill page, SQL analytics pipeline.</p>
+              <div class="skill-demo-media">
+                <video controls playsinline preload="metadata"><source src="videos/sql-postgre-final.mp4" type="video/mp4" /></video>
+              </div>
+              <a class="button secondary-button" href="skill-postgres.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="dashboard-design">
+              <p class="project-meta">Reporting and Dashboards</p>
+              <h2>Dashboard Design</h2>
+              <p>Dashboard Design communicates KPIs, trends, and operational signals in layouts that decision makers can scan quickly.</p>
+              <p><strong>Tools used:</strong> Excel dashboards, KPI cards, charts, tables, dashboard storytelling.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, PC Parts Market Intelligence, LearnView Nexus.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Executive dashboard</strong><span>Membership KPIs, attendance, contact methods, and follow-up reasons.</span></figcaption><img src="images/church-member-verification-system/google-sheet-dashboard.png" alt="Executive dashboard" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="executive-reporting">
+              <p class="project-meta">Reporting and Dashboards</p>
+              <h2>Executive Reporting</h2>
+              <p>Executive Reporting translates analysis into priorities, owners, implications, and recommended actions.</p>
+              <p><strong>Tools used:</strong> KPI summaries, interpretation tables, risk registers, management reporting.</p>
+              <p><strong>Related projects:</strong> Church Member Verification System, Beyond Hospitals, Degree Does Not Equal Ability.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Main KPI summary</strong><span>Executive membership health and data quality view.</span></figcaption><img src="images/church-member-verification-system/main-kpi.png" alt="Main KPI summary" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="product-development">
+              <p class="project-meta">Web and App Development</p>
+              <h2>Product Development</h2>
+              <p>Product Development turns real business workflows into usable systems for operations, reporting, administration, and mobile access.</p>
+              <p><strong>Tools used:</strong> HTML, CSS, JavaScript, PWA design, product workflows, Capacitor Android.</p>
+              <p><strong>Related projects:</strong> LearnView Nexus, Cathdel Creamy, Insight Rides, Ray AI.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence phone-shot"><figcaption><strong>LearnView Nexus</strong><span>Education operations platform dashboard.</span></figcaption><img src="images/learnview-nexus/home.jpeg" alt="LearnView Nexus home dashboard" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="javascript">
+              <p class="project-meta">Web and App Development</p>
+              <h2>JavaScript</h2>
+              <p>JavaScript powers the portfolio interactions, product workflows, category filters, skill selectors, and AI interface behavior.</p>
+              <p><strong>Tools used:</strong> JavaScript, DOM events, interactive UI, PWA behavior, API integration.</p>
+              <p><strong>Related projects:</strong> LearnView Nexus, Ray AI, portfolio website.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence phone-shot"><figcaption><strong>LearnView interaction system</strong><span>Mobile navigation and administration hub.</span></figcaption><img src="images/learnview-nexus/more-tab.jpeg" alt="LearnView Nexus administration hub" /></figure>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="networking">
+              <p class="project-meta">IT and Systems</p>
+              <h2>Networking</h2>
+              <p>Networking knowledge supports packet flow analysis, protocol review, active host monitoring, and infrastructure-aware troubleshooting.</p>
+              <p><strong>Tools used:</strong> Wireshark concepts, packet logs, IP review, topology thinking, troubleshooting workflow.</p>
+              <p><strong>Related projects:</strong> Networking skill page, Cisco learning, IT support foundations.</p>
+              <div class="skill-showcase networking-evidence">
+                <div class="topology-card">
+                  <div class="device router">Router</div>
+                  <div class="packet-flow"></div>
+                  <div class="device switch">Switch</div>
+                  <div class="device host">192.167.7.162</div>
+                  <div class="device cloud">Internet</div>
+                </div>
+              </div>
+              <a class="button secondary-button" href="skill-networking.html">Open Full Skill Page</a>
+            </article>
+
+            <article class="skill-detail-panel" data-skill-detail="it-systems">
+              <p class="project-meta">IT and Systems</p>
+              <h2>IT and Systems</h2>
+              <p>IT and Systems thinking connects infrastructure, data flow, service performance, operational processes, and user-facing reporting.</p>
+              <p><strong>Tools used:</strong> IT support concepts, networking fundamentals, system workflows, operational analysis.</p>
+              <p><strong>Related projects:</strong> Networking skill page, LearnView Nexus, Church Member Verification System.</p>
+              <figure class="gallery-story-item premium-image-card compact-evidence"><figcaption><strong>Risk register</strong><span>Operational systems risk, mitigation, and ownership view.</span></figcaption><img src="images/church-member-verification-system/risk-register.png" alt="Risk register" /></figure>
+            </article>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-title">Ray Mhlongo</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/raymhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Ray-Mhlongo" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://wa.me/27600000000" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+    </div>
+    <p>&#169; <span id="year"></span> Ray Mhlongo</p>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="portfolioData.js?v=1"></script>
+  <script src="projectsData.js?v=1"></script>
+  <script src="productsData.js?v=1"></script>
+  <script src="skillsData.js?v=1"></script>
+  <script src="certificationsData.js?v=1"></script>
+  <script src="experienceData.js?v=1"></script>
+  <script src="educationData.js?v=1"></script>
+  <script src="servicesData.js?v=1"></script>
+  <script src="contactData.js?v=1"></script>
+  <script src="aiContextBuilder.js?v=1"></script>
+  <script src="script.js?v=8"></script>
+</body>
+</html>

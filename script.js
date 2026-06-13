@@ -135,6 +135,34 @@ document.querySelectorAll(".skill-video-trigger").forEach((button) => {
   });
 });
 
+document.querySelectorAll(".skills-category-tab").forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.skillCategory || "";
+    const firstSkill = document.querySelector(`.skills-list[data-skill-list="${category}"] [data-skill-target]`);
+
+    document.querySelectorAll(".skills-category-tab").forEach((item) => item.classList.remove("active"));
+    document.querySelectorAll(".skills-list").forEach((list) => list.classList.remove("active"));
+    button.classList.add("active");
+    document.querySelector(`.skills-list[data-skill-list="${category}"]`)?.classList.add("active");
+    firstSkill?.click();
+  });
+});
+
+document.querySelectorAll("[data-skill-target]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.skillTarget || "";
+
+    document.querySelectorAll("[data-skill-target]").forEach((item) => item.classList.remove("active"));
+    document.querySelectorAll(".skill-detail-panel").forEach((panel) => {
+      panel.classList.remove("active");
+      panel.querySelectorAll("video").forEach((video) => video.pause());
+    });
+
+    button.classList.add("active");
+    document.querySelector(`[data-skill-detail="${target}"]`)?.classList.add("active");
+  });
+});
+
 if (window.ScrollReveal) {
   const sr = ScrollReveal({
     origin: "top",
@@ -167,6 +195,8 @@ if (window.ScrollReveal) {
   sr.reveal(".skill-hero", { delay: 120 });
   sr.reveal(".skill-video-actions", { delay: 150 });
   sr.reveal(".skill-video-panel", { delay: 220 });
+  sr.reveal(".skills-category-tab", { interval: 80 });
+  sr.reveal(".skills-browser", { delay: 180 });
   sr.reveal(".contact-card", { interval: 160 });
   sr.reveal(".contact-input", { interval: 130 });
   sr.reveal(".ray-ai-copy", { delay: 120 });

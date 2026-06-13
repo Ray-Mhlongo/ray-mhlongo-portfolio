@@ -846,6 +846,137 @@ img {
   min-height: 8rem;
 }
 
+.skills-lab {
+  background: #f7f7f2;
+}
+
+.skills-lab-container {
+  max-width: 1180px;
+}
+
+.skills-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skills-category-tab {
+  min-height: 2.9rem;
+  border: 1px solid #e6e1d0;
+  background: #fff;
+  color: #0a0a0a;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.skills-category-tab:hover,
+.skills-category-tab:focus,
+.skills-category-tab.active {
+  background: #0a0a0a;
+  color: #fff;
+  border-color: #0a0a0a;
+  transform: translateY(-2px);
+}
+
+.skills-browser {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.skills-picker {
+  display: grid;
+  gap: 1rem;
+}
+
+.skills-list {
+  display: none;
+  gap: 1rem;
+}
+
+.skills-list.active {
+  display: grid;
+}
+
+.skills-list .skills-data {
+  width: 100%;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.skills-list .skills-data.active {
+  background: #0a0a0a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.skills-list .skills-data.active .skills-icon,
+.skills-list .skills-data.active .skill-cta {
+  color: #f2c94c;
+}
+
+.skills-detail {
+  min-width: 0;
+}
+
+.skill-detail-panel {
+  display: none;
+  min-width: 0;
+  border-top: 4px solid #f2c94c;
+  background: #fff;
+  padding-top: 1.25rem;
+}
+
+.skill-detail-panel.active {
+  display: grid;
+  gap: 1rem;
+  animation: skillVideoIn 0.28s ease forwards;
+}
+
+.skill-detail-panel h2 {
+  color: #0a0a0a;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.skill-detail-panel p {
+  color: #444;
+}
+
+.skill-demo-media {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.skill-demo-media video {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  background: #0a0a0a;
+  object-fit: contain;
+}
+
+.compact-evidence {
+  margin: 0.5rem 0 1rem;
+}
+
+.compact-evidence img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.networking-evidence {
+  display: block;
+  margin: 0.5rem 0 1rem;
+}
+
 .product-shot-grid {
   display: grid;
   gap: 2rem;
@@ -2052,6 +2183,10 @@ img {
 
   .tech-badge-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skills-browser {
+    grid-template-columns: 0.36fr 0.64fr;
   }
 
   .case-card-grid,
