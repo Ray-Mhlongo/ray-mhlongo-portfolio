@@ -17,17 +17,43 @@ const showMenu = (toggleId, navId) => {
 
 showMenu("nav-toggle", "nav-menu");
 
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinks = document.querySelectorAll(".nav-link:not(.nav-dropdown-toggle), .nav-dropdown-link");
 
 function linkAction() {
-  navLinks.forEach((link) => link.classList.remove("active"));
-  this.classList.add("active");
-
   const navMenu = document.getElementById("nav-menu");
   if (navMenu) navMenu.classList.remove("show");
+
+  document.querySelectorAll(".nav-dropdown.open").forEach((dropdown) => dropdown.classList.remove("open"));
+  document.querySelectorAll(".nav-dropdown-toggle[aria-expanded='true']").forEach((toggle) => {
+    toggle.setAttribute("aria-expanded", "false");
+  });
 }
 
 navLinks.forEach((link) => link.addEventListener("click", linkAction));
+
+document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const dropdown = toggle.closest(".nav-dropdown");
+    const isOpen = dropdown?.classList.contains("open");
+
+    document.querySelectorAll(".nav-dropdown.open").forEach((item) => item.classList.remove("open"));
+    document.querySelectorAll(".nav-dropdown-toggle[aria-expanded='true']").forEach((item) => {
+      item.setAttribute("aria-expanded", "false");
+    });
+
+    if (!dropdown || isOpen) return;
+    dropdown.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+  });
+});
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-dropdown.open").forEach((dropdown) => dropdown.classList.remove("open"));
+  document.querySelectorAll(".nav-dropdown-toggle[aria-expanded='true']").forEach((toggle) => {
+    toggle.setAttribute("aria-expanded", "false");
+  });
+});
 
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());
